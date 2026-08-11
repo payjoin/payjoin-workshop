@@ -319,19 +319,28 @@ export async function verifyAndFinalize(
     tk: Toolkit,
     sendCtx: pdk.PollingForProposalLike,
 ): Promise<string> {
-    // TODO(step-5): finalize.
-    //
-    //   1. Poll: await tk.pollForProposal(sendCtx) resolves to the proposal
-    //      PSBT — and has already verified it against what the sender signed
-    //      for as it decrypted (outputs intact, fee sane, nothing hijacked);
-    //      a proposal that fails verification throws instead of resolving.
-    //      Emit "proposal-received", then "proposal-checked".
-    //   2. Sign the sender's inputs and finalize:
-    //        tk.sender.signAndFinalize(proposalPsbt)
-    //      tk.decode(finalPsbt) gives you the finished transaction for the
-    //      detail lines. Emit "payjoin-signed", then "done", and return the
-    //      finalized PSBT.
-    //
-    // Win: the finished payjoin renders, inputs coloured by owner.
-    throw new NotImplemented("step-5", "verifyAndFinalize");
+    const proposalPsbt = await tk.pollForProposal(sendCtx);
+    tk.emit("sender", "proposal-received", "Received the proposal");
+    tk.emit(
+        "sender",
+        "proposal-checked",
+        "Checked the proposal against the original PSBT",
+        "our outputs survived and the fee rose only by what the extra input costs",
+    );
+
+    const finalPsbt = tk.sender.signAndFinalize(proposalPsbt);
+    const payjoin = tk.decode(finalPsbt);
+    tk.emit(
+        "sender",
+        "payjoin-signed",
+        "Signed the payjoin transaction",
+        `${payjoin.vsize} vB`,
+    );
+    tk.emit(
+        "sender",
+        "done",
+        "Payjoin complete, nothing broadcast",
+        `${payjoin.inputs.length} inputs from both sides, ${payjoin.feeSat} sat fee`,
+    );
+    return finalPsbt;
 }
