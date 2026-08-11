@@ -47,20 +47,30 @@ export async function openReceiverSession(
     tk: Toolkit,
     amountSat: number,
 ): Promise<ReceiverSession> {
-    // TODO(step-1): create the receiver session.
-    //
-    //   1. Announce it: tk.emit("receiver", "session-init", "Opening a payjoin
-    //      session", …) — the detail line is yours; the directory's host,
-    //      tk.host(tk.directory), reads well.
-    //   2. Build the session with pdk.ReceiverBuilder. It takes the address
-    //      (tk.receiver.address()), the directory (tk.directory), and the
-    //      directory's OHTTP keys (await tk.ohttpKeys()). Chain
-    //      .withAmount(BigInt(amountSat)).build().save(tk.receiverPersister).
-    //   3. Read the BIP 21 URI off the session: session.pjUri().asString()
-    //   4. Emit "uri-issued" and return { session, uri }.
-    //
-    // Win: the receiver pane shows the URI and its QR code.
-    throw new NotImplemented("step-1", "openReceiverSession");
+    tk.emit(
+        "receiver",
+        "session-init",
+        "Opening a payjoin session",
+        `directory server ${tk.host(tk.directory)}`,
+    );
+
+    const session = new pdk.ReceiverBuilder(
+        tk.receiver.address(),
+        tk.directory,
+        await tk.ohttpKeys(),
+    )
+        .withAmount(BigInt(amountSat))
+        .build()
+        .save(tk.receiverPersister);
+
+    const uri = session.pjUri().asString();
+    tk.emit(
+        "receiver",
+        "uri-issued",
+        "Issued a BIP 21 payjoin URI",
+        `${amountSat.toLocaleString("en-US")} sat`,
+    );
+    return { session, uri };
 }
 
 // ---------------------------------------------------------------------------
