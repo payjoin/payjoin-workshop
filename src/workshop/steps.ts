@@ -234,11 +234,15 @@ export function selectContribution(
     utxos: demo.Utxo[],
     rule: ReceiveRule,
 ): demo.Utxo {
-    // TODO(step-4): the rule. For "consolidate-smallest", return the utxo with
-    // the smallest valueSat (throw a ProtocolError if the wallet is empty).
-    // This function is the policy hook — a new rule is a new case here, and
-    // nothing else changes.
-    throw new NotImplemented("step-4", "selectContribution");
+    if (utxos.length === 0) {
+        throw new ProtocolError("the receiver has no coins to contribute");
+    }
+    switch (rule) {
+        case "consolidate-smallest":
+            return utxos.reduce((smallest, utxo) =>
+                utxo.valueSat < smallest.valueSat ? utxo : smallest,
+            );
+    }
 }
 
 /**
@@ -252,39 +256,52 @@ export async function contributeAndPropose(
     tk: Toolkit,
     wantsOutputs: pdk.WantsOutputsLike,
 ): Promise<void> {
-    // TODO(step-4): apply the rule, sign, and post the proposal.
-    //
-    //   1. Keep the outputs as they are:
-    //        wantsOutputs.commitOutputs().save(tk.receiverPersister)
-    //            as pdk.WantsInputsLike
-    //   2. Let the rule pick the coin:
-    //        selectContribution(tk.receiver.listUnspent(),
-    //                           "consolidate-smallest")
-    //      then contribute it:
-    //        .contributeInputs([tk.toInputPair(coin)]).commitInputs()
-    //        .save(tk.receiverPersister) as pdk.WantsFeeRangeLike
-    //      Emit "inputs-contributed" — say what the rule picked.
-    //   3. Fee policy, then sign:
-    //        .applyFeeRange(RECEIVER_MIN_FEE_RATE_SAT_PER_VB,
-    //                       RECEIVER_MAX_FEE_RATE_SAT_PER_VB)
-    //        .save(tk.receiverPersister) as pdk.ProvisionalProposalLike
-    //      Sign the PSBT the provisional proposal hands you, then give it
-    //      back:
-    //        const signed =
-    //            tk.receiver.signAndFinalize(provisional.psbtToSign())
-    //            — signs the receiver's own input and nothing else; PDK
-    //              rejects a signature on any input from the original PSBT
-    //        provisional.finalizeSignedProposal(signed)
-    //            .save(tk.receiverPersister) as pdk.PayjoinProposalLike
-    //      Emit "proposal-signed".
-    //   4. Post it back, the same throughRelay shape as step-2 but with
-    //      proposal.createPostRequest(relay) and request.clientResponse, then
-    //      proposal.processResponse(body, clientResponse).
-    //      Emit "proposal-sent".
-    //
-    // Win: proposal-sent. Your wallet just acted while receiving — that is
-    // the receive rule firing inside a transfer someone else initiated.
-    throw new NotImplemented("step-4", "contributeAndPropose");
+    const wantsInputs = wantsOutputs
+        .commitOutputs()
+        .save(tk.receiverPersister) as pdk.WantsInputsLike;
+
+    const coin = selectContribution(
+        tk.receiver.listUnspent(),
+        "consolidate-smallest",
+    );
+    const wantsFeeRange = wantsInputs
+        .contributeInputs([tk.toInputPair(coin)])
+        .commitInputs()
+        .save(tk.receiverPersister) as pdk.WantsFeeRangeLike;
+    tk.emit(
+        "receiver",
+        "inputs-contributed",
+        "Contributed a receiver input at a random index",
+        `the receive rule picked the smallest coin: ${coin.valueSat.toLocaleString("en-US")} sat`,
+    );
+
+    const provisional = wantsFeeRange
+        .applyFeeRange(
+            RECEIVER_MIN_FEE_RATE_SAT_PER_VB,
+            RECEIVER_MAX_FEE_RATE_SAT_PER_VB,
+        )
+        .save(tk.receiverPersister) as pdk.ProvisionalProposalLike;
+
+    // Signs the receiver's own input and nothing else. PDK enforces this and
+    // rejects a signature on any input that came from the original PSBT.
+    const signed = tk.receiver.signAndFinalize(provisional.psbtToSign());
+    const proposal = provisional
+        .finalizeSignedProposal(signed)
+        .save(tk.receiverPersister) as pdk.PayjoinProposalLike;
+    tk.emit("receiver", "proposal-signed", "Signed the receiver's own input");
+
+    const posted = await tk.throughRelay(async (relay) => {
+        const request = proposal.createPostRequest(relay);
+        const body = await tk.post(request.request);
+        return { body, clientResponse: request.clientResponse };
+    });
+    proposal.processResponse(posted.value.body, posted.value.clientResponse);
+    tk.emit(
+        "receiver",
+        "proposal-sent",
+        "Sent the proposal back",
+        `via ${tk.host(posted.relay)}`,
+    );
 }
 
 // ---------------------------------------------------------------------------
