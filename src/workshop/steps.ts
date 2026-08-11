@@ -93,33 +93,59 @@ export async function sendOriginal(
     tk: Toolkit,
     uri: string,
 ): Promise<SentOriginal> {
-    // TODO(step-2): the sender side.
-    //
-    //   1. Parse: pdk.Uri.parse(uri).checkPjSupported() — a mangled URI throws,
-    //      and the driver turns that into a protocol failure, not a crash. Read
-    //      the amount with pjUri.amountSats() (undefined means throw a
-    //      ProtocolError). Emit "uri-parsed".
-    //   2. Build and sign the original PSBT with the wallet:
-    //        tk.sender.signAndFinalize(tk.sender.buildOriginalPsbt(
-    //            pjUri.address(), amountSat, ORIGINAL_FEE_RATE_SAT_PER_VB))
-    //      tk.decode(originalPsbt) gives you numbers for the detail lines.
-    //      Emit "original-built", then "original-signed".
-    //   3. Wrap it for BIP 77: new pdk.SenderBuilder(originalPsbt, pjUri)
-    //        .buildRecommended(SENDER_MIN_FEE_RATE_SAT_PER_KWU)
-    //        .save(tk.senderPersister)
-    //   4. Post it through an OHTTP relay:
-    //        const posted = await tk.throughRelay(async (relay) => {
-    //            const request = sender.createV2PostRequest(relay);
-    //            return { body: await tk.post(request.request),
-    //                     ohttpCtx: request.ohttpCtx };
-    //        });
-    //      then sender.processResponse(posted.value.body,
-    //      posted.value.ohttpCtx).save(tk.senderPersister) is your sendCtx.
-    //      Emit "request-sent" and return { sendCtx, originalPsbt }.
-    //
-    // Win: the trace shows request-sent — the directory server now holds the
-    // encrypted original PSBT.
-    throw new NotImplemented("step-2", "sendOriginal");
+    const pjUri = pdk.Uri.parse(uri).checkPjSupported();
+    const amountSat = pjUri.amountSats();
+    if (amountSat === undefined) {
+        throw new ProtocolError("the payjoin URI carries no amount");
+    }
+    tk.emit(
+        "sender",
+        "uri-parsed",
+        "Read the payjoin URI",
+        `${amountSat.toLocaleString("en-US")} sat to ${pjUri.address()}`,
+    );
+
+    const originalPsbt = tk.sender.signAndFinalize(
+        tk.sender.buildOriginalPsbt(
+            pjUri.address(),
+            amountSat,
+            ORIGINAL_FEE_RATE_SAT_PER_VB,
+        ),
+    );
+    const original = tk.decode(originalPsbt);
+    tk.emit(
+        "sender",
+        "original-built",
+        "Built the original PSBT",
+        `${original.inputs.length} in, ${original.outputs.length} out, ${original.feeSat} sat fee`,
+    );
+    tk.emit(
+        "sender",
+        "original-signed",
+        "Signed the original PSBT",
+        `${original.vsize} vB`,
+    );
+
+    const sender = new pdk.SenderBuilder(originalPsbt, pjUri)
+        .buildRecommended(SENDER_MIN_FEE_RATE_SAT_PER_KWU)
+        .save(tk.senderPersister);
+
+    const posted = await tk.throughRelay(async (relay) => {
+        const request = sender.createV2PostRequest(relay);
+        const body = await tk.post(request.request);
+        return { body, ohttpCtx: request.ohttpCtx };
+    });
+    const sendCtx = sender
+        .processResponse(posted.value.body, posted.value.ohttpCtx)
+        .save(tk.senderPersister);
+    tk.emit(
+        "sender",
+        "request-sent",
+        "Sent the original PSBT to the directory server",
+        `via ${tk.host(posted.relay)}`,
+    );
+
+    return { sendCtx, originalPsbt };
 }
 
 // ---------------------------------------------------------------------------
