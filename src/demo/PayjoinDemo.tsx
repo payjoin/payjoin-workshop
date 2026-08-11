@@ -90,6 +90,10 @@ export default function PayjoinDemo() {
             const loaded = await driverFactory({
                 mock: __DEMO_MOCK__,
                 forceFailure: forcedFailure(),
+                fixturesUrl:
+                    new URLSearchParams(window.location.search).get(
+                        "fixtures",
+                    ) ?? undefined,
             })();
             setDriver(loaded);
             setAmountText(btc(loaded.amountBounds().defaultSat));

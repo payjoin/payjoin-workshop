@@ -157,6 +157,24 @@ npm run dev -- --mock
 
 Mock mode needs no network at any point. Live mode needs outbound HTTPS only.
 
+## Pay the receiver from a real wallet
+
+In live mode the receiver's session is real, so any BIP 77 sender can pay the
+URI on the page — scan the QR, or run
+[payjoin-cli](https://crates.io/crates/payjoin-cli) against it. There is also a
+headless version of the page's receiver for testing against an external
+counterparty (run it from the `solutions` branch):
+
+```sh
+npx tsx scripts/receiver-only.mts --amount 15000000
+```
+
+The built-in wallet is a regtest fixture, so the protocol completes but a real
+counterparty's broadcast fails at its node: the receiver's coin exists on no
+chain. To make the finished payjoin broadcastable, load a fixture for a test
+network whose coins are real funded outpoints — `--fixtures <file>` here, or
+`?fixtures=<url>` on the page. The fixture loader refuses mainnet keys.
+
 ## What is actually happening
 
 BIP 77 payjoin is asynchronous: the two wallets never talk to each other

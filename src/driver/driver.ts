@@ -14,11 +14,16 @@ export interface DriverChoice {
     /** Offline mode: simulate the protocol, never touch the network. */
     mock: boolean;
     forceFailure?: DemoFailure["kind"];
+    /** Live mode only: URL of a fixture-wallet JSON to load instead of the
+     *  built-in regtest wallet. Carried by `?fixtures=` so a session can be
+     *  issued on another test network — the loader refuses mainnet keys. */
+    fixturesUrl?: string;
 }
 
 export const driverFactory = ({
     mock,
     forceFailure,
+    fixturesUrl,
 }: DriverChoice): CreateDriver => {
     if (mock || forceFailure !== undefined) {
         return () =>
@@ -26,5 +31,11 @@ export const driverFactory = ({
                 m.createMockDriver({ failure: forceFailure }),
             );
     }
-    return () => import("./wasmDriver").then((m) => m.createLiveDriver());
+    return async () => {
+        const fixtures = fixturesUrl
+            ? await (await fetch(fixturesUrl)).text()
+            : undefined;
+        const { createLiveDriver } = await import("./wasmDriver");
+        return createLiveDriver({ fixtures });
+    };
 };
