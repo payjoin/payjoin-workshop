@@ -163,41 +163,56 @@ export async function receiveAndCheck(
     tk: Toolkit,
     session: pdk.InitializedLike,
 ): Promise<pdk.WantsOutputsLike> {
-    // TODO(step-3): receive the original PSBT and run the receiver's checks.
-    //
-    //   1. Poll: await tk.pollForOriginal(session) — null means it never came;
-    //      throw a ProtocolError. Emit "request-received".
-    //   2. Walk the typestate chain. Each check is a checklist: the state hands
-    //      you its items, your wallet marks every one of them in order, and you
-    //      apply the marked list. You mark the items yourself, so a real wallet
-    //      can look each one up asynchronously first. Each result is
-    //      `.save(tk.receiverPersister)` then cast to the next state. The
-    //      names below are those states; pollForOriginal returned `unchecked`.
-    //        unchecked.applyBroadcastSuitability(undefined, true)
-    //            — a real wallet first tests
-    //              extractTxToCheckBroadcastSuitability() for mempool
-    //              acceptance; nothing is broadcast in the demo, so there is
-    //              no mempool to ask
-    //            → as pdk.MaybeInputsOwnedLike
-    //        maybeInputsOwned.applyInputsOwnedChecklist(
-    //            maybeInputsOwned.inputsOwnedChecklist().map((item) =>
-    //                item.mark(tk.receiverOwnsOutpoint(item.value()))))
-    //            → as pdk.MaybeInputsSeenLike
-    //        maybeInputsSeen.applyInputsSeenChecklist(
-    //            maybeInputsSeen.inputsSeenChecklist().map((item) =>
-    //                item.mark(false)))
-    //            — a payment processor keeps a seen-inputs table here to
-    //              blunt probing; the demo has no state across runs
-    //            → as pdk.OutputsUnknownLike
-    //        outputsUnknown.applyOutputsOwnedChecklist(
-    //            outputsUnknown.outputsOwnedChecklist().map((item) =>
-    //                item.mark(tk.receiver.ownsScript(item.value()))))
-    //            → as pdk.WantsOutputsLike
-    //   3. Emit "checks-passed" and return the WantsOutputsLike.
-    //
-    // Win: the trace shows checks-passed. You cannot reach "contribute"
-    // without this — the typestates will not let you.
-    throw new NotImplemented("step-3", "receiveAndCheck");
+    const unchecked = await tk.pollForOriginal(session);
+    if (!unchecked) {
+        throw new ProtocolError(
+            "the directory server never delivered the original PSBT to the receiver",
+        );
+    }
+    tk.emit("receiver", "request-received", "Received the original PSBT");
+
+    // A real wallet tests extractTxToCheckBroadcastSuitability() for mempool
+    // acceptance before answering. Nothing is broadcast in the demo, so there
+    // is no mempool to ask.
+    const maybeInputsOwned = unchecked
+        .applyBroadcastSuitability(undefined, true)
+        .save(tk.receiverPersister) as pdk.MaybeInputsOwnedLike;
+
+    const maybeInputsSeen = maybeInputsOwned
+        .applyInputsOwnedChecklist(
+            maybeInputsOwned
+                .inputsOwnedChecklist()
+                .map((item) =>
+                    item.mark(tk.receiverOwnsOutpoint(item.value())),
+                ),
+        )
+        .save(tk.receiverPersister) as pdk.MaybeInputsSeenLike;
+
+    // A payment processor keeps a seen-inputs table here to blunt probing.
+    // The demo has no state across runs and nothing to probe.
+    const outputsUnknown = maybeInputsSeen
+        .applyInputsSeenChecklist(
+            maybeInputsSeen
+                .inputsSeenChecklist()
+                .map((item) => item.mark(false)),
+        )
+        .save(tk.receiverPersister) as pdk.OutputsUnknownLike;
+
+    const wantsOutputs = outputsUnknown
+        .applyOutputsOwnedChecklist(
+            outputsUnknown
+                .outputsOwnedChecklist()
+                .map((item) => item.mark(tk.receiver.ownsScript(item.value()))),
+        )
+        .save(tk.receiverPersister) as pdk.WantsOutputsLike;
+
+    tk.emit(
+        "receiver",
+        "checks-passed",
+        "Checked the original PSBT",
+        "broadcastable, none of its inputs are ours, our output is there",
+    );
+    return wantsOutputs;
 }
 
 // ---------------------------------------------------------------------------
