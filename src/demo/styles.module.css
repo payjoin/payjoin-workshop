@@ -1,0 +1,90 @@
+/*
+ * The demo's own surfaces and the two party colours. Tailwind covers the
+ * layout; this file covers the things that need one definition rather than
+ * twenty.
+ *
+ * Receiver and sender are always distinguished by a written label as well as a
+ * colour, because the whole point of the result view is who owns what.
+ */
+
+.receiver {
+    --party: #f75394;
+    --party-soft: rgba(247, 83, 148, 0.16);
+    --party-line: rgba(247, 83, 148, 0.45);
+}
+
+.sender {
+    --party: #f5c14e;
+    --party-soft: rgba(245, 193, 78, 0.16);
+    --party-line: rgba(245, 193, 78, 0.45);
+}
+
+.chip {
+    display: inline-block;
+    padding: 0.05rem 0.45rem;
+    border-radius: 999px;
+    border: 1px solid var(--party-line);
+    background: var(--party-soft);
+    color: var(--party);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    white-space: nowrap;
+}
+
+.panel {
+    background: #46192b;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 0.75rem;
+}
+
+/* The pane whose turn it is. */
+.active {
+    border-color: var(--party-line);
+    box-shadow: 0 0 0 1px var(--party-line);
+}
+
+.inset {
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 0.5rem;
+}
+
+.seam {
+    border: 1px dashed rgba(255, 255, 255, 0.22);
+    border-radius: 0.75rem;
+}
+
+.mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+}
+
+.pending {
+    animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pending {
+        animation: none;
+        opacity: 0.6;
+    }
+}
+
+/* Headings sit in flex rows; the browser default margins fight the gaps. */
+.panel h2,
+.panel h3,
+.panel h4 {
+    margin: 0;
+}

@@ -1,3 +1,5 @@
+import PayjoinDemo from "./demo/PayjoinDemo";
+
 export default function App() {
     return (
         <main className="max-w-6xl mx-auto px-4 py-10 flex flex-col gap-6">
@@ -26,6 +28,7 @@ export default function App() {
                     </a>
                 </p>
             </header>
+            <PayjoinDemo />
         </main>
     );
 }
