@@ -87,7 +87,10 @@ export default function PayjoinDemo() {
         setPhase("loading");
         setFailure(null);
         try {
-            const loaded = await driverFactory(forcedFailure())();
+            const loaded = await driverFactory({
+                mock: __DEMO_MOCK__,
+                forceFailure: forcedFailure(),
+            })();
             setDriver(loaded);
             setAmountText(btc(loaded.amountBounds().defaultSat));
             setPhase("ready");
@@ -216,6 +219,11 @@ export default function PayjoinDemo() {
 
     return (
         <div className="flex flex-col gap-6">
+            <p className="m-0 text-xs text-white/45">
+                {__DEMO_MOCK__ || forcedFailure() !== undefined
+                    ? "offline simulation — the mock driver walks the protocol; nothing touches the network"
+                    : "live — this session runs over the payjo.in directory server through public OHTTP relays"}
+            </p>
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_18rem_minmax(0,1fr)] gap-4 items-start">
                 <WalletPane
                     wallet={wallets.receiver}

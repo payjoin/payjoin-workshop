@@ -10,11 +10,21 @@ import type { CreateDriver, DemoFailure } from "./types";
  * relay cannot produce failures on demand, so a forced failure always resolves
  * to the mock.
  */
-export const driverFactory = (
-    forceFailure?: DemoFailure["kind"],
-): CreateDriver => {
-    return () =>
-        import("./mockDriver").then((m) =>
-            m.createMockDriver({ failure: forceFailure }),
-        );
+export interface DriverChoice {
+    /** Offline mode: simulate the protocol, never touch the network. */
+    mock: boolean;
+    forceFailure?: DemoFailure["kind"];
+}
+
+export const driverFactory = ({
+    mock,
+    forceFailure,
+}: DriverChoice): CreateDriver => {
+    if (mock || forceFailure !== undefined) {
+        return () =>
+            import("./mockDriver").then((m) =>
+                m.createMockDriver({ failure: forceFailure }),
+            );
+    }
+    return () => import("./wasmDriver").then((m) => m.createLiveDriver());
 };
