@@ -11,6 +11,11 @@ Nothing here is spendable and nothing is broadcast. In live mode the protocol
 runs over the real payjo.in directory server and public OHTTP relays; in mock
 mode it runs with no network at all.
 
+This repository also includes an AI agent skill in `.agents/skills/payjoin-workshop/`.
+It helps an agent explain and implement the workshop's five BIP 77 checkpoints,
+while preserving the mock/live driver contract and Payjoin safety boundaries.
+The skill is educational and testnet-safe; it is not a production wallet audit.
+
 ## Before you start
 
 1. Install Node.js 20 or later (https://nodejs.org).
