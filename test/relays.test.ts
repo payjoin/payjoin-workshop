@@ -1,8 +1,9 @@
-// Relay failover and the failure it produces, offline. The live e2e
+// Relay failover and the failure shapes it produces, offline. The live e2e
 // test exercises the same path against real relays, but only when asked to.
 import { describe, expect, it } from "vitest";
 import { NoRelaysLeft, RelayManager, throughRelay } from "../src/driver/relays";
 import { toFailure } from "../src/driver/wasmDriver";
+import { Cancelled, Toolkit, type ToolkitDeps } from "../src/workshop/toolkit";
 
 const BROKEN_RELAY = "https://relay.invalid.payjoin-workshop.example";
 
@@ -55,5 +56,21 @@ describe("relay failover", () => {
             kind: "network",
             relay: `${BROKEN_RELAY}, https://a.example`,
         });
+    });
+});
+
+describe("cancellation", () => {
+    it("stops a session cancelled while its OHTTP keys were in flight", async () => {
+        let cancelled = false;
+        const tk = new Toolkit({
+            directory: "https://directory.example",
+            fetchImpl: async () => {
+                cancelled = true;
+                return new Response(new Uint8Array([0]));
+            },
+            isCancelled: () => cancelled,
+        } as unknown as ToolkitDeps);
+
+        await expect(tk.ohttpKeys()).rejects.toBeInstanceOf(Cancelled);
     });
 });

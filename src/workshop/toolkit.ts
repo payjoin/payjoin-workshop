@@ -143,6 +143,9 @@ export class Toolkit {
     async ohttpKeys(): Promise<pdk.OhttpKeysLike> {
         const url = `${this.deps.directory.replace(/\/$/, "")}/ohttp-keys`;
         const response = await this.deps.fetchImpl(url);
+        // The fetch can outlast a Stop press. Catch it here, or the session
+        // goes on to issue a URI nobody will act on.
+        this.checkCancelled();
         if (!response.ok) {
             throw new Error(
                 `directory server ${host(url)} answered ${response.status} for its ohttp keys`,
