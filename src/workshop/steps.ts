@@ -131,22 +131,31 @@ export async function receiveAndCheck(
     //
     //   1. Poll: await tk.pollForOriginal(session) — null means it never came;
     //      throw a ProtocolError. Emit "request-received".
-    //   2. Walk the typestate chain. Each check takes a callback the wallet
-    //      answers, each result is `.save(tk.receiverPersister)` then cast to
-    //      the next state:
-    //        .checkBroadcastSuitability(undefined, { callback: () => true })
-    //            — nothing is broadcast in the demo, so there is no mempool
-    //              to ask; a real wallet tests mempool acceptance here
+    //   2. Walk the typestate chain. Each check is a checklist: the state hands
+    //      you its items, your wallet marks every one of them in order, and you
+    //      apply the marked list. You mark the items yourself, so a real wallet
+    //      can look each one up asynchronously first. Each result is
+    //      `.save(tk.receiverPersister)` then cast to the next state. The
+    //      names below are those states; pollForOriginal returned `unchecked`.
+    //        unchecked.applyBroadcastSuitability(undefined, true)
+    //            — a real wallet first tests
+    //              extractTxToCheckBroadcastSuitability() for mempool
+    //              acceptance; nothing is broadcast in the demo, so there is
+    //              no mempool to ask
     //            → as pdk.MaybeInputsOwnedLike
-    //        .checkInputsNotOwned({ callback: (outpoint) =>
-    //              tk.receiverOwnsOutpoint(outpoint) })
+    //        maybeInputsOwned.applyInputsOwnedChecklist(
+    //            maybeInputsOwned.inputsOwnedChecklist().map((item) =>
+    //                item.mark(tk.receiverOwnsOutpoint(item.value()))))
     //            → as pdk.MaybeInputsSeenLike
-    //        .checkNoInputsSeenBefore({ callback: () => false })
+    //        maybeInputsSeen.applyInputsSeenChecklist(
+    //            maybeInputsSeen.inputsSeenChecklist().map((item) =>
+    //                item.mark(false)))
     //            — a payment processor keeps a seen-inputs table here to
     //              blunt probing; the demo has no state across runs
     //            → as pdk.OutputsUnknownLike
-    //        .identifyReceiverOutputs({ callback: (script) =>
-    //              tk.receiver.ownsScript(script) })
+    //        outputsUnknown.applyOutputsOwnedChecklist(
+    //            outputsUnknown.outputsOwnedChecklist().map((item) =>
+    //                item.mark(tk.receiver.ownsScript(item.value()))))
     //            → as pdk.WantsOutputsLike
     //   3. Emit "checks-passed" and return the WantsOutputsLike.
     //
@@ -208,11 +217,14 @@ export async function contributeAndPropose(
     //        .applyFeeRange(RECEIVER_MIN_FEE_RATE_SAT_PER_VB,
     //                       RECEIVER_MAX_FEE_RATE_SAT_PER_VB)
     //        .save(tk.receiverPersister) as pdk.ProvisionalProposalLike
-    //        .finalizeProposal({ callback: (psbt) =>
-    //              tk.receiver.signAndFinalize(psbt) })
+    //      Sign the PSBT the provisional proposal hands you, then give it
+    //      back:
+    //        const signed =
+    //            tk.receiver.signAndFinalize(provisional.psbtToSign())
     //            — signs the receiver's own input and nothing else; PDK
     //              rejects a signature on any input from the original PSBT
-    //        .save(tk.receiverPersister) as pdk.PayjoinProposalLike
+    //        provisional.finalizeSignedProposal(signed)
+    //            .save(tk.receiverPersister) as pdk.PayjoinProposalLike
     //      Emit "proposal-signed".
     //   4. Post it back, the same throughRelay shape as step-2 but with
     //      proposal.createPostRequest(relay) and request.clientResponse, then

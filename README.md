@@ -93,10 +93,15 @@ Checked the original PSBT      broadcastable, none of its inputs are ours, our o
 Each check exists because a malicious sender probes. The typestates force the
 sequence — the library will not let you contribute before checking.
 
+The library hands your wallet each check as a list of items to mark, and you
+apply the marked list. Because you mark the items yourself, the answers can
+come from an async lookup such as an indexer call.
+
 ### step-4 — the receive rule fires
 
 Implement `selectContribution` (the rule: consolidate the smallest coin on
-every receive), contribute the coin it picks, sign, and post the proposal.
+every receive), contribute the coin it picks, sign the PSBT the proposal hands
+you, and post the proposal.
 Win:
 
 ```
