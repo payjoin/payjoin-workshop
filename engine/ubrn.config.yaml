@@ -1,0 +1,23 @@
+# Builds the workshop's payjoin engine: this crate plus, through its dependency
+# on payjoin-ffi, the whole payjoin binding surface in one wasm binary.
+#
+# uniffi bindgen runs in library mode over the cdylib, so it finds every uniffi
+# namespace linked into it. The generated TypeScript carries both the `payjoin`
+# and `demo_wallet` namespaces, and rust-bitcoin and secp256k1 are linked once.
+#
+# Paths are relative to this directory, which ubrn treats as the project root
+# because it holds the nearest package.json.
+
+rust:
+    directory: .
+    manifestPath: Cargo.toml
+
+web:
+    features: ["wasm_js"]
+    defaultFeatures: false
+    target: web
+    manifestPath: rust_modules/demo-wasm/Cargo.toml
+    wasmCrateName: payjoin-demo-wasm
+    manifestPatchFile: wasm-manifest-patch.toml
+    entrypoint: generated-entrypoint.ts
+    tsBindings: generated

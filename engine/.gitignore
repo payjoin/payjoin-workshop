@@ -1,0 +1,5 @@
+# Build outputs. The engine the workshop runs is the copy in vendor/payjoin-demo.
+/target/
+/rust_modules/
+/generated/
+/generated-entrypoint.ts

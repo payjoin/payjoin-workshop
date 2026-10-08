@@ -1,0 +1,32 @@
+[package]
+name = "payjoin-demo-wallet"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Fixture-backed wallet for the workshop's browser demo. Regtest only."
+publish = false
+
+[lib]
+name = "payjoin_demo_wallet"
+crate-type = ["lib", "cdylib"]
+
+[[bin]]
+name = "gen-fixtures"
+path = "src/bin/gen_fixtures.rs"
+
+[features]
+default = []
+wasm_js = ["payjoin-ffi/wasm_js"]
+
+[dependencies]
+bitcoin = { version = "0.32.9", features = ["base64", "rand-std", "serde"] }
+# payjoin-ffi is not on crates.io. This tag is the release the vendored
+# bindings are built from.
+payjoin-ffi = { git = "https://github.com/payjoin/rust-payjoin", tag = "payjoin-javascript-0.3.0+payjoin-1.2.0", default-features = false }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+thiserror = "2.0.18"
+uniffi = "0.31.2"
+
+[dev-dependencies]
+payjoin = { version = "1.2.0", features = ["v1"] }

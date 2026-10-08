@@ -226,8 +226,9 @@ live directory server. It needs every checkpoint solved (run it from the
 `solutions` branch), and it puts real traffic on volunteer-run relays, so it
 is off by default and does one payjoin per run. Do not loop it.
 
-The vendored engine under `vendor/payjoin-demo/` is a build product; its
-provenance and rebuild instructions are in `vendor/payjoin-demo/README.md`.
+The vendored engine under `vendor/payjoin-demo/` is a build product of the
+Rust in `engine/`. Provenance and rebuild instructions are in
+`vendor/payjoin-demo/README.md`. CI does not build it.
 
 ## License
 

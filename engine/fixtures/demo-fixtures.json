@@ -1,0 +1,108 @@
+{
+  "$comment": "REGTEST DEMO KEYS - PUBLISHED DELIBERATELY, WORTHLESS, DERIVED FROM A SEED IN THIS FILE. NEVER SEND REAL BITCOIN TO THESE ADDRESSES.",
+  "network": "regtest",
+  "generatedBy": "cargo run -p payjoin-demo-wallet --bin gen-fixtures",
+  "seed": "payjoin.org demo wallet fixtures v1",
+  "wallets": {
+    "receiver": {
+      "label": "receiver",
+      "addressType": "p2wpkh",
+      "receive": {
+        "path": "receiver/receive",
+        "wif": "cPJJpD9Y6Wfma4LFVkAdYqmEWZ7ErWYdj3kwzLoTG2wbDLJEmDgk",
+        "pubkey": "0249afa221f114548595685962f393b65a122570fce1050c8b323b24b2766d8387",
+        "address": "bcrt1qzw82nappetzsax7sxrg7z8muqej7gydv0em7nw",
+        "scriptPubKey": "0014138ea9f421cac50e9bd030d1e11f7c0665e411ac"
+      },
+      "change": {
+        "path": "receiver/change",
+        "wif": "cV3U3QWSjEywuxgAQx8TBi8YTP72B7oKZEqCmXEZXAo93GX6t3od",
+        "pubkey": "034b0ad2659d61eb2e1899241f6affc3d50255136b1a069bc0e14093c1de602308",
+        "address": "bcrt1q2zm6sc4gs6x5vq7a7nax2ll42qfhdue62uk482",
+        "scriptPubKey": "001450b7a862a8868d4603ddf4fa657ff5501376f33a"
+      },
+      "utxos": [
+        {
+          "txid": "0f62094121122691ee923a72a44804d724ae8e3fdb21806ddf1efadda26e98fa",
+          "vout": 0,
+          "valueSat": 40000000,
+          "path": "receiver/coin/0",
+          "wif": "cPp2YDDLxSQ3TQPsD6CvDKGLXpFejy3ErnazmJt7odWfyuaJbdit",
+          "pubkey": "03b41cfed52fc374b87a5a334418f43fed0bdb2d77473608bf9f50dda338e49682",
+          "address": "bcrt1q93khm7gdq0sm980k5k2taw28e7s06f5eqacyz4",
+          "scriptPubKey": "00142c6d7df90d03e1b29df6a594beb947cfa0fd2699"
+        },
+        {
+          "txid": "0f62094121122691ee923a72a44804d724ae8e3fdb21806ddf1efadda26e98fa",
+          "vout": 1,
+          "valueSat": 60000000,
+          "path": "receiver/coin/1",
+          "wif": "cMdxJoNZKUXu7gFNC62KNQ2wehTmR3iDnrqpwoxFqBy1UsEFQ5Vt",
+          "pubkey": "036ef557e71d60715e851213b03305bb102a83b876c771d2a6e974f3e62f7d187d",
+          "address": "bcrt1qfmsaaduknxkz6m3ttp8drnagulv37a8w2jfjcd",
+          "scriptPubKey": "00144ee1deb79699ac2d6e2b584ed1cfa8e7d91f74ee"
+        }
+      ]
+    },
+    "sender": {
+      "label": "sender",
+      "addressType": "p2wpkh",
+      "receive": {
+        "path": "sender/receive",
+        "wif": "cQUCWZNR3WwJqDtBzn6gN3Wq529zVMkZ4AiVzq3AvVgNjCfJhSBe",
+        "pubkey": "02917756b093c43caa3cef2290ada31f950d84e212bad632ca5c35151a73d31f94",
+        "address": "bcrt1qrzz37fx3k9t7hmg0ruy254vsd335tv64vx398h",
+        "scriptPubKey": "001418851f24d1b157ebed0f1f08aa55906c6345b355"
+      },
+      "change": {
+        "path": "sender/change",
+        "wif": "cScX68FVsoAJjE1sHrL2e8gwddhyLEquvux4mpYJNz3FdGshBJBF",
+        "pubkey": "03352d6e57bcdfddcd70a6d9e3ac53964987eb64f316f735b3c18a81eae8697ed3",
+        "address": "bcrt1q4u2ueygge3d7lk3dpc75zfmsevt3ty42rhs843",
+        "scriptPubKey": "0014af15cc9108cc5befda2d0e3d412770cb171592aa"
+      },
+      "utxos": [
+        {
+          "txid": "b4d677b24417c37a30109e6b1e51511981de07add4a32efb42ab90b792608878",
+          "vout": 0,
+          "valueSat": 20000000,
+          "path": "sender/coin/0",
+          "wif": "cTdLkHAJVE6B3HUvpkjctc2kBPCYqufzar4ayjte7DFFkRncssUN",
+          "pubkey": "0286452402f6dd4d845daca1a2235921f140749f406a30ea41d65493f7e2316171",
+          "address": "bcrt1qj4tqu8dkz9l2r82thg0z0gnrapk685xs58ah49",
+          "scriptPubKey": "001495560e1db6117ea19d4bba1e27a263e86da3d0d0"
+        },
+        {
+          "txid": "b4d677b24417c37a30109e6b1e51511981de07add4a32efb42ab90b792608878",
+          "vout": 1,
+          "valueSat": 35000000,
+          "path": "sender/coin/1",
+          "wif": "cSMLm68FuC955FuvjDFJBHR1LN82XvmW38TmsqMzAViB33JZPesJ",
+          "pubkey": "038d22aefcf18d23320d8fe22330908ed4ac7e9968eb35e44c930d55c2aced32f1",
+          "address": "bcrt1qtxkeyd90m0qtaraa2a9ulhdtjrl28mrrmscww0",
+          "scriptPubKey": "001459ad9234afdbc0be8fbd574bcfddab90fea3ec63"
+        },
+        {
+          "txid": "b4d677b24417c37a30109e6b1e51511981de07add4a32efb42ab90b792608878",
+          "vout": 2,
+          "valueSat": 50000000,
+          "path": "sender/coin/2",
+          "wif": "cUzuwG9Sf1q5m7cpLLwtt5ZJeYgufYpgTWD2puTEnT2nctLhns9i",
+          "pubkey": "03f22e328d4cf2f32879ca78d6509ca544877e83d84ad84168cfdd57144507ab6d",
+          "address": "bcrt1qjc7c4napermdu9nhswxen8xx45engy43ws9wfy",
+          "scriptPubKey": "0014963d8acfa1c8f6de1677838d999cc6ad333412b1"
+        },
+        {
+          "txid": "b4d677b24417c37a30109e6b1e51511981de07add4a32efb42ab90b792608878",
+          "vout": 3,
+          "valueSat": 100000000,
+          "path": "sender/coin/3",
+          "wif": "cPcspNMySQNSiUqAYoZcUQNTS1JjCaCU9HbsDYNv2MtEZGTjMhEU",
+          "pubkey": "031ba9ab9dcad290fd38775692b1f227a53e70578497da1d2c2f5c5e35ad4c4674",
+          "address": "bcrt1qsdr3z3dqgas5rq2p34cmcm3q5f0hzamq0hwe28",
+          "scriptPubKey": "001483471145a047614181418d71bc6e20a25f717760"
+        }
+      ]
+    }
+  }
+}

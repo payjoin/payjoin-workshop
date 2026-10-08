@@ -144,9 +144,8 @@ const FfiConverterString = uniffiCreateFfiConverterString(stringConverter);
 
 /**
  * Which side of the demo something belongs to. A payjoin's defining visible property is
- * that its inputs come from both, so nothing downstream may infer this from ordering —
- * the receiver randomizes input position on purpose
- * (`payjoin/src/core/receive/common/mod.rs:367`).
+ * that its inputs come from both, so nothing downstream may infer this from ordering.
+ * The receiver randomizes input position on purpose (payjoin's `contribute_inputs`).
  */
 export enum Party {
     Receiver,
@@ -761,15 +760,15 @@ export interface DemoWalletLike {
     changeAddress(): string;
     listUnspent(): Array<Utxo>;
     /**
-     * Set membership over raw scriptPubKey bytes. Backs `checkInputsNotOwned` and
-     * `identifyReceiverOutputs`, neither of which wants an address round-trip.
+     * Set membership over raw scriptPubKey bytes, which is what the receiver's input and
+     * output ownership checks test. No address round-trip.
      */
     ownsScript(scriptPubkey: ArrayBuffer): boolean;
     party(): Party;
     /**
      * Signs and finalizes only the inputs this wallet owns, leaving every other input
-     * byte-identical. Serves the sender's original, the receiver's `finalizeProposal`,
-     * and the sender's signature over the returned proposal.
+     * byte-identical. Serves the sender's original, the receiver's proposal, and the
+     * sender's signature over the returned proposal.
      */
     signAndFinalize(psbtBase64: string) /*throws*/ : string;
 }
@@ -925,8 +924,8 @@ export class DemoWallet extends UniffiAbstractObject implements DemoWalletLike {
     }
 
     /**
-     * Set membership over raw scriptPubKey bytes. Backs `checkInputsNotOwned` and
-     * `identifyReceiverOutputs`, neither of which wants an address round-trip.
+     * Set membership over raw scriptPubKey bytes, which is what the receiver's input and
+     * output ownership checks test. No address round-trip.
      */
     ownsScript(scriptPubkey: ArrayBuffer): boolean {
         return FfiConverterBool.lift(
@@ -972,8 +971,8 @@ export class DemoWallet extends UniffiAbstractObject implements DemoWalletLike {
 
     /**
      * Signs and finalizes only the inputs this wallet owns, leaving every other input
-     * byte-identical. Serves the sender's original, the receiver's `finalizeProposal`,
-     * and the sender's signature over the returned proposal.
+     * byte-identical. Serves the sender's original, the receiver's proposal, and the
+     * sender's signature over the returned proposal.
      */
     signAndFinalize(psbtBase64: string): string /*throws*/ {
         return ((__rb: Uint8Array) => {
@@ -1445,7 +1444,7 @@ function uniffiEnsureInitialized() {
     }
     if (
         nativeModule().ubrn_uniffi_payjoin_demo_wallet_checksum_method_demowallet_owns_script() !==
-        60705
+        11122
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_demo_wallet_checksum_method_demowallet_owns_script",
@@ -1461,7 +1460,7 @@ function uniffiEnsureInitialized() {
     }
     if (
         nativeModule().ubrn_uniffi_payjoin_demo_wallet_checksum_method_demowallet_sign_and_finalize() !==
-        22662
+        61931
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_demo_wallet_checksum_method_demowallet_sign_and_finalize",

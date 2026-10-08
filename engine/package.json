@@ -1,0 +1,9 @@
+{
+    "name": "payjoin-demo-wasm",
+    "private": true,
+    "version": "0.3.0",
+    "description": "Build input for the vendored payjoin engine. Not installed; see vendor/payjoin-demo/README.md.",
+    "repository": {
+        "url": "https://github.com/payjoin/payjoin-workshop"
+    }
+}
