@@ -1388,8 +1388,40 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_initialsendtransition_sa
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_mark() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_mark();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_value() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_value();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_inputpair_outpoint() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_inputpair_outpoint();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_mark() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_mark();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_value() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_value();
     return ret;
 }
 
@@ -1516,6 +1548,14 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_jsonsendersessionpersist
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_apply_inputs_owned_checklist() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_apply_inputs_owned_checklist();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_cancel() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_cancel();
     return ret;
@@ -1534,6 +1574,14 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_check_i
  */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_extract_tx_to_schedule_broadcast() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_extract_tx_to_schedule_broadcast();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_inputs_owned_checklist() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_inputs_owned_checklist();
     return ret;
 }
 
@@ -1564,6 +1612,14 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsownedtransiti
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_apply_inputs_seen_checklist() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_apply_inputs_seen_checklist();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_cancel() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_cancel();
     return ret;
@@ -1574,6 +1630,14 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_cancel()
  */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_check_no_inputs_seen_before() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_check_no_inputs_seen_before();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_inputs_seen_checklist() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_inputs_seen_checklist();
     return ret;
 }
 
@@ -1644,6 +1708,30 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_monitortransition_save_a
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_mark() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_mark();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_value() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_value();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_apply_outputs_owned_checklist() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_apply_outputs_owned_checklist();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_cancel() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_cancel();
     return ret;
@@ -1654,6 +1742,14 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_cancel() 
  */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_identify_receiver_outputs() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_identify_receiver_outputs();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_outputs_owned_checklist() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_outputs_owned_checklist();
     return ret;
 }
 
@@ -1862,6 +1958,14 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_canc
  */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_proposal() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_proposal();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_signed_proposal() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_signed_proposal();
     return ret;
 }
 
@@ -2164,6 +2268,14 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_transactionfinder_callba
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_apply_broadcast_suitability() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_apply_broadcast_suitability();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_assume_interactive_receiver() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_assume_interactive_receiver();
     return ret;
@@ -2182,6 +2294,14 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload
  */
 export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_check_broadcast_suitability() {
     const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_check_broadcast_suitability();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability() {
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability();
     return ret;
 }
 
@@ -2519,6 +2639,17 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_broadcastedtransition(handle, f
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
+export function ubrn_uniffi_payjoin_ffi_fn_clone_buildsendererror(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_buildsendererror(handle, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
 export function ubrn_uniffi_payjoin_ffi_fn_clone_canbroadcast(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_canbroadcast(handle, f_status_.__wbg_ptr);
@@ -2684,9 +2815,31 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_inputcontributionerror(handle, 
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
+export function ubrn_uniffi_payjoin_ffi_fn_clone_inputownedchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_inputownedchecklistitem(handle, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
 export function ubrn_uniffi_payjoin_ffi_fn_clone_inputpair(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_inputpair(handle, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_clone_inputseenchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_inputseenchecklistitem(handle, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -2794,6 +2947,39 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_jsonsendersessionpersisterasync
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
+export function ubrn_uniffi_payjoin_ffi_fn_clone_markedinputownedchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_markedinputownedchecklistitem(handle, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_clone_markedinputseenchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_markedinputseenchecklistitem(handle, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_clone_markedoutputownedchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_markedoutputownedchecklistitem(handle, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
 export function ubrn_uniffi_payjoin_ffi_fn_clone_maybeinputsowned(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_maybeinputsowned(handle, f_status_.__wbg_ptr);
@@ -2874,6 +3060,17 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_ohttperror(handle, f_status_) {
 export function ubrn_uniffi_payjoin_ffi_fn_clone_ohttpkeys(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_ohttpkeys(handle, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_clone_outputownedchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_outputownedchecklistitem(handle, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -3160,17 +3357,6 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_replayresult(handle, f_status_)
 export function ubrn_uniffi_payjoin_ffi_fn_clone_senderbuilder(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_senderbuilder(handle, f_status_.__wbg_ptr);
-    return BigInt.asUintN(64, ret);
-}
-
-/**
- * @param {bigint} handle
- * @param {RustCallStatus} f_status_
- * @returns {bigint}
- */
-export function ubrn_uniffi_payjoin_ffi_fn_clone_senderbuildererror(handle, f_status_) {
-    _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_clone_senderbuildererror(handle, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -3628,6 +3814,15 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_broadcastedtransition(handle, f_
  * @param {bigint} handle
  * @param {RustCallStatus} f_status_
  */
+export function ubrn_uniffi_payjoin_ffi_fn_free_buildsendererror(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_payjoin_ffi_fn_free_buildsendererror(handle, f_status_.__wbg_ptr);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ */
 export function ubrn_uniffi_payjoin_ffi_fn_free_canbroadcast(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     wasm.ubrn_uniffi_payjoin_ffi_fn_free_canbroadcast(handle, f_status_.__wbg_ptr);
@@ -3763,9 +3958,27 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_inputcontributionerror(handle, f
  * @param {bigint} handle
  * @param {RustCallStatus} f_status_
  */
+export function ubrn_uniffi_payjoin_ffi_fn_free_inputownedchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_payjoin_ffi_fn_free_inputownedchecklistitem(handle, f_status_.__wbg_ptr);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ */
 export function ubrn_uniffi_payjoin_ffi_fn_free_inputpair(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     wasm.ubrn_uniffi_payjoin_ffi_fn_free_inputpair(handle, f_status_.__wbg_ptr);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_free_inputseenchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_payjoin_ffi_fn_free_inputseenchecklistitem(handle, f_status_.__wbg_ptr);
 }
 
 /**
@@ -3853,6 +4066,33 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_jsonsendersessionpersisterasync(
  * @param {bigint} handle
  * @param {RustCallStatus} f_status_
  */
+export function ubrn_uniffi_payjoin_ffi_fn_free_markedinputownedchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_payjoin_ffi_fn_free_markedinputownedchecklistitem(handle, f_status_.__wbg_ptr);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_free_markedinputseenchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_payjoin_ffi_fn_free_markedinputseenchecklistitem(handle, f_status_.__wbg_ptr);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_free_markedoutputownedchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_payjoin_ffi_fn_free_markedoutputownedchecklistitem(handle, f_status_.__wbg_ptr);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ */
 export function ubrn_uniffi_payjoin_ffi_fn_free_maybeinputsowned(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     wasm.ubrn_uniffi_payjoin_ffi_fn_free_maybeinputsowned(handle, f_status_.__wbg_ptr);
@@ -3919,6 +4159,15 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_ohttperror(handle, f_status_) {
 export function ubrn_uniffi_payjoin_ffi_fn_free_ohttpkeys(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     wasm.ubrn_uniffi_payjoin_ffi_fn_free_ohttpkeys(handle, f_status_.__wbg_ptr);
+}
+
+/**
+ * @param {bigint} handle
+ * @param {RustCallStatus} f_status_
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_free_outputownedchecklistitem(handle, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_payjoin_ffi_fn_free_outputownedchecklistitem(handle, f_status_.__wbg_ptr);
 }
 
 /**
@@ -4153,15 +4402,6 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_replayresult(handle, f_status_) 
 export function ubrn_uniffi_payjoin_ffi_fn_free_senderbuilder(handle, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     wasm.ubrn_uniffi_payjoin_ffi_fn_free_senderbuilder(handle, f_status_.__wbg_ptr);
-}
-
-/**
- * @param {bigint} handle
- * @param {RustCallStatus} f_status_
- */
-export function ubrn_uniffi_payjoin_ffi_fn_free_senderbuildererror(handle, f_status_) {
-    _assertClass(f_status_, RustCallStatus);
-    wasm.ubrn_uniffi_payjoin_ffi_fn_free_senderbuildererror(handle, f_status_.__wbg_ptr);
 }
 
 /**
@@ -4596,6 +4836,56 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_broadcastedtransition_save_asy
 
 /**
  * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_debug(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_debug(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_display(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_display(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {bigint} other
+ * @param {RustCallStatus} f_status_
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_eq(ptr, other, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_eq(ptr, other, f_status_.__wbg_ptr);
+    return ret;
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {bigint} other
+ * @param {RustCallStatus} f_status_
+ * @returns {number}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_ne(ptr, other, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_ne(ptr, other, f_status_.__wbg_ptr);
+    return ret;
+}
+
+/**
+ * @param {bigint} ptr
  * @param {Uint8Array} tx
  * @param {RustCallStatus} f_status_
  * @returns {number}
@@ -4988,12 +5278,62 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_inputcontributionerror_uniffi_
 
 /**
  * @param {bigint} ptr
+ * @param {number} result
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_mark(ptr, result, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_mark(ptr, result, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_value(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_value(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
+}
+
+/**
+ * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  * @returns {Uint8Array}
  */
 export function ubrn_uniffi_payjoin_ffi_fn_method_inputpair_outpoint(ptr, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_inputpair_outpoint(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {number} result
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_mark(ptr, result, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_mark(ptr, result, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_value(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_value(ptr, f_status_.__wbg_ptr);
     var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
     wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
     return v1;
@@ -5234,6 +5574,20 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_jsonsendersessionpersisterasyn
 
 /**
  * @param {bigint} ptr
+ * @param {Uint8Array} marked_checklist
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_apply_inputs_owned_checklist(ptr, marked_checklist, f_status_) {
+    const ptr0 = passArray8ToWasm0(marked_checklist, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_apply_inputs_owned_checklist(ptr, ptr0, len0, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
@@ -5263,6 +5617,19 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_check_inputs_
 export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_extract_tx_to_schedule_broadcast(ptr, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_extract_tx_to_schedule_broadcast(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_inputs_owned_checklist(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_inputs_owned_checklist(ptr, f_status_.__wbg_ptr);
     var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
     wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
     return v1;
@@ -5303,6 +5670,20 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsownedtransition_sav
 
 /**
  * @param {bigint} ptr
+ * @param {Uint8Array} marked_checklist
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_apply_inputs_seen_checklist(ptr, marked_checklist, f_status_) {
+    const ptr0 = passArray8ToWasm0(marked_checklist, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_apply_inputs_seen_checklist(ptr, ptr0, len0, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
@@ -5322,6 +5703,19 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_check_no_input
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_check_no_inputs_seen_before(ptr, is_known, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_inputs_seen_checklist(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_inputs_seen_checklist(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
 }
 
 /**
@@ -5439,6 +5833,31 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_ohttperror_uniffi_trait_displa
 
 /**
  * @param {bigint} ptr
+ * @param {number} result
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_mark(ptr, result, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_mark(ptr, result, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_value(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_value(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
+}
+
+/**
+ * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  * @returns {Uint8Array}
  */
@@ -5465,6 +5884,20 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_outputsubstitutionprotocolerro
 
 /**
  * @param {bigint} ptr
+ * @param {Uint8Array} marked_checklist
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_apply_outputs_owned_checklist(ptr, marked_checklist, f_status_) {
+    const ptr0 = passArray8ToWasm0(marked_checklist, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_apply_outputs_owned_checklist(ptr, ptr0, len0, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
@@ -5484,6 +5917,19 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_identify_receiv
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_identify_receiver_outputs(ptr, is_receiver_output, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_outputs_owned_checklist(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_outputs_owned_checklist(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
 }
 
 /**
@@ -5887,6 +6333,20 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_p
 
 /**
  * @param {bigint} ptr
+ * @param {Uint8Array} signed_psbt
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_signed_proposal(ptr, signed_psbt, f_status_) {
+    const ptr0 = passArray8ToWasm0(signed_psbt, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_signed_proposal(ptr, ptr0, len0, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  * @returns {number}
  */
@@ -6228,56 +6688,6 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuilder_build_with_addit
 
 /**
  * @param {bigint} ptr
- * @param {RustCallStatus} f_status_
- * @returns {Uint8Array}
- */
-export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_debug(ptr, f_status_) {
-    _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_debug(ptr, f_status_.__wbg_ptr);
-    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
-    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
-    return v1;
-}
-
-/**
- * @param {bigint} ptr
- * @param {RustCallStatus} f_status_
- * @returns {Uint8Array}
- */
-export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_display(ptr, f_status_) {
-    _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_display(ptr, f_status_.__wbg_ptr);
-    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
-    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
-    return v1;
-}
-
-/**
- * @param {bigint} ptr
- * @param {bigint} other
- * @param {RustCallStatus} f_status_
- * @returns {number}
- */
-export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_eq(ptr, other, f_status_) {
-    _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_eq(ptr, other, f_status_.__wbg_ptr);
-    return ret;
-}
-
-/**
- * @param {bigint} ptr
- * @param {bigint} other
- * @param {RustCallStatus} f_status_
- * @returns {number}
- */
-export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_ne(ptr, other, f_status_) {
-    _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_ne(ptr, other, f_status_.__wbg_ptr);
-    return ret;
-}
-
-/**
- * @param {bigint} ptr
  * @param {bigint} persister
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
@@ -6536,6 +6946,21 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_transactionfinder_callback(ptr
 
 /**
  * @param {bigint} ptr
+ * @param {Uint8Array} min_fee_rate_sat_per_kwu
+ * @param {number} is_broadcast_suitable
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_apply_broadcast_suitability(ptr, min_fee_rate_sat_per_kwu, is_broadcast_suitable, f_status_) {
+    const ptr0 = passArray8ToWasm0(min_fee_rate_sat_per_kwu, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_apply_broadcast_suitability(ptr, ptr0, len0, is_broadcast_suitable, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
@@ -6569,6 +6994,19 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_check
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_check_broadcast_suitability(ptr, ptr0, len0, can_broadcast, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
 }
 
 /**
@@ -7158,55 +7596,39 @@ function __wbg_get_imports() {
         __wbg___wbindgen_throw_be289d5034ed271b: function(arg0, arg1) {
             throw new Error(getStringFromWasm0(arg0, arg1));
         },
-        __wbg_call_015cec0d3e74b23b: function(arg0, arg1, arg2, arg3, arg4) {
+        __wbg_call_00713f69b559539f: function(arg0, arg1, arg2, arg3, arg4) {
             var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
             wasm.__wbindgen_free(arg3, arg4 * 1, 1);
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
             return ret;
         },
-        __wbg_call_0424820c525124d7: function(arg0, arg1, arg2, arg3, arg4) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), ForeignFutureCompleteVoid.__wrap(arg3), BigInt.asUintN(64, arg4));
-            return ret;
-        },
-        __wbg_call_058bfce9f56887ec: function(arg0, arg1, arg2) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2));
-        },
-        __wbg_call_0d02442536f8c513: function(arg0, arg1, arg2) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2));
-        },
-        __wbg_call_0e93f89d33176649: function(arg0, arg1, arg2) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2));
-        },
-        __wbg_call_0f2a069b8dd767a6: function(arg0, arg1, arg2) {
+        __wbg_call_041d932663fc4465: function(arg0, arg1, arg2) {
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
             return ret;
         },
-        __wbg_call_12e2f13e6bfd0b5b: function(arg0, arg1, arg2, arg3, arg4) {
+        __wbg_call_15b3b9c9a8060484: function(arg0, arg1, arg2, arg3, arg4) {
             var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
             wasm.__wbindgen_free(arg3, arg4 * 1, 1);
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
             return ret;
         },
-        __wbg_call_13fc21757915850f: function(arg0, arg1, arg2) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
+        __wbg_call_19abf0a869e9573d: function(arg0, arg1, arg2, arg3, arg4) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), ForeignFutureCompleteRustBuffer.__wrap(arg3), BigInt.asUintN(64, arg4));
             return ret;
         },
-        __wbg_call_1c58a7d9443c7c42: function(arg0, arg1, arg2) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2));
-        },
-        __wbg_call_1d299f6855004b4b: function(arg0, arg1, arg2) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2));
-        },
-        __wbg_call_1ee8875186543483: function(arg0, arg1, arg2, arg3) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2), arg3);
-        },
-        __wbg_call_2ac31e1d728b26ab: function(arg0, arg1, arg2, arg3, arg4) {
+        __wbg_call_1f47ea310def883e: function(arg0, arg1, arg2, arg3, arg4) {
             var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
             wasm.__wbindgen_free(arg3, arg4 * 1, 1);
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
             return ret;
         },
-        __wbg_call_2bd1b08c2a186e1d: function(arg0, arg1, arg2) {
+        __wbg_call_21e2ce45e0d2235e: function(arg0, arg1, arg2, arg3, arg4) {
+            var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
+            wasm.__wbindgen_free(arg3, arg4 * 1, 1);
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
+            return ret;
+        },
+        __wbg_call_3362ecba7a2ee6f7: function(arg0, arg1, arg2) {
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
             return ret;
         },
@@ -7214,7 +7636,16 @@ function __wbg_get_imports() {
             const ret = arg0.call(arg1);
             return ret;
         }, arguments); },
-        __wbg_call_38d65f919667e5d7: function(arg0, arg1, arg2) {
+        __wbg_call_39164c9a8cb6bf27: function(arg0, arg1, arg2) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        },
+        __wbg_call_3cffb4e575392f4f: function(arg0, arg1, arg2, arg3, arg4) {
+            var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
+            wasm.__wbindgen_free(arg3, arg4 * 1, 1);
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
+            return ret;
+        },
+        __wbg_call_468b25753bd7e8c7: function(arg0, arg1, arg2) {
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
             return ret;
         },
@@ -7222,161 +7653,168 @@ function __wbg_get_imports() {
             const ret = arg0.call(arg1, arg2);
             return ret;
         }, arguments); },
-        __wbg_call_4de01b1ef155e875: function(arg0, arg1, arg2, arg3, arg4) {
-            var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
-            wasm.__wbindgen_free(arg3, arg4 * 1, 1);
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
+        __wbg_call_4958a86bbeb8f1b0: function(arg0, arg1, arg2) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
             return ret;
         },
-        __wbg_call_584acf6335c9a9a9: function(arg0, arg1, arg2) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2));
-        },
-        __wbg_call_625b766487083633: function(arg0, arg1, arg2) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2));
-        },
-        __wbg_call_682aea1f6b027a82: function(arg0, arg1, arg2, arg3, arg4) {
+        __wbg_call_4d61a1cb6135cb74: function(arg0, arg1, arg2, arg3, arg4) {
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), ForeignFutureCompleteVoid.__wrap(arg3), BigInt.asUintN(64, arg4));
             return ret;
         },
-        __wbg_call_69ff3c5eafeb4ce0: function(arg0, arg1, arg2, arg3, arg4, arg5, arg6) {
+        __wbg_call_540856ee288c2b3b: function(arg0, arg1, arg2, arg3, arg4) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), ForeignFutureCompleteVoid.__wrap(arg3), BigInt.asUintN(64, arg4));
+            return ret;
+        },
+        __wbg_call_557517af1d27f7cc: function(arg0, arg1, arg2) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
+            return ret;
+        },
+        __wbg_call_5ebd717bb238aa19: function(arg0, arg1, arg2) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        },
+        __wbg_call_611399bbcb557c98: function(arg0, arg1, arg2, arg3, arg4, arg5, arg6) {
             var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
             wasm.__wbindgen_free(arg3, arg4 * 1, 1);
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0, ForeignFutureCompleteVoid.__wrap(arg5), BigInt.asUintN(64, arg6));
             return ret;
         },
-        __wbg_call_713f0ea941a76ab1: function(arg0, arg1, arg2) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2));
-        },
-        __wbg_call_7185a2da946cef62: function(arg0, arg1, arg2) {
+        __wbg_call_6d73e1eeca84398c: function(arg0, arg1, arg2) {
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
             return ret;
         },
-        __wbg_call_800aa07e8171815a: function(arg0, arg1, arg2, arg3, arg4) {
+        __wbg_call_6e3e6f14fd98ed5e: function(arg0, arg1, arg2) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        },
+        __wbg_call_8104a74abee4f1e2: function(arg0, arg1, arg2) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
+            return ret;
+        },
+        __wbg_call_8a1910be984e44d8: function(arg0, arg1, arg2) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        },
+        __wbg_call_967d082e12932d5f: function(arg0, arg1, arg2, arg3, arg4) {
             var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
             wasm.__wbindgen_free(arg3, arg4 * 1, 1);
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
             return ret;
         },
-        __wbg_call_88561db226cbec15: function(arg0, arg1, arg2) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
-            return ret;
-        },
-        __wbg_call_994a0a86e55a6eab: function(arg0, arg1, arg2) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
-            return ret;
-        },
-        __wbg_call_9a01e3b4b7e956ea: function(arg0, arg1, arg2) {
+        __wbg_call_9e12989463e0bc27: function(arg0, arg1, arg2) {
             arg0.call(arg1, BigInt.asUintN(64, arg2));
         },
-        __wbg_call_a0361d3e5179209c: function(arg0, arg1, arg2) {
+        __wbg_call_a743d97904775e19: function(arg0, arg1, arg2) {
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
             return ret;
         },
-        __wbg_call_b3cfbbbc8ca12a23: function(arg0, arg1, arg2, arg3, arg4) {
-            var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
-            wasm.__wbindgen_free(arg3, arg4 * 1, 1);
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
-            return ret;
-        },
-        __wbg_call_b63453d254879fda: function(arg0, arg1, arg2) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
-            return ret;
-        },
-        __wbg_call_b635478c16160ef4: function(arg0, arg1, arg2, arg3, arg4) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), ForeignFutureCompleteRustBuffer.__wrap(arg3), BigInt.asUintN(64, arg4));
-            return ret;
-        },
-        __wbg_call_b8bfb87878d4c41f: function(arg0, arg1, arg2) {
+        __wbg_call_ac6edbffac05140a: function(arg0, arg1, arg2) {
             arg0.call(arg1, BigInt.asUintN(64, arg2));
         },
-        __wbg_call_bdf9bbd522cc6737: function(arg0, arg1, arg2) {
-            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        __wbg_call_ba25a04f52b89178: function(arg0, arg1, arg2, arg3) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2), arg3);
         },
-        __wbg_call_bf16754483d6914e: function(arg0, arg1, arg2) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
-            return ret;
-        },
-        __wbg_call_c1ecfa8823fcd49b: function(arg0, arg1, arg2) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
-            return ret;
-        },
-        __wbg_call_c69f88d37763f713: function(arg0, arg1, arg2, arg3, arg4, arg5, arg6) {
+        __wbg_call_c14a20da05a1938f: function(arg0, arg1, arg2, arg3, arg4, arg5, arg6) {
             var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
             wasm.__wbindgen_free(arg3, arg4 * 1, 1);
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0, ForeignFutureCompleteVoid.__wrap(arg5), BigInt.asUintN(64, arg6));
             return ret;
         },
-        __wbg_call_d8c9d31f7b959d13: function(arg0, arg1, arg2) {
+        __wbg_call_c28ffccdddec0c9c: function(arg0, arg1, arg2) {
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
             return ret;
         },
-        __wbg_call_db79958f0c675067: function(arg0, arg1, arg2) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
+        __wbg_call_c82266365636f638: function(arg0, arg1, arg2, arg3, arg4) {
+            var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
+            wasm.__wbindgen_free(arg3, arg4 * 1, 1);
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
             return ret;
         },
-        __wbg_call_f1b98b02329c70ba: function(arg0, arg1, arg2) {
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
-            return ret;
-        },
-        __wbg_call_f3984dc802adcaea: function(arg0, arg1, arg2, arg3, arg4) {
+        __wbg_call_d47b6004019ce5ce: function(arg0, arg1, arg2, arg3, arg4) {
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), ForeignFutureCompleteRustBuffer.__wrap(arg3), BigInt.asUintN(64, arg4));
             return ret;
         },
-        __wbg_call_f7fab2e2ddb0e560: function(arg0, arg1, arg2, arg3, arg4) {
+        __wbg_call_dbed6a1703cb30a5: function(arg0, arg1, arg2) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        },
+        __wbg_call_e084498165fea9ee: function(arg0, arg1, arg2) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
+            return ret;
+        },
+        __wbg_call_e093d1950e4d3b79: function(arg0, arg1, arg2, arg3, arg4) {
             var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
             wasm.__wbindgen_free(arg3, arg4 * 1, 1);
             const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
             return ret;
         },
-        __wbg_call_fbe3dd3e8e8d243b: function(arg0, arg1, arg2, arg3, arg4) {
-            var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
-            wasm.__wbindgen_free(arg3, arg4 * 1, 1);
-            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
+        __wbg_call_e3d7009383f3c0cb: function(arg0, arg1, arg2) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        },
+        __wbg_call_e9a306974a0bb4d8: function(arg0, arg1, arg2) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
             return ret;
         },
-        __wbg_call_status_897e68e2fccec2aa: function(arg0) {
+        __wbg_call_eca17979f3ff45dd: function(arg0, arg1, arg2) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
+            return ret;
+        },
+        __wbg_call_ee2003d8190d4f7b: function(arg0, arg1, arg2) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
+            return ret;
+        },
+        __wbg_call_f1a0f394f5bc5cf0: function(arg0, arg1, arg2) {
+            const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
+            return ret;
+        },
+        __wbg_call_f747c04563ee2259: function(arg0, arg1, arg2) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        },
+        __wbg_call_fab5fde5b0e16a2a: function(arg0, arg1, arg2) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        },
+        __wbg_call_fad0dc254b21f293: function(arg0, arg1, arg2) {
+            arg0.call(arg1, BigInt.asUintN(64, arg2));
+        },
+        __wbg_call_status_bc3862bf13311fe8: function(arg0) {
             const ret = arg0.call_status;
             _assertClass(ret, RustCallStatus);
             var ptr1 = ret.__destroy_into_raw();
             return ptr1;
         },
-        __wbg_callback_0d61ff9dbba8ba62: function(arg0) {
+        __wbg_callback_1515a9630b3de822: function(arg0) {
             const ret = arg0.callback;
             return ret;
         },
-        __wbg_callback_7d13c77024f72620: function(arg0) {
+        __wbg_callback_16ca5044e27a2b4c: function(arg0) {
             const ret = arg0.callback;
             return ret;
         },
-        __wbg_callback_9ea908560357ecaf: function(arg0) {
+        __wbg_callback_a795333e186b7192: function(arg0) {
             const ret = arg0.callback;
             return ret;
         },
-        __wbg_callback_d04274828b6b36f1: function(arg0) {
+        __wbg_callback_dd7f253acb8b9060: function(arg0) {
             const ret = arg0.callback;
             return ret;
         },
-        __wbg_callback_d3d444fb639bb20e: function(arg0) {
+        __wbg_callback_eb5d9802d6c789cf: function(arg0) {
             const ret = arg0.callback;
             return ret;
         },
-        __wbg_callback_fde68ebc95311459: function(arg0) {
+        __wbg_callback_efbf1e84c8a23c72: function(arg0) {
             const ret = arg0.callback;
             return ret;
         },
-        __wbg_close_1fa9f476d352899b: function(arg0) {
+        __wbg_close_0116ee4b25538b62: function(arg0) {
             const ret = arg0.close;
             return ret;
         },
-        __wbg_close_5b63032a266e71ce: function(arg0) {
+        __wbg_close_54e25b27365647de: function(arg0) {
             const ret = arg0.close;
             return ret;
         },
-        __wbg_close_ad8f6295430a13db: function(arg0) {
+        __wbg_close_62d732f9ff1aac90: function(arg0) {
             const ret = arg0.close;
             return ret;
         },
-        __wbg_close_f967aadbb29ca409: function(arg0) {
+        __wbg_close_7df6732dc752e40e: function(arg0) {
             const ret = arg0.close;
             return ret;
         },
@@ -7417,14 +7855,14 @@ function __wbg_get_imports() {
             getDataViewMemory0().setInt32(arg0 + 4 * 1, len1, true);
             getDataViewMemory0().setInt32(arg0 + 4 * 0, ptr1, true);
         },
-        __wbg_free_e7d9051e9d29c5fe: function(arg0) {
+        __wbg_free_7ca6e7756ab2b4b4: function(arg0) {
             const ret = arg0.free;
             return ret;
         },
         __wbg_getRandomValues_b3f15fcbfabb0f8b: function() { return handleError(function (arg0, arg1) {
             arg0.getRandomValues(arg1);
         }, arguments); },
-        __wbg_handle_6d411e01f50f330b: function(arg0) {
+        __wbg_handle_750e5ff461f848b3: function(arg0) {
             const ret = arg0.handle;
             return ret;
         },
@@ -7432,19 +7870,19 @@ function __wbg_get_imports() {
             const ret = arg0.length;
             return ret;
         },
-        __wbg_load_2b6d046a4e7c03cb: function(arg0) {
+        __wbg_load_03615bc13223c027: function(arg0) {
             const ret = arg0.load;
             return ret;
         },
-        __wbg_load_2f21210f90ab6905: function(arg0) {
+        __wbg_load_192b0163e7e8e5d7: function(arg0) {
             const ret = arg0.load;
             return ret;
         },
-        __wbg_load_48aefac9e4e87c4f: function(arg0) {
+        __wbg_load_39eced587bf98121: function(arg0) {
             const ret = arg0.load;
             return ret;
         },
-        __wbg_load_b4e967bfcc219394: function(arg0) {
+        __wbg_load_ba7fd3f400c30a68: function(arg0) {
             const ret = arg0.load;
             return ret;
         },
@@ -7493,66 +7931,66 @@ function __wbg_get_imports() {
             const ret = module.require;
             return ret;
         }, arguments); },
-        __wbg_return_value_0a8aec6d190a7134: function(arg0) {
+        __wbg_return_value_00beaa9bf779e560: function(arg0) {
             const ret = arg0.return_value;
             return ret;
         },
-        __wbg_return_value_0d19576f690d7261: function(arg0) {
+        __wbg_return_value_028d27560b9f362a: function(arg0) {
             const ret = arg0.return_value;
             return ret;
         },
-        __wbg_return_value_0defa5e52b9790e8: function(arg0, arg1) {
+        __wbg_return_value_2d88959fd9c4e06f: function(arg0) {
+            const ret = arg0.return_value;
+            return ret;
+        },
+        __wbg_return_value_5cdcdeba99d08c8a: function(arg0) {
+            const ret = arg0.return_value;
+            return ret;
+        },
+        __wbg_return_value_636e63b5ffdc7490: function(arg0) {
+            const ret = arg0.return_value;
+            return ret;
+        },
+        __wbg_return_value_85a8f629bdc1d9e1: function(arg0) {
+            const ret = arg0.return_value;
+            return ret;
+        },
+        __wbg_return_value_889dddb9e8f70145: function(arg0, arg1) {
             const ret = arg1.return_value;
             const ptr1 = passArray8ToWasm0(ret, wasm.__wbindgen_malloc);
             const len1 = WASM_VECTOR_LEN;
             getDataViewMemory0().setInt32(arg0 + 4 * 1, len1, true);
             getDataViewMemory0().setInt32(arg0 + 4 * 0, ptr1, true);
         },
-        __wbg_return_value_17b1892df4885505: function(arg0) {
+        __wbg_return_value_933a259475efa1e0: function(arg0) {
             const ret = arg0.return_value;
             return ret;
         },
-        __wbg_return_value_1857f644bbbdbffc: function(arg0) {
+        __wbg_return_value_a38f206398f2ac4c: function(arg0) {
             const ret = arg0.return_value;
             return ret;
         },
-        __wbg_return_value_1f88cc7dbb9b5104: function(arg0) {
+        __wbg_return_value_c97d83b88e402e2a: function(arg0) {
             const ret = arg0.return_value;
             return ret;
         },
-        __wbg_return_value_3317d7a5dd8f9da5: function(arg0) {
+        __wbg_return_value_f6b1c7c17b5bf3f2: function(arg0) {
             const ret = arg0.return_value;
             return ret;
         },
-        __wbg_return_value_7823618fdff1a671: function(arg0) {
-            const ret = arg0.return_value;
-            return ret;
-        },
-        __wbg_return_value_9cbe928697b64630: function(arg0) {
-            const ret = arg0.return_value;
-            return ret;
-        },
-        __wbg_return_value_cb90d72a19441170: function(arg0) {
-            const ret = arg0.return_value;
-            return ret;
-        },
-        __wbg_return_value_e8adc72ada7526fa: function(arg0) {
-            const ret = arg0.return_value;
-            return ret;
-        },
-        __wbg_save_12a87a87df041355: function(arg0) {
+        __wbg_save_1847e7fde14d4362: function(arg0) {
             const ret = arg0.save;
             return ret;
         },
-        __wbg_save_42bf37f09b0a12d0: function(arg0) {
+        __wbg_save_982d080a4257cfb5: function(arg0) {
             const ret = arg0.save;
             return ret;
         },
-        __wbg_save_9d92a28188f5a091: function(arg0) {
+        __wbg_save_b68174352ecaaae1: function(arg0) {
             const ret = arg0.save;
             return ret;
         },
-        __wbg_save_bab98a97257b532a: function(arg0) {
+        __wbg_save_fd7887d0f363f7e6: function(arg0) {
             const ret = arg0.save;
             return ret;
         },
@@ -7576,83 +8014,83 @@ function __wbg_get_imports() {
             const ret = arg0.subarray(arg1 >>> 0, arg2 >>> 0);
             return ret;
         },
-        __wbg_uniffi_clone_193eddd35b182a50: function(arg0) {
+        __wbg_uniffi_clone_05a0197b59538d06: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_clone_3316b6968cda727d: function(arg0) {
+        __wbg_uniffi_clone_56d6e3d34e6324ea: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_clone_3a58e3fcf76ea3c1: function(arg0) {
+        __wbg_uniffi_clone_63d51a5413742a8a: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_clone_450a00cab65feb9d: function(arg0) {
+        __wbg_uniffi_clone_704b48f1ca196e12: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_clone_48498f3d984d29c3: function(arg0) {
+        __wbg_uniffi_clone_73fabd7fa52e1ec7: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_clone_4bce26b3ceec46bb: function(arg0) {
+        __wbg_uniffi_clone_7ece7abbe4da2095: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_clone_65cb74b3c2bf51ac: function(arg0) {
+        __wbg_uniffi_clone_a9d934ce5bbbdc7d: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_clone_7fa81fe94991fed7: function(arg0) {
+        __wbg_uniffi_clone_bfbfc0fec9a52e01: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_clone_81d46315f9de1abc: function(arg0) {
+        __wbg_uniffi_clone_f2fd4317b6cb88fc: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_clone_e78e9f0488caf77b: function(arg0) {
+        __wbg_uniffi_clone_f5848f2a467170f2: function(arg0) {
             const ret = arg0.uniffi_clone;
             return ret;
         },
-        __wbg_uniffi_free_044aaf099344585b: function(arg0) {
+        __wbg_uniffi_free_1a7240b40e3aa32b: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },
-        __wbg_uniffi_free_06965280feb57b10: function(arg0) {
+        __wbg_uniffi_free_26b52cd70a07d729: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },
-        __wbg_uniffi_free_1b6346e5fe0de262: function(arg0) {
+        __wbg_uniffi_free_3365fc9f5dd89d56: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },
-        __wbg_uniffi_free_200d3c385360e96d: function(arg0) {
+        __wbg_uniffi_free_44b79456de684028: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },
-        __wbg_uniffi_free_241fb3b9b55f3c6d: function(arg0) {
+        __wbg_uniffi_free_8280c1914409e105: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },
-        __wbg_uniffi_free_6db425b7f4cfd2e4: function(arg0) {
+        __wbg_uniffi_free_8a83119c8d3aebe9: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },
-        __wbg_uniffi_free_9547e899e638fe17: function(arg0) {
+        __wbg_uniffi_free_901983ed2c593cef: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },
-        __wbg_uniffi_free_994e64fcbb109155: function(arg0) {
+        __wbg_uniffi_free_cf9a9f84d934d2fc: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },
-        __wbg_uniffi_free_f348b94f927388d5: function(arg0) {
+        __wbg_uniffi_free_dbf45d65a709791e: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },
-        __wbg_uniffi_free_f5d3e11c1ce6bd56: function(arg0) {
+        __wbg_uniffi_free_e2f3d1ceb9c15fde: function(arg0) {
             const ret = arg0.uniffi_free;
             return ret;
         },

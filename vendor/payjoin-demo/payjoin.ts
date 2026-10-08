@@ -1649,6 +1649,508 @@ const FfiConverterTypeWeight = (() => {
     return new FFIConverter();
 })();
 
+/**
+ * Error parsing a Bitcoin address.
+ */
+export interface AddressParseErrorLike {}
+/**
+ * @deprecated Use `AddressParseErrorLike` instead.
+ */
+export type AddressParseErrorInterface = AddressParseErrorLike;
+
+/**
+ * Error parsing a Bitcoin address.
+ */
+export class AddressParseError
+    extends UniffiAbstractObject
+    implements AddressParseErrorLike
+{
+    readonly [uniffiTypeNameSymbol] = "AddressParseError";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeAddressParseErrorObjectFactory.bless(pointer);
+    }
+
+    toString(): string {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterString.lift(__rb);
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_addressparseerror_uniffi_trait_display(
+                        uniffiTypeAddressParseErrorObjectFactory.clonePointer(
+                            this,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    toDebugString(): string {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterString.lift(__rb);
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_addressparseerror_uniffi_trait_debug(
+                        uniffiTypeAddressParseErrorObjectFactory.clonePointer(
+                            this,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeAddressParseErrorObjectFactory.pointer(this);
+            uniffiTypeAddressParseErrorObjectFactory.freePointer(pointer);
+            uniffiTypeAddressParseErrorObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is AddressParseError {
+        return uniffiTypeAddressParseErrorObjectFactory.isConcreteType(obj_);
+    }
+}
+
+const uniffiTypeAddressParseErrorObjectFactory: UniffiObjectFactory<AddressParseErrorLike> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeAddressParseErrorObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): AddressParseErrorLike {
+                const instance = Object.create(AddressParseError.prototype);
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] = "AddressParseError";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: AddressParseErrorLike): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(obj_: AddressParseErrorLike): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_addressparseerror(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_addressparseerror(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(obj_: any): obj_ is AddressParseErrorLike {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] === "AddressParseError"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeAddressParseError = new FfiConverterObject(
+    uniffiTypeAddressParseErrorObjectFactory,
+);
+
+export interface IntoUrlErrorLike {}
+/**
+ * @deprecated Use `IntoUrlErrorLike` instead.
+ */
+export type IntoUrlErrorInterface = IntoUrlErrorLike;
+
+export class IntoUrlError
+    extends UniffiAbstractObject
+    implements IntoUrlErrorLike
+{
+    readonly [uniffiTypeNameSymbol] = "IntoUrlError";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeIntoUrlErrorObjectFactory.bless(pointer);
+    }
+
+    toString(): string {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterString.lift(__rb);
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_intourlerror_uniffi_trait_display(
+                        uniffiTypeIntoUrlErrorObjectFactory.clonePointer(this),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    toDebugString(): string {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterString.lift(__rb);
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_intourlerror_uniffi_trait_debug(
+                        uniffiTypeIntoUrlErrorObjectFactory.clonePointer(this),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer = uniffiTypeIntoUrlErrorObjectFactory.pointer(this);
+            uniffiTypeIntoUrlErrorObjectFactory.freePointer(pointer);
+            uniffiTypeIntoUrlErrorObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is IntoUrlError {
+        return uniffiTypeIntoUrlErrorObjectFactory.isConcreteType(obj_);
+    }
+}
+
+const uniffiTypeIntoUrlErrorObjectFactory: UniffiObjectFactory<IntoUrlErrorLike> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeIntoUrlErrorObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): IntoUrlErrorLike {
+                const instance = Object.create(IntoUrlError.prototype);
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] = "IntoUrlError";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: IntoUrlErrorLike): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(obj_: IntoUrlErrorLike): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_intourlerror(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_intourlerror(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(obj_: any): obj_ is IntoUrlErrorLike {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] === "IntoUrlError"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeIntoUrlError = new FfiConverterObject(
+    uniffiTypeIntoUrlErrorObjectFactory,
+);
+
+// Error type: BuildReceiverError
+export enum BuildReceiverError_Tags {
+    InvalidAddress = "InvalidAddress",
+    IntoUrl = "IntoUrl",
+}
+/**
+ * Error that may occur when building a receiver session.
+ */
+export const BuildReceiverError = (() => {
+    type InvalidAddress__interface = {
+        tag: BuildReceiverError_Tags.InvalidAddress;
+        inner: Readonly<[AddressParseErrorLike]>;
+    };
+    /**
+     * The provided Bitcoin address is invalid.
+     */
+    class InvalidAddress_
+        extends UniffiError
+        implements InvalidAddress__interface
+    {
+        /**
+         * @private
+         * This field is private and should not be used, use `tag` instead.
+         */
+        readonly [uniffiTypeNameSymbol] = "BuildReceiverError";
+        readonly tag = BuildReceiverError_Tags.InvalidAddress;
+        readonly inner: Readonly<[AddressParseErrorLike]>;
+        constructor(v0: AddressParseErrorLike) {
+            super("BuildReceiverError", "InvalidAddress");
+
+            this.inner = Object.freeze([v0]);
+        }
+        static new(v0: AddressParseErrorLike): InvalidAddress_ {
+            return new InvalidAddress_(v0);
+        }
+
+        static instanceOf(obj: any): obj is InvalidAddress_ {
+            return obj.tag === BuildReceiverError_Tags.InvalidAddress;
+        }
+        static hasInner(obj: any): obj is InvalidAddress_ {
+            return InvalidAddress_.instanceOf(obj);
+        }
+
+        static getInner(
+            obj: InvalidAddress_,
+        ): Readonly<[AddressParseErrorLike]> {
+            return obj.inner;
+        }
+    }
+
+    type IntoUrl__interface = {
+        tag: BuildReceiverError_Tags.IntoUrl;
+        inner: Readonly<[IntoUrlErrorLike]>;
+    };
+    /**
+     * Error that may occur when converting a value into a URL.
+     */
+    class IntoUrl_ extends UniffiError implements IntoUrl__interface {
+        /**
+         * @private
+         * This field is private and should not be used, use `tag` instead.
+         */
+        readonly [uniffiTypeNameSymbol] = "BuildReceiverError";
+        readonly tag = BuildReceiverError_Tags.IntoUrl;
+        readonly inner: Readonly<[IntoUrlErrorLike]>;
+        constructor(v0: IntoUrlErrorLike) {
+            super("BuildReceiverError", "IntoUrl");
+
+            this.inner = Object.freeze([v0]);
+        }
+        static new(v0: IntoUrlErrorLike): IntoUrl_ {
+            return new IntoUrl_(v0);
+        }
+
+        static instanceOf(obj: any): obj is IntoUrl_ {
+            return obj.tag === BuildReceiverError_Tags.IntoUrl;
+        }
+        static hasInner(obj: any): obj is IntoUrl_ {
+            return IntoUrl_.instanceOf(obj);
+        }
+
+        static getInner(obj: IntoUrl_): Readonly<[IntoUrlErrorLike]> {
+            return obj.inner;
+        }
+    }
+
+    function instanceOf(obj: any): obj is BuildReceiverError {
+        return obj[uniffiTypeNameSymbol] === "BuildReceiverError";
+    }
+
+    return Object.freeze({
+        instanceOf,
+        InvalidAddress: InvalidAddress_,
+        IntoUrl: IntoUrl_,
+    });
+})();
+/**
+ * Error that may occur when building a receiver session.
+ */
+export type BuildReceiverError = InstanceType<
+    (typeof BuildReceiverError)["InvalidAddress" | "IntoUrl"]
+>;
+
+// FfiConverter for enum BuildReceiverError
+const FfiConverterTypeBuildReceiverError = (() => {
+    const ordinalConverter = FfiConverterInt32;
+    type TypeName = BuildReceiverError;
+    class FFIConverter extends AbstractFfiConverterByteArray<TypeName> {
+        read(from: RustBuffer): TypeName {
+            switch (ordinalConverter.read(from)) {
+                case 1:
+                    return new BuildReceiverError.InvalidAddress(
+                        FfiConverterTypeAddressParseError.read(from),
+                    );
+                case 2:
+                    return new BuildReceiverError.IntoUrl(
+                        FfiConverterTypeIntoUrlError.read(from),
+                    );
+                default:
+                    throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+        write(value: TypeName, into: RustBuffer): void {
+            switch (value.tag) {
+                case BuildReceiverError_Tags.InvalidAddress: {
+                    ordinalConverter.write(1, into);
+                    const inner = value.inner;
+                    FfiConverterTypeAddressParseError.write(inner[0], into);
+                    return;
+                }
+                case BuildReceiverError_Tags.IntoUrl: {
+                    ordinalConverter.write(2, into);
+                    const inner = value.inner;
+                    FfiConverterTypeIntoUrlError.write(inner[0], into);
+                    return;
+                }
+                default:
+                    // Throwing from here means that BuildReceiverError_Tags hasn't matched an ordinal.
+                    throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+        allocationSize(value: TypeName): number {
+            switch (value.tag) {
+                case BuildReceiverError_Tags.InvalidAddress: {
+                    const inner = value.inner;
+                    let size = ordinalConverter.allocationSize(1);
+                    size += FfiConverterTypeAddressParseError.allocationSize(
+                        inner[0],
+                    );
+                    return size;
+                }
+                case BuildReceiverError_Tags.IntoUrl: {
+                    const inner = value.inner;
+                    let size = ordinalConverter.allocationSize(2);
+                    size += FfiConverterTypeIntoUrlError.allocationSize(
+                        inner[0],
+                    );
+                    return size;
+                }
+                default:
+                    throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+    }
+    return new FFIConverter();
+})();
+
 // Error type: FfiValidationError
 export enum FfiValidationError_Tags {
     AmountOutOfRange = "AmountOutOfRange",
@@ -2682,6 +3184,407 @@ const uniffiCallbackInterfaceJsonReceiverSessionPersister: {
     },
 };
 
+export interface MarkedInputOwnedChecklistItemLike {}
+/**
+ * @deprecated Use `MarkedInputOwnedChecklistItemLike` instead.
+ */
+export type MarkedInputOwnedChecklistItemInterface =
+    MarkedInputOwnedChecklistItemLike;
+
+export class MarkedInputOwnedChecklistItem
+    extends UniffiAbstractObject
+    implements MarkedInputOwnedChecklistItemLike
+{
+    readonly [uniffiTypeNameSymbol] = "MarkedInputOwnedChecklistItem";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeMarkedInputOwnedChecklistItemObjectFactory.bless(pointer);
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeMarkedInputOwnedChecklistItemObjectFactory.pointer(
+                    this,
+                );
+            uniffiTypeMarkedInputOwnedChecklistItemObjectFactory.freePointer(
+                pointer,
+            );
+            uniffiTypeMarkedInputOwnedChecklistItemObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is MarkedInputOwnedChecklistItem {
+        return uniffiTypeMarkedInputOwnedChecklistItemObjectFactory.isConcreteType(
+            obj_,
+        );
+    }
+}
+
+const uniffiTypeMarkedInputOwnedChecklistItemObjectFactory: UniffiObjectFactory<MarkedInputOwnedChecklistItemLike> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeMarkedInputOwnedChecklistItemObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): MarkedInputOwnedChecklistItemLike {
+                const instance = Object.create(
+                    MarkedInputOwnedChecklistItem.prototype,
+                );
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] =
+                    "MarkedInputOwnedChecklistItem";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: MarkedInputOwnedChecklistItemLike): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(
+                obj_: MarkedInputOwnedChecklistItemLike,
+            ): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_markedinputownedchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_markedinputownedchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(
+                obj_: any,
+            ): obj_ is MarkedInputOwnedChecklistItemLike {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] ===
+                        "MarkedInputOwnedChecklistItem"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeMarkedInputOwnedChecklistItem = new FfiConverterObject(
+    uniffiTypeMarkedInputOwnedChecklistItemObjectFactory,
+);
+
+export interface MarkedInputSeenChecklistItemLike {}
+/**
+ * @deprecated Use `MarkedInputSeenChecklistItemLike` instead.
+ */
+export type MarkedInputSeenChecklistItemInterface =
+    MarkedInputSeenChecklistItemLike;
+
+export class MarkedInputSeenChecklistItem
+    extends UniffiAbstractObject
+    implements MarkedInputSeenChecklistItemLike
+{
+    readonly [uniffiTypeNameSymbol] = "MarkedInputSeenChecklistItem";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeMarkedInputSeenChecklistItemObjectFactory.bless(pointer);
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeMarkedInputSeenChecklistItemObjectFactory.pointer(
+                    this,
+                );
+            uniffiTypeMarkedInputSeenChecklistItemObjectFactory.freePointer(
+                pointer,
+            );
+            uniffiTypeMarkedInputSeenChecklistItemObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is MarkedInputSeenChecklistItem {
+        return uniffiTypeMarkedInputSeenChecklistItemObjectFactory.isConcreteType(
+            obj_,
+        );
+    }
+}
+
+const uniffiTypeMarkedInputSeenChecklistItemObjectFactory: UniffiObjectFactory<MarkedInputSeenChecklistItemLike> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeMarkedInputSeenChecklistItemObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): MarkedInputSeenChecklistItemLike {
+                const instance = Object.create(
+                    MarkedInputSeenChecklistItem.prototype,
+                );
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] = "MarkedInputSeenChecklistItem";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: MarkedInputSeenChecklistItemLike): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(obj_: MarkedInputSeenChecklistItemLike): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_markedinputseenchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_markedinputseenchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(
+                obj_: any,
+            ): obj_ is MarkedInputSeenChecklistItemLike {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] ===
+                        "MarkedInputSeenChecklistItem"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeMarkedInputSeenChecklistItem = new FfiConverterObject(
+    uniffiTypeMarkedInputSeenChecklistItemObjectFactory,
+);
+
+export interface MarkedOutputOwnedChecklistItemLike {}
+/**
+ * @deprecated Use `MarkedOutputOwnedChecklistItemLike` instead.
+ */
+export type MarkedOutputOwnedChecklistItemInterface =
+    MarkedOutputOwnedChecklistItemLike;
+
+export class MarkedOutputOwnedChecklistItem
+    extends UniffiAbstractObject
+    implements MarkedOutputOwnedChecklistItemLike
+{
+    readonly [uniffiTypeNameSymbol] = "MarkedOutputOwnedChecklistItem";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeMarkedOutputOwnedChecklistItemObjectFactory.bless(
+                pointer,
+            );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeMarkedOutputOwnedChecklistItemObjectFactory.pointer(
+                    this,
+                );
+            uniffiTypeMarkedOutputOwnedChecklistItemObjectFactory.freePointer(
+                pointer,
+            );
+            uniffiTypeMarkedOutputOwnedChecklistItemObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is MarkedOutputOwnedChecklistItem {
+        return uniffiTypeMarkedOutputOwnedChecklistItemObjectFactory.isConcreteType(
+            obj_,
+        );
+    }
+}
+
+const uniffiTypeMarkedOutputOwnedChecklistItemObjectFactory: UniffiObjectFactory<MarkedOutputOwnedChecklistItemLike> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeMarkedOutputOwnedChecklistItemObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): MarkedOutputOwnedChecklistItemLike {
+                const instance = Object.create(
+                    MarkedOutputOwnedChecklistItem.prototype,
+                );
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] =
+                    "MarkedOutputOwnedChecklistItem";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: MarkedOutputOwnedChecklistItemLike): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(
+                obj_: MarkedOutputOwnedChecklistItemLike,
+            ): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_markedoutputownedchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_markedoutputownedchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(
+                obj_: any,
+            ): obj_ is MarkedOutputOwnedChecklistItemLike {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] ===
+                        "MarkedOutputOwnedChecklistItem"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeMarkedOutputOwnedChecklistItem = new FfiConverterObject(
+    uniffiTypeMarkedOutputOwnedChecklistItemObjectFactory,
+);
+
 /**
  * The replyable error type for the payjoin receiver, representing failures need to be
  * returned to the sender.
@@ -2959,6 +3862,21 @@ export class ImplementationError
     static instanceOf(obj_: any): obj_ is ImplementationError {
         return uniffiTypeImplementationErrorObjectFactory.isConcreteType(obj_);
     }
+
+    static hasInner(
+        obj_: any,
+    ): obj_ is UniffiThrownObject<ImplementationError> {
+        return (
+            UniffiThrownObject.instanceOf(obj_) &&
+            ImplementationError.instanceOf(obj_.inner)
+        );
+    }
+
+    static getInner(
+        err: UniffiThrownObject<ImplementationError>,
+    ): ImplementationError {
+        return err.inner;
+    }
 }
 
 const uniffiTypeImplementationErrorObjectFactory: UniffiObjectFactory<ImplementationErrorLike> =
@@ -3042,168 +3960,11 @@ const uniffiTypeImplementationErrorObjectFactory: UniffiObjectFactory<Implementa
 const FfiConverterTypeImplementationError = new FfiConverterObject(
     uniffiTypeImplementationErrorObjectFactory,
 );
-
-export interface IntoUrlErrorLike {}
-/**
- * @deprecated Use `IntoUrlErrorLike` instead.
- */
-export type IntoUrlErrorInterface = IntoUrlErrorLike;
-
-export class IntoUrlError
-    extends UniffiAbstractObject
-    implements IntoUrlErrorLike
-{
-    readonly [uniffiTypeNameSymbol] = "IntoUrlError";
-    readonly [destructorGuardSymbol]: UniffiGcObject;
-    readonly [pointerLiteralSymbol]: UniffiHandle;
-    // No primary constructor declared for this class.
-    private constructor(pointer: UniffiHandle) {
-        super();
-        this[pointerLiteralSymbol] = pointer;
-        this[destructorGuardSymbol] =
-            uniffiTypeIntoUrlErrorObjectFactory.bless(pointer);
-    }
-
-    toString(): string {
-        return ((__rb: Uint8Array) => {
-            try {
-                return FfiConverterString.lift(__rb);
-            } finally {
-                nativeModule().rustbuffer_free(__rb);
-            }
-        })(
-            uniffiCaller.rustCall(
-                /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_intourlerror_uniffi_trait_display(
-                        uniffiTypeIntoUrlErrorObjectFactory.clonePointer(this),
-                        callStatus,
-                    );
-                },
-                /*liftString:*/ FfiConverterString.lift.bind(
-                    FfiConverterString,
-                ),
-            ),
-        );
-    }
-
-    toDebugString(): string {
-        return ((__rb: Uint8Array) => {
-            try {
-                return FfiConverterString.lift(__rb);
-            } finally {
-                nativeModule().rustbuffer_free(__rb);
-            }
-        })(
-            uniffiCaller.rustCall(
-                /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_intourlerror_uniffi_trait_debug(
-                        uniffiTypeIntoUrlErrorObjectFactory.clonePointer(this),
-                        callStatus,
-                    );
-                },
-                /*liftString:*/ FfiConverterString.lift.bind(
-                    FfiConverterString,
-                ),
-            ),
-        );
-    }
-
-    uniffiDestroy(): void {
-        const ptr = (this as any)[destructorGuardSymbol];
-        if (ptr !== undefined) {
-            const pointer = uniffiTypeIntoUrlErrorObjectFactory.pointer(this);
-            uniffiTypeIntoUrlErrorObjectFactory.freePointer(pointer);
-            uniffiTypeIntoUrlErrorObjectFactory.unbless(ptr);
-            delete (this as any)[destructorGuardSymbol];
-        }
-    }
-
-    static instanceOf(obj_: any): obj_ is IntoUrlError {
-        return uniffiTypeIntoUrlErrorObjectFactory.isConcreteType(obj_);
-    }
-}
-
-const uniffiTypeIntoUrlErrorObjectFactory: UniffiObjectFactory<IntoUrlErrorLike> =
-    (() => {
-        /// <reference lib="es2021" />
-        const registry =
-            typeof FinalizationRegistry !== "undefined"
-                ? new FinalizationRegistry<UniffiHandle>(
-                      (heldValue: UniffiHandle) => {
-                          uniffiTypeIntoUrlErrorObjectFactory.freePointer(
-                              heldValue,
-                          );
-                      },
-                  )
-                : null;
-
-        return {
-            create(pointer: UniffiHandle): IntoUrlErrorLike {
-                const instance = Object.create(IntoUrlError.prototype);
-                instance[pointerLiteralSymbol] = pointer;
-                instance[destructorGuardSymbol] = this.bless(pointer);
-                instance[uniffiTypeNameSymbol] = "IntoUrlError";
-                return instance;
-            },
-
-            bless(p: UniffiHandle): UniffiGcObject {
-                const ptr = {
-                    p, // make sure this object doesn't get optimized away.
-                    markDestroyed: () => undefined,
-                };
-                if (registry) {
-                    registry.register(ptr, p, ptr);
-                }
-                return ptr;
-            },
-
-            unbless(ptr_: UniffiGcObject) {
-                if (registry) {
-                    registry.unregister(ptr_);
-                }
-            },
-
-            pointer(obj_: IntoUrlErrorLike): UniffiHandle {
-                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
-                    throw new UniffiInternalError.UnexpectedNullPointer();
-                }
-                return (obj_ as any)[pointerLiteralSymbol];
-            },
-
-            clonePointer(obj_: IntoUrlErrorLike): UniffiHandle {
-                const pointer = this.pointer(obj_);
-                return uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_intourlerror(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            freePointer(pointer: UniffiHandle): void {
-                uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_intourlerror(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            isConcreteType(obj_: any): obj_ is IntoUrlErrorLike {
-                return (
-                    obj_[destructorGuardSymbol] &&
-                    obj_[uniffiTypeNameSymbol] === "IntoUrlError"
-                );
-            },
-        };
-    })();
-const FfiConverterTypeIntoUrlError = new FfiConverterObject(
-    uniffiTypeIntoUrlErrorObjectFactory,
-);
+const FfiConverterTypeImplementationError__as_error =
+    new FfiConverterObjectAsError(
+        "ImplementationError",
+        FfiConverterTypeImplementationError,
+    );
 
 // Error type: ReceiverError
 export enum ReceiverError_Tags {
@@ -4708,634 +5469,6 @@ const uniffiTypeCancelTransitionObjectFactory: UniffiObjectFactory<CancelTransit
 const FfiConverterTypeCancelTransition = new FfiConverterObject(
     uniffiTypeCancelTransitionObjectFactory,
 );
-
-/**
- * Answers whether the receiver's wallet can sign the coin at a given outpoint.
- * Implement this against the wallet's own authoritative state, covering every
- * outpoint the wallet can sign, including locked and unconfirmed coins.
- */
-export interface IsInputOwned {
-    callback(outpoint: OutPoint) /*throws*/ : boolean;
-}
-
-/**
- * Answers whether the receiver's wallet can sign the coin at a given outpoint.
- * Implement this against the wallet's own authoritative state, covering every
- * outpoint the wallet can sign, including locked and unconfirmed coins.
- */
-export class IsInputOwnedImpl
-    extends UniffiAbstractObject
-    implements IsInputOwned
-{
-    readonly [uniffiTypeNameSymbol] = "IsInputOwnedImpl";
-    readonly [destructorGuardSymbol]: UniffiGcObject;
-    readonly [pointerLiteralSymbol]: UniffiHandle;
-    // No primary constructor declared for this class.
-    private constructor(pointer: UniffiHandle) {
-        super();
-        this[pointerLiteralSymbol] = pointer;
-        this[destructorGuardSymbol] =
-            uniffiTypeIsInputOwnedImplObjectFactory.bless(pointer);
-    }
-
-    callback(outpoint: OutPoint): boolean /*throws*/ {
-        return FfiConverterBool.lift(
-            uniffiCaller.rustCallWithError(
-                /*liftError:*/ FfiConverterTypeForeignError.lift.bind(
-                    FfiConverterTypeForeignError,
-                ),
-                /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_isinputowned_callback(
-                        uniffiTypeIsInputOwnedImplObjectFactory.clonePointer(
-                            this,
-                        ),
-                        FfiConverterTypeOutPoint.lower(
-                            outpoint,
-                            nativeModule().rustbuffer_alloc,
-                        ),
-                        callStatus,
-                    );
-                },
-                /*liftString:*/ FfiConverterString.lift.bind(
-                    FfiConverterString,
-                ),
-            ),
-        );
-    }
-
-    uniffiDestroy(): void {
-        const ptr = (this as any)[destructorGuardSymbol];
-        if (ptr !== undefined) {
-            const pointer =
-                uniffiTypeIsInputOwnedImplObjectFactory.pointer(this);
-            uniffiTypeIsInputOwnedImplObjectFactory.freePointer(pointer);
-            uniffiTypeIsInputOwnedImplObjectFactory.unbless(ptr);
-            delete (this as any)[destructorGuardSymbol];
-        }
-    }
-
-    static instanceOf(obj_: any): obj_ is IsInputOwnedImpl {
-        return uniffiTypeIsInputOwnedImplObjectFactory.isConcreteType(obj_);
-    }
-}
-
-const uniffiTypeIsInputOwnedImplObjectFactory: UniffiObjectFactory<IsInputOwned> =
-    (() => {
-        /// <reference lib="es2021" />
-        const registry =
-            typeof FinalizationRegistry !== "undefined"
-                ? new FinalizationRegistry<UniffiHandle>(
-                      (heldValue: UniffiHandle) => {
-                          uniffiTypeIsInputOwnedImplObjectFactory.freePointer(
-                              heldValue,
-                          );
-                      },
-                  )
-                : null;
-
-        return {
-            create(pointer: UniffiHandle): IsInputOwned {
-                const instance = Object.create(IsInputOwnedImpl.prototype);
-                instance[pointerLiteralSymbol] = pointer;
-                instance[destructorGuardSymbol] = this.bless(pointer);
-                instance[uniffiTypeNameSymbol] = "IsInputOwnedImpl";
-                return instance;
-            },
-
-            bless(p: UniffiHandle): UniffiGcObject {
-                const ptr = {
-                    p, // make sure this object doesn't get optimized away.
-                    markDestroyed: () => undefined,
-                };
-                if (registry) {
-                    registry.register(ptr, p, ptr);
-                }
-                return ptr;
-            },
-
-            unbless(ptr_: UniffiGcObject) {
-                if (registry) {
-                    registry.unregister(ptr_);
-                }
-            },
-
-            pointer(obj_: IsInputOwned): UniffiHandle {
-                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
-                    throw new UniffiInternalError.UnexpectedNullPointer();
-                }
-                return (obj_ as any)[pointerLiteralSymbol];
-            },
-
-            clonePointer(obj_: IsInputOwned): UniffiHandle {
-                const pointer = this.pointer(obj_);
-                return uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_isinputowned(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            freePointer(pointer: UniffiHandle): void {
-                uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_isinputowned(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            isConcreteType(obj_: any): obj_ is IsInputOwned {
-                return (
-                    obj_[destructorGuardSymbol] &&
-                    obj_[uniffiTypeNameSymbol] === "IsInputOwnedImpl"
-                );
-            },
-        };
-    })();
-const FfiConverterTypeIsInputOwned = new FfiConverterObjectWithCallbacks(
-    uniffiTypeIsInputOwnedImplObjectFactory,
-);
-
-// Add a vtable for the callbacks that go in IsInputOwned.
-
-// Put the implementation in a struct so we don't pollute the top-level namespace
-const uniffiCallbackInterfaceIsInputOwned: {
-    vtable: any;
-    register: () => void;
-} = {
-    // Create the VTable using a series of closures.
-    // ts automatically converts these into C callback functions.
-    vtable: {
-        callback: (uniffiHandle: bigint, outpoint: Uint8Array) => {
-            const uniffiMakeCall = (): boolean => {
-                const jsCallback =
-                    FfiConverterTypeIsInputOwned.lift(uniffiHandle);
-                return jsCallback.callback(
-                    FfiConverterTypeOutPoint.lift(outpoint),
-                );
-            };
-            const uniffiResult = UniffiResult.ready<number>();
-            const uniffiHandleSuccess = (obj: any) => {
-                UniffiResult.writeSuccess(
-                    uniffiResult,
-                    FfiConverterBool.lower(
-                        obj,
-                        nativeModule().rustbuffer_alloc,
-                    ),
-                );
-            };
-            const uniffiHandleError = (
-                code: number,
-                errBuf: UniffiByteArray,
-            ) => {
-                UniffiResult.writeError(uniffiResult, code, errBuf);
-            };
-            uniffiTraitInterfaceCallWithError(
-                /*makeCall:*/ uniffiMakeCall,
-                /*handleSuccess:*/ uniffiHandleSuccess,
-                /*handleError:*/ uniffiHandleError,
-                /*isErrorType:*/ ForeignError.instanceOf,
-                /*lowerError:*/ FfiConverterTypeForeignError.lower.bind(
-                    FfiConverterTypeForeignError,
-                ),
-                /*lowerString:*/ FfiConverterString.lower.bind(
-                    FfiConverterString,
-                ),
-                /*alloc:*/ nativeModule().rustbuffer_alloc,
-            );
-            return uniffiResult;
-        },
-        uniffi_free: (uniffiHandle: UniffiHandle): void => {
-            // this will throw a stale handle error if the handle isn't found.
-            FfiConverterTypeIsInputOwned.drop(uniffiHandle);
-        },
-        uniffi_clone: (uniffiHandle: UniffiHandle): UniffiHandle => {
-            return FfiConverterTypeIsInputOwned.clone(uniffiHandle);
-        },
-    },
-    register: () => {
-        nativeModule().ubrn_uniffi_payjoin_ffi_fn_init_callback_vtable_isinputowned(
-            uniffiCallbackInterfaceIsInputOwned.vtable,
-        );
-    },
-};
-
-export interface IsOutputKnown {
-    callback(outpoint: OutPoint) /*throws*/ : boolean;
-}
-
-export class IsOutputKnownImpl
-    extends UniffiAbstractObject
-    implements IsOutputKnown
-{
-    readonly [uniffiTypeNameSymbol] = "IsOutputKnownImpl";
-    readonly [destructorGuardSymbol]: UniffiGcObject;
-    readonly [pointerLiteralSymbol]: UniffiHandle;
-    // No primary constructor declared for this class.
-    private constructor(pointer: UniffiHandle) {
-        super();
-        this[pointerLiteralSymbol] = pointer;
-        this[destructorGuardSymbol] =
-            uniffiTypeIsOutputKnownImplObjectFactory.bless(pointer);
-    }
-
-    callback(outpoint: OutPoint): boolean /*throws*/ {
-        return FfiConverterBool.lift(
-            uniffiCaller.rustCallWithError(
-                /*liftError:*/ FfiConverterTypeForeignError.lift.bind(
-                    FfiConverterTypeForeignError,
-                ),
-                /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_isoutputknown_callback(
-                        uniffiTypeIsOutputKnownImplObjectFactory.clonePointer(
-                            this,
-                        ),
-                        FfiConverterTypeOutPoint.lower(
-                            outpoint,
-                            nativeModule().rustbuffer_alloc,
-                        ),
-                        callStatus,
-                    );
-                },
-                /*liftString:*/ FfiConverterString.lift.bind(
-                    FfiConverterString,
-                ),
-            ),
-        );
-    }
-
-    uniffiDestroy(): void {
-        const ptr = (this as any)[destructorGuardSymbol];
-        if (ptr !== undefined) {
-            const pointer =
-                uniffiTypeIsOutputKnownImplObjectFactory.pointer(this);
-            uniffiTypeIsOutputKnownImplObjectFactory.freePointer(pointer);
-            uniffiTypeIsOutputKnownImplObjectFactory.unbless(ptr);
-            delete (this as any)[destructorGuardSymbol];
-        }
-    }
-
-    static instanceOf(obj_: any): obj_ is IsOutputKnownImpl {
-        return uniffiTypeIsOutputKnownImplObjectFactory.isConcreteType(obj_);
-    }
-}
-
-const uniffiTypeIsOutputKnownImplObjectFactory: UniffiObjectFactory<IsOutputKnown> =
-    (() => {
-        /// <reference lib="es2021" />
-        const registry =
-            typeof FinalizationRegistry !== "undefined"
-                ? new FinalizationRegistry<UniffiHandle>(
-                      (heldValue: UniffiHandle) => {
-                          uniffiTypeIsOutputKnownImplObjectFactory.freePointer(
-                              heldValue,
-                          );
-                      },
-                  )
-                : null;
-
-        return {
-            create(pointer: UniffiHandle): IsOutputKnown {
-                const instance = Object.create(IsOutputKnownImpl.prototype);
-                instance[pointerLiteralSymbol] = pointer;
-                instance[destructorGuardSymbol] = this.bless(pointer);
-                instance[uniffiTypeNameSymbol] = "IsOutputKnownImpl";
-                return instance;
-            },
-
-            bless(p: UniffiHandle): UniffiGcObject {
-                const ptr = {
-                    p, // make sure this object doesn't get optimized away.
-                    markDestroyed: () => undefined,
-                };
-                if (registry) {
-                    registry.register(ptr, p, ptr);
-                }
-                return ptr;
-            },
-
-            unbless(ptr_: UniffiGcObject) {
-                if (registry) {
-                    registry.unregister(ptr_);
-                }
-            },
-
-            pointer(obj_: IsOutputKnown): UniffiHandle {
-                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
-                    throw new UniffiInternalError.UnexpectedNullPointer();
-                }
-                return (obj_ as any)[pointerLiteralSymbol];
-            },
-
-            clonePointer(obj_: IsOutputKnown): UniffiHandle {
-                const pointer = this.pointer(obj_);
-                return uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_isoutputknown(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            freePointer(pointer: UniffiHandle): void {
-                uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_isoutputknown(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            isConcreteType(obj_: any): obj_ is IsOutputKnown {
-                return (
-                    obj_[destructorGuardSymbol] &&
-                    obj_[uniffiTypeNameSymbol] === "IsOutputKnownImpl"
-                );
-            },
-        };
-    })();
-const FfiConverterTypeIsOutputKnown = new FfiConverterObjectWithCallbacks(
-    uniffiTypeIsOutputKnownImplObjectFactory,
-);
-
-// Add a vtable for the callbacks that go in IsOutputKnown.
-
-// Put the implementation in a struct so we don't pollute the top-level namespace
-const uniffiCallbackInterfaceIsOutputKnown: {
-    vtable: any;
-    register: () => void;
-} = {
-    // Create the VTable using a series of closures.
-    // ts automatically converts these into C callback functions.
-    vtable: {
-        callback: (uniffiHandle: bigint, outpoint: Uint8Array) => {
-            const uniffiMakeCall = (): boolean => {
-                const jsCallback =
-                    FfiConverterTypeIsOutputKnown.lift(uniffiHandle);
-                return jsCallback.callback(
-                    FfiConverterTypeOutPoint.lift(outpoint),
-                );
-            };
-            const uniffiResult = UniffiResult.ready<number>();
-            const uniffiHandleSuccess = (obj: any) => {
-                UniffiResult.writeSuccess(
-                    uniffiResult,
-                    FfiConverterBool.lower(
-                        obj,
-                        nativeModule().rustbuffer_alloc,
-                    ),
-                );
-            };
-            const uniffiHandleError = (
-                code: number,
-                errBuf: UniffiByteArray,
-            ) => {
-                UniffiResult.writeError(uniffiResult, code, errBuf);
-            };
-            uniffiTraitInterfaceCallWithError(
-                /*makeCall:*/ uniffiMakeCall,
-                /*handleSuccess:*/ uniffiHandleSuccess,
-                /*handleError:*/ uniffiHandleError,
-                /*isErrorType:*/ ForeignError.instanceOf,
-                /*lowerError:*/ FfiConverterTypeForeignError.lower.bind(
-                    FfiConverterTypeForeignError,
-                ),
-                /*lowerString:*/ FfiConverterString.lower.bind(
-                    FfiConverterString,
-                ),
-                /*alloc:*/ nativeModule().rustbuffer_alloc,
-            );
-            return uniffiResult;
-        },
-        uniffi_free: (uniffiHandle: UniffiHandle): void => {
-            // this will throw a stale handle error if the handle isn't found.
-            FfiConverterTypeIsOutputKnown.drop(uniffiHandle);
-        },
-        uniffi_clone: (uniffiHandle: UniffiHandle): UniffiHandle => {
-            return FfiConverterTypeIsOutputKnown.clone(uniffiHandle);
-        },
-    },
-    register: () => {
-        nativeModule().ubrn_uniffi_payjoin_ffi_fn_init_callback_vtable_isoutputknown(
-            uniffiCallbackInterfaceIsOutputKnown.vtable,
-        );
-    },
-};
-
-export interface IsScriptOwned {
-    callback(script: ArrayBuffer) /*throws*/ : boolean;
-}
-
-export class IsScriptOwnedImpl
-    extends UniffiAbstractObject
-    implements IsScriptOwned
-{
-    readonly [uniffiTypeNameSymbol] = "IsScriptOwnedImpl";
-    readonly [destructorGuardSymbol]: UniffiGcObject;
-    readonly [pointerLiteralSymbol]: UniffiHandle;
-    // No primary constructor declared for this class.
-    private constructor(pointer: UniffiHandle) {
-        super();
-        this[pointerLiteralSymbol] = pointer;
-        this[destructorGuardSymbol] =
-            uniffiTypeIsScriptOwnedImplObjectFactory.bless(pointer);
-    }
-
-    callback(script: ArrayBuffer): boolean /*throws*/ {
-        return FfiConverterBool.lift(
-            uniffiCaller.rustCallWithError(
-                /*liftError:*/ FfiConverterTypeForeignError.lift.bind(
-                    FfiConverterTypeForeignError,
-                ),
-                /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_isscriptowned_callback(
-                        uniffiTypeIsScriptOwnedImplObjectFactory.clonePointer(
-                            this,
-                        ),
-                        FfiConverterArrayBuffer.lower(
-                            script,
-                            nativeModule().rustbuffer_alloc,
-                        ),
-                        callStatus,
-                    );
-                },
-                /*liftString:*/ FfiConverterString.lift.bind(
-                    FfiConverterString,
-                ),
-            ),
-        );
-    }
-
-    uniffiDestroy(): void {
-        const ptr = (this as any)[destructorGuardSymbol];
-        if (ptr !== undefined) {
-            const pointer =
-                uniffiTypeIsScriptOwnedImplObjectFactory.pointer(this);
-            uniffiTypeIsScriptOwnedImplObjectFactory.freePointer(pointer);
-            uniffiTypeIsScriptOwnedImplObjectFactory.unbless(ptr);
-            delete (this as any)[destructorGuardSymbol];
-        }
-    }
-
-    static instanceOf(obj_: any): obj_ is IsScriptOwnedImpl {
-        return uniffiTypeIsScriptOwnedImplObjectFactory.isConcreteType(obj_);
-    }
-}
-
-const uniffiTypeIsScriptOwnedImplObjectFactory: UniffiObjectFactory<IsScriptOwned> =
-    (() => {
-        /// <reference lib="es2021" />
-        const registry =
-            typeof FinalizationRegistry !== "undefined"
-                ? new FinalizationRegistry<UniffiHandle>(
-                      (heldValue: UniffiHandle) => {
-                          uniffiTypeIsScriptOwnedImplObjectFactory.freePointer(
-                              heldValue,
-                          );
-                      },
-                  )
-                : null;
-
-        return {
-            create(pointer: UniffiHandle): IsScriptOwned {
-                const instance = Object.create(IsScriptOwnedImpl.prototype);
-                instance[pointerLiteralSymbol] = pointer;
-                instance[destructorGuardSymbol] = this.bless(pointer);
-                instance[uniffiTypeNameSymbol] = "IsScriptOwnedImpl";
-                return instance;
-            },
-
-            bless(p: UniffiHandle): UniffiGcObject {
-                const ptr = {
-                    p, // make sure this object doesn't get optimized away.
-                    markDestroyed: () => undefined,
-                };
-                if (registry) {
-                    registry.register(ptr, p, ptr);
-                }
-                return ptr;
-            },
-
-            unbless(ptr_: UniffiGcObject) {
-                if (registry) {
-                    registry.unregister(ptr_);
-                }
-            },
-
-            pointer(obj_: IsScriptOwned): UniffiHandle {
-                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
-                    throw new UniffiInternalError.UnexpectedNullPointer();
-                }
-                return (obj_ as any)[pointerLiteralSymbol];
-            },
-
-            clonePointer(obj_: IsScriptOwned): UniffiHandle {
-                const pointer = this.pointer(obj_);
-                return uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_isscriptowned(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            freePointer(pointer: UniffiHandle): void {
-                uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_isscriptowned(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            isConcreteType(obj_: any): obj_ is IsScriptOwned {
-                return (
-                    obj_[destructorGuardSymbol] &&
-                    obj_[uniffiTypeNameSymbol] === "IsScriptOwnedImpl"
-                );
-            },
-        };
-    })();
-const FfiConverterTypeIsScriptOwned = new FfiConverterObjectWithCallbacks(
-    uniffiTypeIsScriptOwnedImplObjectFactory,
-);
-
-// Add a vtable for the callbacks that go in IsScriptOwned.
-
-// Put the implementation in a struct so we don't pollute the top-level namespace
-const uniffiCallbackInterfaceIsScriptOwned: {
-    vtable: any;
-    register: () => void;
-} = {
-    // Create the VTable using a series of closures.
-    // ts automatically converts these into C callback functions.
-    vtable: {
-        callback: (uniffiHandle: bigint, script: Uint8Array) => {
-            const uniffiMakeCall = (): boolean => {
-                const jsCallback =
-                    FfiConverterTypeIsScriptOwned.lift(uniffiHandle);
-                return jsCallback.callback(
-                    FfiConverterArrayBuffer.lift(script),
-                );
-            };
-            const uniffiResult = UniffiResult.ready<number>();
-            const uniffiHandleSuccess = (obj: any) => {
-                UniffiResult.writeSuccess(
-                    uniffiResult,
-                    FfiConverterBool.lower(
-                        obj,
-                        nativeModule().rustbuffer_alloc,
-                    ),
-                );
-            };
-            const uniffiHandleError = (
-                code: number,
-                errBuf: UniffiByteArray,
-            ) => {
-                UniffiResult.writeError(uniffiResult, code, errBuf);
-            };
-            uniffiTraitInterfaceCallWithError(
-                /*makeCall:*/ uniffiMakeCall,
-                /*handleSuccess:*/ uniffiHandleSuccess,
-                /*handleError:*/ uniffiHandleError,
-                /*isErrorType:*/ ForeignError.instanceOf,
-                /*lowerError:*/ FfiConverterTypeForeignError.lower.bind(
-                    FfiConverterTypeForeignError,
-                ),
-                /*lowerString:*/ FfiConverterString.lower.bind(
-                    FfiConverterString,
-                ),
-                /*alloc:*/ nativeModule().rustbuffer_alloc,
-            );
-            return uniffiResult;
-        },
-        uniffi_free: (uniffiHandle: UniffiHandle): void => {
-            // this will throw a stale handle error if the handle isn't found.
-            FfiConverterTypeIsScriptOwned.drop(uniffiHandle);
-        },
-        uniffi_clone: (uniffiHandle: UniffiHandle): UniffiHandle => {
-            return FfiConverterTypeIsScriptOwned.clone(uniffiHandle);
-        },
-    },
-    register: () => {
-        nativeModule().ubrn_uniffi_payjoin_ffi_fn_init_callback_vtable_isscriptowned(
-            uniffiCallbackInterfaceIsScriptOwned.vtable,
-        );
-    },
-};
 
 export interface ProcessPsbt {
     callback(psbt: string) /*throws*/ : string;
@@ -7159,6 +7292,18 @@ export interface ProvisionalProposalLike {
         processPsbt: ProcessPsbt,
     ): ProvisionalProposalTransitionLike;
     /**
+     * Finalize the proposal with a signed PSBT.
+     *
+     * Use [`ProvisionalProposal::psbt_to_sign`] to obtain the unsigned PSBT for the receiver
+     * to sign and return here.
+     *
+     * Returns a [`ProvisionalProposalTransition`] that, once persisted,
+     * yields the final [`PayjoinProposal`].
+     */
+    finalizeSignedProposal(
+        signedPsbt: string,
+    ) /*throws*/ : ProvisionalProposalTransitionLike;
+    /**
      * Whether the payjoin proposal's transaction ID is knowable in advance.
      *
      * If every sender input is native SegWit (empty script_sig), the
@@ -7174,6 +7319,8 @@ export interface ProvisionalProposalLike {
     proposalTxidIsStable(): boolean;
     /**
      * Extract the PSBT that needs to be signed by the receiver's wallet.
+     *
+     * Submit the signed PSBT to [`ProvisionalProposal::finalize_signed_proposal`].
      */
     psbtToSign(): string;
 }
@@ -7252,6 +7399,42 @@ export class ProvisionalProposal
     }
 
     /**
+     * Finalize the proposal with a signed PSBT.
+     *
+     * Use [`ProvisionalProposal::psbt_to_sign`] to obtain the unsigned PSBT for the receiver
+     * to sign and return here.
+     *
+     * Returns a [`ProvisionalProposalTransition`] that, once persisted,
+     * yields the final [`PayjoinProposal`].
+     */
+    finalizeSignedProposal(
+        signedPsbt: string,
+    ): ProvisionalProposalTransitionLike /*throws*/ {
+        return FfiConverterTypeProvisionalProposalTransition.lift(
+            uniffiCaller.rustCallWithError(
+                /*liftError:*/ FfiConverterTypeImplementationError__as_error.lift.bind(
+                    FfiConverterTypeImplementationError__as_error,
+                ),
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_signed_proposal(
+                        uniffiTypeProvisionalProposalObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterString.lower(
+                            signedPsbt,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    /**
      * Whether the payjoin proposal's transaction ID is knowable in advance.
      *
      * If every sender input is native SegWit (empty script_sig), the
@@ -7284,6 +7467,8 @@ export class ProvisionalProposal
 
     /**
      * Extract the PSBT that needs to be signed by the receiver's wallet.
+     *
+     * Submit the signed PSBT to [`ProvisionalProposal::finalize_signed_proposal`].
      */
     psbtToSign(): string {
         return ((__rb: Uint8Array) => {
@@ -10057,6 +10242,386 @@ const FfiConverterTypeOutputsUnknownTransition = new FfiConverterObject(
     uniffiTypeOutputsUnknownTransitionObjectFactory,
 );
 
+export interface IsScriptOwned {
+    callback(script: ArrayBuffer) /*throws*/ : boolean;
+}
+
+export class IsScriptOwnedImpl
+    extends UniffiAbstractObject
+    implements IsScriptOwned
+{
+    readonly [uniffiTypeNameSymbol] = "IsScriptOwnedImpl";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeIsScriptOwnedImplObjectFactory.bless(pointer);
+    }
+
+    callback(script: ArrayBuffer): boolean /*throws*/ {
+        return FfiConverterBool.lift(
+            uniffiCaller.rustCallWithError(
+                /*liftError:*/ FfiConverterTypeForeignError.lift.bind(
+                    FfiConverterTypeForeignError,
+                ),
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_isscriptowned_callback(
+                        uniffiTypeIsScriptOwnedImplObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterArrayBuffer.lower(
+                            script,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeIsScriptOwnedImplObjectFactory.pointer(this);
+            uniffiTypeIsScriptOwnedImplObjectFactory.freePointer(pointer);
+            uniffiTypeIsScriptOwnedImplObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is IsScriptOwnedImpl {
+        return uniffiTypeIsScriptOwnedImplObjectFactory.isConcreteType(obj_);
+    }
+}
+
+const uniffiTypeIsScriptOwnedImplObjectFactory: UniffiObjectFactory<IsScriptOwned> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeIsScriptOwnedImplObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): IsScriptOwned {
+                const instance = Object.create(IsScriptOwnedImpl.prototype);
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] = "IsScriptOwnedImpl";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: IsScriptOwned): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(obj_: IsScriptOwned): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_isscriptowned(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_isscriptowned(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(obj_: any): obj_ is IsScriptOwned {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] === "IsScriptOwnedImpl"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeIsScriptOwned = new FfiConverterObjectWithCallbacks(
+    uniffiTypeIsScriptOwnedImplObjectFactory,
+);
+
+// Add a vtable for the callbacks that go in IsScriptOwned.
+
+// Put the implementation in a struct so we don't pollute the top-level namespace
+const uniffiCallbackInterfaceIsScriptOwned: {
+    vtable: any;
+    register: () => void;
+} = {
+    // Create the VTable using a series of closures.
+    // ts automatically converts these into C callback functions.
+    vtable: {
+        callback: (uniffiHandle: bigint, script: Uint8Array) => {
+            const uniffiMakeCall = (): boolean => {
+                const jsCallback =
+                    FfiConverterTypeIsScriptOwned.lift(uniffiHandle);
+                return jsCallback.callback(
+                    FfiConverterArrayBuffer.lift(script),
+                );
+            };
+            const uniffiResult = UniffiResult.ready<number>();
+            const uniffiHandleSuccess = (obj: any) => {
+                UniffiResult.writeSuccess(
+                    uniffiResult,
+                    FfiConverterBool.lower(
+                        obj,
+                        nativeModule().rustbuffer_alloc,
+                    ),
+                );
+            };
+            const uniffiHandleError = (
+                code: number,
+                errBuf: UniffiByteArray,
+            ) => {
+                UniffiResult.writeError(uniffiResult, code, errBuf);
+            };
+            uniffiTraitInterfaceCallWithError(
+                /*makeCall:*/ uniffiMakeCall,
+                /*handleSuccess:*/ uniffiHandleSuccess,
+                /*handleError:*/ uniffiHandleError,
+                /*isErrorType:*/ ForeignError.instanceOf,
+                /*lowerError:*/ FfiConverterTypeForeignError.lower.bind(
+                    FfiConverterTypeForeignError,
+                ),
+                /*lowerString:*/ FfiConverterString.lower.bind(
+                    FfiConverterString,
+                ),
+                /*alloc:*/ nativeModule().rustbuffer_alloc,
+            );
+            return uniffiResult;
+        },
+        uniffi_free: (uniffiHandle: UniffiHandle): void => {
+            // this will throw a stale handle error if the handle isn't found.
+            FfiConverterTypeIsScriptOwned.drop(uniffiHandle);
+        },
+        uniffi_clone: (uniffiHandle: UniffiHandle): UniffiHandle => {
+            return FfiConverterTypeIsScriptOwned.clone(uniffiHandle);
+        },
+    },
+    register: () => {
+        nativeModule().ubrn_uniffi_payjoin_ffi_fn_init_callback_vtable_isscriptowned(
+            uniffiCallbackInterfaceIsScriptOwned.vtable,
+        );
+    },
+};
+
+export interface OutputOwnedChecklistItemLike {
+    mark(result: boolean): MarkedOutputOwnedChecklistItemLike;
+    value(): ArrayBuffer;
+}
+/**
+ * @deprecated Use `OutputOwnedChecklistItemLike` instead.
+ */
+export type OutputOwnedChecklistItemInterface = OutputOwnedChecklistItemLike;
+
+export class OutputOwnedChecklistItem
+    extends UniffiAbstractObject
+    implements OutputOwnedChecklistItemLike
+{
+    readonly [uniffiTypeNameSymbol] = "OutputOwnedChecklistItem";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeOutputOwnedChecklistItemObjectFactory.bless(pointer);
+    }
+
+    mark(result: boolean): MarkedOutputOwnedChecklistItemLike {
+        return FfiConverterTypeMarkedOutputOwnedChecklistItem.lift(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_mark(
+                        uniffiTypeOutputOwnedChecklistItemObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterBool.lower(
+                            result,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    value(): ArrayBuffer {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterArrayBuffer.lift(__rb);
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_value(
+                        uniffiTypeOutputOwnedChecklistItemObjectFactory.clonePointer(
+                            this,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeOutputOwnedChecklistItemObjectFactory.pointer(this);
+            uniffiTypeOutputOwnedChecklistItemObjectFactory.freePointer(
+                pointer,
+            );
+            uniffiTypeOutputOwnedChecklistItemObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is OutputOwnedChecklistItem {
+        return uniffiTypeOutputOwnedChecklistItemObjectFactory.isConcreteType(
+            obj_,
+        );
+    }
+}
+
+const uniffiTypeOutputOwnedChecklistItemObjectFactory: UniffiObjectFactory<OutputOwnedChecklistItemLike> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeOutputOwnedChecklistItemObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): OutputOwnedChecklistItemLike {
+                const instance = Object.create(
+                    OutputOwnedChecklistItem.prototype,
+                );
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] = "OutputOwnedChecklistItem";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: OutputOwnedChecklistItemLike): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(obj_: OutputOwnedChecklistItemLike): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_outputownedchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_outputownedchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(obj_: any): obj_ is OutputOwnedChecklistItemLike {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] === "OutputOwnedChecklistItem"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeOutputOwnedChecklistItem = new FfiConverterObject(
+    uniffiTypeOutputOwnedChecklistItemObjectFactory,
+);
+
 /**
  * The receiver has not yet identified which outputs belong to the receiver.
  *
@@ -10064,6 +10629,19 @@ const FfiConverterTypeOutputsUnknownTransition = new FfiConverterObject(
  * Identify those outputs with `identify_receiver_outputs()` to proceed
  */
 export interface OutputsUnknownLike {
+    /**
+     * Apply the results of the output ownership checklist, identifying which
+     * outputs in the original transaction belong to the receiver and ensuring
+     * at least one output pays the receiver.
+     *
+     * Use [`OutputsUnknown::outputs_owned_checklist`] to obtain the items that need to be checked.
+     *
+     * Returns an [`OutputsUnknownTransition`] that, once persisted,
+     * yields a [`WantsOutputs`] to continue the proposal.
+     */
+    applyOutputsOwnedChecklist(
+        markedChecklist: Array<MarkedOutputOwnedChecklistItemLike>,
+    ) /*throws*/ : OutputsUnknownTransitionLike;
     /**
      * Cancel the Payjoin session and return pending fallback handling.
      *
@@ -10081,6 +10659,13 @@ export interface OutputsUnknownLike {
     identifyReceiverOutputs(
         isReceiverOutput: IsScriptOwned,
     ): OutputsUnknownTransitionLike;
+    /**
+     * Get the outputs owned checklist for external ownership verification.
+     *
+     * Each item can be marked with the result via [`OutputOwnedChecklistItem::mark`]
+     * and passed to [`OutputsUnknown::apply_outputs_owned_checklist`].
+     */
+    outputsOwnedChecklist(): Array<OutputOwnedChecklistItemLike>;
     /**
      * Whether the payjoin proposal's transaction ID is knowable in advance.
      *
@@ -10120,6 +10705,43 @@ export class OutputsUnknown
         this[pointerLiteralSymbol] = pointer;
         this[destructorGuardSymbol] =
             uniffiTypeOutputsUnknownObjectFactory.bless(pointer);
+    }
+
+    /**
+     * Apply the results of the output ownership checklist, identifying which
+     * outputs in the original transaction belong to the receiver and ensuring
+     * at least one output pays the receiver.
+     *
+     * Use [`OutputsUnknown::outputs_owned_checklist`] to obtain the items that need to be checked.
+     *
+     * Returns an [`OutputsUnknownTransition`] that, once persisted,
+     * yields a [`WantsOutputs`] to continue the proposal.
+     */
+    applyOutputsOwnedChecklist(
+        markedChecklist: Array<MarkedOutputOwnedChecklistItemLike>,
+    ): OutputsUnknownTransitionLike /*throws*/ {
+        return FfiConverterTypeOutputsUnknownTransition.lift(
+            uniffiCaller.rustCallWithError(
+                /*liftError:*/ FfiConverterTypeReceiverError.lift.bind(
+                    FfiConverterTypeReceiverError,
+                ),
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_apply_outputs_owned_checklist(
+                        uniffiTypeOutputsUnknownObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterSequenceTypeMarkedOutputOwnedChecklistItem.lower(
+                            markedChecklist,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
     }
 
     /**
@@ -10166,6 +10788,38 @@ export class OutputsUnknown
                         FfiConverterTypeIsScriptOwned.lower(
                             isReceiverOutput,
                             nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    /**
+     * Get the outputs owned checklist for external ownership verification.
+     *
+     * Each item can be marked with the result via [`OutputOwnedChecklistItem::mark`]
+     * and passed to [`OutputsUnknown::apply_outputs_owned_checklist`].
+     */
+    outputsOwnedChecklist(): Array<OutputOwnedChecklistItemLike> {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterSequenceTypeOutputOwnedChecklistItem.lift(
+                    __rb,
+                );
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_outputs_owned_checklist(
+                        uniffiTypeOutputsUnknownObjectFactory.clonePointer(
+                            this,
                         ),
                         callStatus,
                     );
@@ -10506,7 +11160,398 @@ const FfiConverterTypeMaybeInputsSeenTransition = new FfiConverterObject(
     uniffiTypeMaybeInputsSeenTransitionObjectFactory,
 );
 
+export interface IsOutputKnown {
+    callback(outpoint: OutPoint) /*throws*/ : boolean;
+}
+
+export class IsOutputKnownImpl
+    extends UniffiAbstractObject
+    implements IsOutputKnown
+{
+    readonly [uniffiTypeNameSymbol] = "IsOutputKnownImpl";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeIsOutputKnownImplObjectFactory.bless(pointer);
+    }
+
+    callback(outpoint: OutPoint): boolean /*throws*/ {
+        return FfiConverterBool.lift(
+            uniffiCaller.rustCallWithError(
+                /*liftError:*/ FfiConverterTypeForeignError.lift.bind(
+                    FfiConverterTypeForeignError,
+                ),
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_isoutputknown_callback(
+                        uniffiTypeIsOutputKnownImplObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterTypeOutPoint.lower(
+                            outpoint,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeIsOutputKnownImplObjectFactory.pointer(this);
+            uniffiTypeIsOutputKnownImplObjectFactory.freePointer(pointer);
+            uniffiTypeIsOutputKnownImplObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is IsOutputKnownImpl {
+        return uniffiTypeIsOutputKnownImplObjectFactory.isConcreteType(obj_);
+    }
+}
+
+const uniffiTypeIsOutputKnownImplObjectFactory: UniffiObjectFactory<IsOutputKnown> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeIsOutputKnownImplObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): IsOutputKnown {
+                const instance = Object.create(IsOutputKnownImpl.prototype);
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] = "IsOutputKnownImpl";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: IsOutputKnown): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(obj_: IsOutputKnown): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_isoutputknown(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_isoutputknown(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(obj_: any): obj_ is IsOutputKnown {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] === "IsOutputKnownImpl"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeIsOutputKnown = new FfiConverterObjectWithCallbacks(
+    uniffiTypeIsOutputKnownImplObjectFactory,
+);
+
+// Add a vtable for the callbacks that go in IsOutputKnown.
+
+// Put the implementation in a struct so we don't pollute the top-level namespace
+const uniffiCallbackInterfaceIsOutputKnown: {
+    vtable: any;
+    register: () => void;
+} = {
+    // Create the VTable using a series of closures.
+    // ts automatically converts these into C callback functions.
+    vtable: {
+        callback: (uniffiHandle: bigint, outpoint: Uint8Array) => {
+            const uniffiMakeCall = (): boolean => {
+                const jsCallback =
+                    FfiConverterTypeIsOutputKnown.lift(uniffiHandle);
+                return jsCallback.callback(
+                    FfiConverterTypeOutPoint.lift(outpoint),
+                );
+            };
+            const uniffiResult = UniffiResult.ready<number>();
+            const uniffiHandleSuccess = (obj: any) => {
+                UniffiResult.writeSuccess(
+                    uniffiResult,
+                    FfiConverterBool.lower(
+                        obj,
+                        nativeModule().rustbuffer_alloc,
+                    ),
+                );
+            };
+            const uniffiHandleError = (
+                code: number,
+                errBuf: UniffiByteArray,
+            ) => {
+                UniffiResult.writeError(uniffiResult, code, errBuf);
+            };
+            uniffiTraitInterfaceCallWithError(
+                /*makeCall:*/ uniffiMakeCall,
+                /*handleSuccess:*/ uniffiHandleSuccess,
+                /*handleError:*/ uniffiHandleError,
+                /*isErrorType:*/ ForeignError.instanceOf,
+                /*lowerError:*/ FfiConverterTypeForeignError.lower.bind(
+                    FfiConverterTypeForeignError,
+                ),
+                /*lowerString:*/ FfiConverterString.lower.bind(
+                    FfiConverterString,
+                ),
+                /*alloc:*/ nativeModule().rustbuffer_alloc,
+            );
+            return uniffiResult;
+        },
+        uniffi_free: (uniffiHandle: UniffiHandle): void => {
+            // this will throw a stale handle error if the handle isn't found.
+            FfiConverterTypeIsOutputKnown.drop(uniffiHandle);
+        },
+        uniffi_clone: (uniffiHandle: UniffiHandle): UniffiHandle => {
+            return FfiConverterTypeIsOutputKnown.clone(uniffiHandle);
+        },
+    },
+    register: () => {
+        nativeModule().ubrn_uniffi_payjoin_ffi_fn_init_callback_vtable_isoutputknown(
+            uniffiCallbackInterfaceIsOutputKnown.vtable,
+        );
+    },
+};
+
+export interface InputSeenChecklistItemLike {
+    mark(result: boolean): MarkedInputSeenChecklistItemLike;
+    value(): OutPoint;
+}
+/**
+ * @deprecated Use `InputSeenChecklistItemLike` instead.
+ */
+export type InputSeenChecklistItemInterface = InputSeenChecklistItemLike;
+
+export class InputSeenChecklistItem
+    extends UniffiAbstractObject
+    implements InputSeenChecklistItemLike
+{
+    readonly [uniffiTypeNameSymbol] = "InputSeenChecklistItem";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeInputSeenChecklistItemObjectFactory.bless(pointer);
+    }
+
+    mark(result: boolean): MarkedInputSeenChecklistItemLike {
+        return FfiConverterTypeMarkedInputSeenChecklistItem.lift(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_mark(
+                        uniffiTypeInputSeenChecklistItemObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterBool.lower(
+                            result,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    value(): OutPoint {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterTypeOutPoint.lift(__rb);
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_value(
+                        uniffiTypeInputSeenChecklistItemObjectFactory.clonePointer(
+                            this,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeInputSeenChecklistItemObjectFactory.pointer(this);
+            uniffiTypeInputSeenChecklistItemObjectFactory.freePointer(pointer);
+            uniffiTypeInputSeenChecklistItemObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is InputSeenChecklistItem {
+        return uniffiTypeInputSeenChecklistItemObjectFactory.isConcreteType(
+            obj_,
+        );
+    }
+}
+
+const uniffiTypeInputSeenChecklistItemObjectFactory: UniffiObjectFactory<InputSeenChecklistItemLike> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeInputSeenChecklistItemObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): InputSeenChecklistItemLike {
+                const instance = Object.create(
+                    InputSeenChecklistItem.prototype,
+                );
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] = "InputSeenChecklistItem";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: InputSeenChecklistItemLike): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(obj_: InputSeenChecklistItemLike): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_inputseenchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_inputseenchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(obj_: any): obj_ is InputSeenChecklistItemLike {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] === "InputSeenChecklistItem"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeInputSeenChecklistItem = new FfiConverterObject(
+    uniffiTypeInputSeenChecklistItemObjectFactory,
+);
+
 export interface MaybeInputsSeenLike {
+    /**
+     * Apply the results of the outpoint seen checklist, ensuring none of
+     * the inputs have been seen before. This prevents input probing and replay
+     * attacks (where inputs have been used in a previous payjoin attempt).
+     *
+     * Use [`MaybeInputsSeen::inputs_seen_checklist`] to obtain the items that need to be checked.
+     *
+     * Returns a [`MaybeInputsSeenTransition`] that, once persisted,
+     * yields an [`OutputsUnknown`] to continue validation.
+     */
+    applyInputsSeenChecklist(
+        markedChecklist: Array<MarkedInputSeenChecklistItemLike>,
+    ) /*throws*/ : MaybeInputsSeenTransitionLike;
     /**
      * Cancel the Payjoin session and return pending fallback handling.
      *
@@ -10525,6 +11570,13 @@ export interface MaybeInputsSeenLike {
     checkNoInputsSeenBefore(
         isKnown: IsOutputKnown,
     ): MaybeInputsSeenTransitionLike;
+    /**
+     * Get the inputs seen checklist for external outpoint seen verification.
+     *
+     * Each item can be marked with the result via [`InputSeenChecklistItem::mark`]
+     * and passed to [`MaybeInputsSeen::apply_inputs_seen_checklist`].
+     */
+    inputsSeenChecklist(): Array<InputSeenChecklistItemLike>;
     /**
      * Whether the payjoin proposal's transaction ID is knowable in advance.
      *
@@ -10558,6 +11610,43 @@ export class MaybeInputsSeen
         this[pointerLiteralSymbol] = pointer;
         this[destructorGuardSymbol] =
             uniffiTypeMaybeInputsSeenObjectFactory.bless(pointer);
+    }
+
+    /**
+     * Apply the results of the outpoint seen checklist, ensuring none of
+     * the inputs have been seen before. This prevents input probing and replay
+     * attacks (where inputs have been used in a previous payjoin attempt).
+     *
+     * Use [`MaybeInputsSeen::inputs_seen_checklist`] to obtain the items that need to be checked.
+     *
+     * Returns a [`MaybeInputsSeenTransition`] that, once persisted,
+     * yields an [`OutputsUnknown`] to continue validation.
+     */
+    applyInputsSeenChecklist(
+        markedChecklist: Array<MarkedInputSeenChecklistItemLike>,
+    ): MaybeInputsSeenTransitionLike /*throws*/ {
+        return FfiConverterTypeMaybeInputsSeenTransition.lift(
+            uniffiCaller.rustCallWithError(
+                /*liftError:*/ FfiConverterTypeReceiverError.lift.bind(
+                    FfiConverterTypeReceiverError,
+                ),
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_apply_inputs_seen_checklist(
+                        uniffiTypeMaybeInputsSeenObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterSequenceTypeMarkedInputSeenChecklistItem.lower(
+                            markedChecklist,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
     }
 
     /**
@@ -10605,6 +11694,38 @@ export class MaybeInputsSeen
                         FfiConverterTypeIsOutputKnown.lower(
                             isKnown,
                             nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    /**
+     * Get the inputs seen checklist for external outpoint seen verification.
+     *
+     * Each item can be marked with the result via [`InputSeenChecklistItem::mark`]
+     * and passed to [`MaybeInputsSeen::apply_inputs_seen_checklist`].
+     */
+    inputsSeenChecklist(): Array<InputSeenChecklistItemLike> {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterSequenceTypeInputSeenChecklistItem.lift(
+                    __rb,
+                );
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_inputs_seen_checklist(
+                        uniffiTypeMaybeInputsSeenObjectFactory.clonePointer(
+                            this,
                         ),
                         callStatus,
                     );
@@ -10947,7 +12068,408 @@ const FfiConverterTypeMaybeInputsOwnedTransition = new FfiConverterObject(
     uniffiTypeMaybeInputsOwnedTransitionObjectFactory,
 );
 
+/**
+ * Answers whether the receiver's wallet can sign the coin at a given outpoint.
+ * Implement this against the wallet's own authoritative state, covering every
+ * outpoint the wallet can sign, including locked and unconfirmed coins.
+ */
+export interface IsInputOwned {
+    callback(outpoint: OutPoint) /*throws*/ : boolean;
+}
+
+/**
+ * Answers whether the receiver's wallet can sign the coin at a given outpoint.
+ * Implement this against the wallet's own authoritative state, covering every
+ * outpoint the wallet can sign, including locked and unconfirmed coins.
+ */
+export class IsInputOwnedImpl
+    extends UniffiAbstractObject
+    implements IsInputOwned
+{
+    readonly [uniffiTypeNameSymbol] = "IsInputOwnedImpl";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeIsInputOwnedImplObjectFactory.bless(pointer);
+    }
+
+    callback(outpoint: OutPoint): boolean /*throws*/ {
+        return FfiConverterBool.lift(
+            uniffiCaller.rustCallWithError(
+                /*liftError:*/ FfiConverterTypeForeignError.lift.bind(
+                    FfiConverterTypeForeignError,
+                ),
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_isinputowned_callback(
+                        uniffiTypeIsInputOwnedImplObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterTypeOutPoint.lower(
+                            outpoint,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeIsInputOwnedImplObjectFactory.pointer(this);
+            uniffiTypeIsInputOwnedImplObjectFactory.freePointer(pointer);
+            uniffiTypeIsInputOwnedImplObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is IsInputOwnedImpl {
+        return uniffiTypeIsInputOwnedImplObjectFactory.isConcreteType(obj_);
+    }
+}
+
+const uniffiTypeIsInputOwnedImplObjectFactory: UniffiObjectFactory<IsInputOwned> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeIsInputOwnedImplObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): IsInputOwned {
+                const instance = Object.create(IsInputOwnedImpl.prototype);
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] = "IsInputOwnedImpl";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: IsInputOwned): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(obj_: IsInputOwned): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_isinputowned(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_isinputowned(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(obj_: any): obj_ is IsInputOwned {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] === "IsInputOwnedImpl"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeIsInputOwned = new FfiConverterObjectWithCallbacks(
+    uniffiTypeIsInputOwnedImplObjectFactory,
+);
+
+// Add a vtable for the callbacks that go in IsInputOwned.
+
+// Put the implementation in a struct so we don't pollute the top-level namespace
+const uniffiCallbackInterfaceIsInputOwned: {
+    vtable: any;
+    register: () => void;
+} = {
+    // Create the VTable using a series of closures.
+    // ts automatically converts these into C callback functions.
+    vtable: {
+        callback: (uniffiHandle: bigint, outpoint: Uint8Array) => {
+            const uniffiMakeCall = (): boolean => {
+                const jsCallback =
+                    FfiConverterTypeIsInputOwned.lift(uniffiHandle);
+                return jsCallback.callback(
+                    FfiConverterTypeOutPoint.lift(outpoint),
+                );
+            };
+            const uniffiResult = UniffiResult.ready<number>();
+            const uniffiHandleSuccess = (obj: any) => {
+                UniffiResult.writeSuccess(
+                    uniffiResult,
+                    FfiConverterBool.lower(
+                        obj,
+                        nativeModule().rustbuffer_alloc,
+                    ),
+                );
+            };
+            const uniffiHandleError = (
+                code: number,
+                errBuf: UniffiByteArray,
+            ) => {
+                UniffiResult.writeError(uniffiResult, code, errBuf);
+            };
+            uniffiTraitInterfaceCallWithError(
+                /*makeCall:*/ uniffiMakeCall,
+                /*handleSuccess:*/ uniffiHandleSuccess,
+                /*handleError:*/ uniffiHandleError,
+                /*isErrorType:*/ ForeignError.instanceOf,
+                /*lowerError:*/ FfiConverterTypeForeignError.lower.bind(
+                    FfiConverterTypeForeignError,
+                ),
+                /*lowerString:*/ FfiConverterString.lower.bind(
+                    FfiConverterString,
+                ),
+                /*alloc:*/ nativeModule().rustbuffer_alloc,
+            );
+            return uniffiResult;
+        },
+        uniffi_free: (uniffiHandle: UniffiHandle): void => {
+            // this will throw a stale handle error if the handle isn't found.
+            FfiConverterTypeIsInputOwned.drop(uniffiHandle);
+        },
+        uniffi_clone: (uniffiHandle: UniffiHandle): UniffiHandle => {
+            return FfiConverterTypeIsInputOwned.clone(uniffiHandle);
+        },
+    },
+    register: () => {
+        nativeModule().ubrn_uniffi_payjoin_ffi_fn_init_callback_vtable_isinputowned(
+            uniffiCallbackInterfaceIsInputOwned.vtable,
+        );
+    },
+};
+
+export interface InputOwnedChecklistItemLike {
+    mark(result: boolean): MarkedInputOwnedChecklistItemLike;
+    value(): OutPoint;
+}
+/**
+ * @deprecated Use `InputOwnedChecklistItemLike` instead.
+ */
+export type InputOwnedChecklistItemInterface = InputOwnedChecklistItemLike;
+
+export class InputOwnedChecklistItem
+    extends UniffiAbstractObject
+    implements InputOwnedChecklistItemLike
+{
+    readonly [uniffiTypeNameSymbol] = "InputOwnedChecklistItem";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeInputOwnedChecklistItemObjectFactory.bless(pointer);
+    }
+
+    mark(result: boolean): MarkedInputOwnedChecklistItemLike {
+        return FfiConverterTypeMarkedInputOwnedChecklistItem.lift(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_mark(
+                        uniffiTypeInputOwnedChecklistItemObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterBool.lower(
+                            result,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    value(): OutPoint {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterTypeOutPoint.lift(__rb);
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_value(
+                        uniffiTypeInputOwnedChecklistItemObjectFactory.clonePointer(
+                            this,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeInputOwnedChecklistItemObjectFactory.pointer(this);
+            uniffiTypeInputOwnedChecklistItemObjectFactory.freePointer(pointer);
+            uniffiTypeInputOwnedChecklistItemObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is InputOwnedChecklistItem {
+        return uniffiTypeInputOwnedChecklistItemObjectFactory.isConcreteType(
+            obj_,
+        );
+    }
+}
+
+const uniffiTypeInputOwnedChecklistItemObjectFactory: UniffiObjectFactory<InputOwnedChecklistItemLike> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeInputOwnedChecklistItemObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(pointer: UniffiHandle): InputOwnedChecklistItemLike {
+                const instance = Object.create(
+                    InputOwnedChecklistItem.prototype,
+                );
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] = "InputOwnedChecklistItem";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(obj_: InputOwnedChecklistItemLike): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(obj_: InputOwnedChecklistItemLike): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_inputownedchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_inputownedchecklistitem(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(obj_: any): obj_ is InputOwnedChecklistItemLike {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] === "InputOwnedChecklistItem"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeInputOwnedChecklistItem = new FfiConverterObject(
+    uniffiTypeInputOwnedChecklistItemObjectFactory,
+);
+
 export interface MaybeInputsOwnedLike {
+    /**
+     * Apply the results of the input ownership checklist, ensuring none of the
+     * inputs are owned by the receiver. This prevents an attacker from spending
+     * the receiver's own inputs.
+     *
+     * Use [`MaybeInputsOwned::inputs_owned_checklist`] to obtain the items that need to be checked.
+     *
+     * Returns a [`MaybeInputsOwnedTransition`] that, once persisted,
+     * yields a [`MaybeInputsSeen`] to continue validation.
+     */
+    applyInputsOwnedChecklist(
+        markedChecklist: Array<MarkedInputOwnedChecklistItemLike>,
+    ) /*throws*/ : MaybeInputsOwnedTransitionLike;
     /**
      * Cancel the Payjoin session and return pending fallback handling.
      *
@@ -10970,6 +12492,13 @@ export interface MaybeInputsOwnedLike {
      * Returns the consensus-encoded raw transaction bytes.
      */
     extractTxToScheduleBroadcast(): ArrayBuffer;
+    /**
+     * Get the inputs owned checklist for external ownership verification.
+     *
+     * Each item can be marked with the result via [`InputOwnedChecklistItem::mark`]
+     * and passed to [`MaybeInputsOwned::apply_inputs_owned_checklist`].
+     */
+    inputsOwnedChecklist(): Array<InputOwnedChecklistItemLike>;
     /**
      * Whether the payjoin proposal's transaction ID is knowable in advance.
      *
@@ -11003,6 +12532,43 @@ export class MaybeInputsOwned
         this[pointerLiteralSymbol] = pointer;
         this[destructorGuardSymbol] =
             uniffiTypeMaybeInputsOwnedObjectFactory.bless(pointer);
+    }
+
+    /**
+     * Apply the results of the input ownership checklist, ensuring none of the
+     * inputs are owned by the receiver. This prevents an attacker from spending
+     * the receiver's own inputs.
+     *
+     * Use [`MaybeInputsOwned::inputs_owned_checklist`] to obtain the items that need to be checked.
+     *
+     * Returns a [`MaybeInputsOwnedTransition`] that, once persisted,
+     * yields a [`MaybeInputsSeen`] to continue validation.
+     */
+    applyInputsOwnedChecklist(
+        markedChecklist: Array<MarkedInputOwnedChecklistItemLike>,
+    ): MaybeInputsOwnedTransitionLike /*throws*/ {
+        return FfiConverterTypeMaybeInputsOwnedTransition.lift(
+            uniffiCaller.rustCallWithError(
+                /*liftError:*/ FfiConverterTypeReceiverError.lift.bind(
+                    FfiConverterTypeReceiverError,
+                ),
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_apply_inputs_owned_checklist(
+                        uniffiTypeMaybeInputsOwnedObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterSequenceTypeMarkedInputOwnedChecklistItem.lower(
+                            markedChecklist,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
     }
 
     /**
@@ -11075,6 +12641,38 @@ export class MaybeInputsOwned
             uniffiCaller.rustCall(
                 /*caller:*/ (callStatus) => {
                     return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_extract_tx_to_schedule_broadcast(
+                        uniffiTypeMaybeInputsOwnedObjectFactory.clonePointer(
+                            this,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    /**
+     * Get the inputs owned checklist for external ownership verification.
+     *
+     * Each item can be marked with the result via [`InputOwnedChecklistItem::mark`]
+     * and passed to [`MaybeInputsOwned::apply_inputs_owned_checklist`].
+     */
+    inputsOwnedChecklist(): Array<InputOwnedChecklistItemLike> {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterSequenceTypeInputOwnedChecklistItem.lift(
+                    __rb,
+                );
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_inputs_owned_checklist(
                         uniffiTypeMaybeInputsOwnedObjectFactory.clonePointer(
                             this,
                         ),
@@ -11216,6 +12814,225 @@ const uniffiTypeMaybeInputsOwnedObjectFactory: UniffiObjectFactory<MaybeInputsOw
 const FfiConverterTypeMaybeInputsOwned = new FfiConverterObject(
     uniffiTypeMaybeInputsOwnedObjectFactory,
 );
+
+export interface UncheckedOriginalPayloadTransitionLike {
+    save(
+        persister: JsonReceiverSessionPersister,
+    ) /*throws*/ : MaybeInputsOwnedLike;
+    saveAsync(
+        persister: JsonReceiverSessionPersisterAsync,
+        asyncOpts_?: { signal: AbortSignal },
+    ) /*throws*/ : Promise<MaybeInputsOwnedLike>;
+}
+/**
+ * @deprecated Use `UncheckedOriginalPayloadTransitionLike` instead.
+ */
+export type UncheckedOriginalPayloadTransitionInterface =
+    UncheckedOriginalPayloadTransitionLike;
+
+export class UncheckedOriginalPayloadTransition
+    extends UniffiAbstractObject
+    implements UncheckedOriginalPayloadTransitionLike
+{
+    readonly [uniffiTypeNameSymbol] = "UncheckedOriginalPayloadTransition";
+    readonly [destructorGuardSymbol]: UniffiGcObject;
+    readonly [pointerLiteralSymbol]: UniffiHandle;
+    // No primary constructor declared for this class.
+    private constructor(pointer: UniffiHandle) {
+        super();
+        this[pointerLiteralSymbol] = pointer;
+        this[destructorGuardSymbol] =
+            uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.bless(
+                pointer,
+            );
+    }
+
+    save(
+        persister: JsonReceiverSessionPersister,
+    ): MaybeInputsOwnedLike /*throws*/ {
+        return FfiConverterTypeMaybeInputsOwned.lift(
+            uniffiCaller.rustCallWithError(
+                /*liftError:*/ FfiConverterTypeReceiverPersistedError.lift.bind(
+                    FfiConverterTypeReceiverPersistedError,
+                ),
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayloadtransition_save(
+                        uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterTypeJsonReceiverSessionPersister.lower(
+                            persister,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    async saveAsync(
+        persister: JsonReceiverSessionPersisterAsync,
+        asyncOpts_?: { signal: AbortSignal },
+    ): Promise<MaybeInputsOwnedLike> /*throws*/ {
+        return await uniffiRustCallAsync(
+            /*rustCaller:*/ uniffiCaller,
+            /*rustFutureFunc:*/ () => {
+                return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayloadtransition_save_async(
+                    uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.clonePointer(
+                        this,
+                    ),
+                    FfiConverterTypeJsonReceiverSessionPersisterAsync.lower(
+                        persister,
+                        nativeModule().rustbuffer_alloc,
+                    ),
+                );
+            },
+            /*pollFunc:*/ nativeModule()
+                .ubrn_ffi_payjoin_ffi_rust_future_poll_u64,
+            /*cancelFunc:*/ nativeModule()
+                .ubrn_ffi_payjoin_ffi_rust_future_cancel_u64,
+            /*completeFunc:*/ nativeModule()
+                .ubrn_ffi_payjoin_ffi_rust_future_complete_u64,
+            /*freeFunc:*/ nativeModule()
+                .ubrn_ffi_payjoin_ffi_rust_future_free_u64,
+            // Async returns always go through the JS-side converter: the
+            // FFI symbol returns the future handle (u64), and the user-level
+            // RustBuffer comes back via the shared `rust_future_complete_*`
+            // export. The bytes the runtime hands back must be deserialized
+            // here using the per-callable return-type converter.
+            /*liftFunc:*/ FfiConverterTypeMaybeInputsOwned.lift.bind(
+                FfiConverterTypeMaybeInputsOwned,
+            ),
+            /*liftString:*/ FfiConverterString.lift.bind(FfiConverterString),
+            /*asyncOpts:*/ asyncOpts_,
+            /*errorHandler:*/ FfiConverterTypeReceiverPersistedError.lift.bind(
+                FfiConverterTypeReceiverPersistedError,
+            ),
+        );
+    }
+
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer =
+                uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.pointer(
+                    this,
+                );
+            uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.freePointer(
+                pointer,
+            );
+            uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.unbless(
+                ptr,
+            );
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj_: any): obj_ is UncheckedOriginalPayloadTransition {
+        return uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.isConcreteType(
+            obj_,
+        );
+    }
+}
+
+const uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory: UniffiObjectFactory<UncheckedOriginalPayloadTransitionLike> =
+    (() => {
+        /// <reference lib="es2021" />
+        const registry =
+            typeof FinalizationRegistry !== "undefined"
+                ? new FinalizationRegistry<UniffiHandle>(
+                      (heldValue: UniffiHandle) => {
+                          uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.freePointer(
+                              heldValue,
+                          );
+                      },
+                  )
+                : null;
+
+        return {
+            create(
+                pointer: UniffiHandle,
+            ): UncheckedOriginalPayloadTransitionLike {
+                const instance = Object.create(
+                    UncheckedOriginalPayloadTransition.prototype,
+                );
+                instance[pointerLiteralSymbol] = pointer;
+                instance[destructorGuardSymbol] = this.bless(pointer);
+                instance[uniffiTypeNameSymbol] =
+                    "UncheckedOriginalPayloadTransition";
+                return instance;
+            },
+
+            bless(p: UniffiHandle): UniffiGcObject {
+                const ptr = {
+                    p, // make sure this object doesn't get optimized away.
+                    markDestroyed: () => undefined,
+                };
+                if (registry) {
+                    registry.register(ptr, p, ptr);
+                }
+                return ptr;
+            },
+
+            unbless(ptr_: UniffiGcObject) {
+                if (registry) {
+                    registry.unregister(ptr_);
+                }
+            },
+
+            pointer(
+                obj_: UncheckedOriginalPayloadTransitionLike,
+            ): UniffiHandle {
+                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
+                    throw new UniffiInternalError.UnexpectedNullPointer();
+                }
+                return (obj_ as any)[pointerLiteralSymbol];
+            },
+
+            clonePointer(
+                obj_: UncheckedOriginalPayloadTransitionLike,
+            ): UniffiHandle {
+                const pointer = this.pointer(obj_);
+                return uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_uncheckedoriginalpayloadtransition(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            freePointer(pointer: UniffiHandle): void {
+                uniffiCaller.rustCall(
+                    /*caller:*/ (callStatus) =>
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_uncheckedoriginalpayloadtransition(
+                            pointer,
+                            callStatus,
+                        ),
+                    /*liftString:*/ FfiConverterString.lift,
+                );
+            },
+
+            isConcreteType(
+                obj_: any,
+            ): obj_ is UncheckedOriginalPayloadTransitionLike {
+                return (
+                    obj_[destructorGuardSymbol] &&
+                    obj_[uniffiTypeNameSymbol] ===
+                        "UncheckedOriginalPayloadTransition"
+                );
+            },
+        };
+    })();
+const FfiConverterTypeUncheckedOriginalPayloadTransition =
+    new FfiConverterObject(
+        uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory,
+    );
 
 export interface AssumeInteractiveTransitionLike {
     save(
@@ -11625,226 +13442,22 @@ const uniffiCallbackInterfaceCanBroadcast: {
     },
 };
 
-export interface UncheckedOriginalPayloadTransitionLike {
-    save(
-        persister: JsonReceiverSessionPersister,
-    ) /*throws*/ : MaybeInputsOwnedLike;
-    saveAsync(
-        persister: JsonReceiverSessionPersisterAsync,
-        asyncOpts_?: { signal: AbortSignal },
-    ) /*throws*/ : Promise<MaybeInputsOwnedLike>;
-}
-/**
- * @deprecated Use `UncheckedOriginalPayloadTransitionLike` instead.
- */
-export type UncheckedOriginalPayloadTransitionInterface =
-    UncheckedOriginalPayloadTransitionLike;
-
-export class UncheckedOriginalPayloadTransition
-    extends UniffiAbstractObject
-    implements UncheckedOriginalPayloadTransitionLike
-{
-    readonly [uniffiTypeNameSymbol] = "UncheckedOriginalPayloadTransition";
-    readonly [destructorGuardSymbol]: UniffiGcObject;
-    readonly [pointerLiteralSymbol]: UniffiHandle;
-    // No primary constructor declared for this class.
-    private constructor(pointer: UniffiHandle) {
-        super();
-        this[pointerLiteralSymbol] = pointer;
-        this[destructorGuardSymbol] =
-            uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.bless(
-                pointer,
-            );
-    }
-
-    save(
-        persister: JsonReceiverSessionPersister,
-    ): MaybeInputsOwnedLike /*throws*/ {
-        return FfiConverterTypeMaybeInputsOwned.lift(
-            uniffiCaller.rustCallWithError(
-                /*liftError:*/ FfiConverterTypeReceiverPersistedError.lift.bind(
-                    FfiConverterTypeReceiverPersistedError,
-                ),
-                /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayloadtransition_save(
-                        uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.clonePointer(
-                            this,
-                        ),
-                        FfiConverterTypeJsonReceiverSessionPersister.lower(
-                            persister,
-                            nativeModule().rustbuffer_alloc,
-                        ),
-                        callStatus,
-                    );
-                },
-                /*liftString:*/ FfiConverterString.lift.bind(
-                    FfiConverterString,
-                ),
-            ),
-        );
-    }
-
-    async saveAsync(
-        persister: JsonReceiverSessionPersisterAsync,
-        asyncOpts_?: { signal: AbortSignal },
-    ): Promise<MaybeInputsOwnedLike> /*throws*/ {
-        return await uniffiRustCallAsync(
-            /*rustCaller:*/ uniffiCaller,
-            /*rustFutureFunc:*/ () => {
-                return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayloadtransition_save_async(
-                    uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.clonePointer(
-                        this,
-                    ),
-                    FfiConverterTypeJsonReceiverSessionPersisterAsync.lower(
-                        persister,
-                        nativeModule().rustbuffer_alloc,
-                    ),
-                );
-            },
-            /*pollFunc:*/ nativeModule()
-                .ubrn_ffi_payjoin_ffi_rust_future_poll_u64,
-            /*cancelFunc:*/ nativeModule()
-                .ubrn_ffi_payjoin_ffi_rust_future_cancel_u64,
-            /*completeFunc:*/ nativeModule()
-                .ubrn_ffi_payjoin_ffi_rust_future_complete_u64,
-            /*freeFunc:*/ nativeModule()
-                .ubrn_ffi_payjoin_ffi_rust_future_free_u64,
-            // Async returns always go through the JS-side converter: the
-            // FFI symbol returns the future handle (u64), and the user-level
-            // RustBuffer comes back via the shared `rust_future_complete_*`
-            // export. The bytes the runtime hands back must be deserialized
-            // here using the per-callable return-type converter.
-            /*liftFunc:*/ FfiConverterTypeMaybeInputsOwned.lift.bind(
-                FfiConverterTypeMaybeInputsOwned,
-            ),
-            /*liftString:*/ FfiConverterString.lift.bind(FfiConverterString),
-            /*asyncOpts:*/ asyncOpts_,
-            /*errorHandler:*/ FfiConverterTypeReceiverPersistedError.lift.bind(
-                FfiConverterTypeReceiverPersistedError,
-            ),
-        );
-    }
-
-    uniffiDestroy(): void {
-        const ptr = (this as any)[destructorGuardSymbol];
-        if (ptr !== undefined) {
-            const pointer =
-                uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.pointer(
-                    this,
-                );
-            uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.freePointer(
-                pointer,
-            );
-            uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.unbless(
-                ptr,
-            );
-            delete (this as any)[destructorGuardSymbol];
-        }
-    }
-
-    static instanceOf(obj_: any): obj_ is UncheckedOriginalPayloadTransition {
-        return uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.isConcreteType(
-            obj_,
-        );
-    }
-}
-
-const uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory: UniffiObjectFactory<UncheckedOriginalPayloadTransitionLike> =
-    (() => {
-        /// <reference lib="es2021" />
-        const registry =
-            typeof FinalizationRegistry !== "undefined"
-                ? new FinalizationRegistry<UniffiHandle>(
-                      (heldValue: UniffiHandle) => {
-                          uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory.freePointer(
-                              heldValue,
-                          );
-                      },
-                  )
-                : null;
-
-        return {
-            create(
-                pointer: UniffiHandle,
-            ): UncheckedOriginalPayloadTransitionLike {
-                const instance = Object.create(
-                    UncheckedOriginalPayloadTransition.prototype,
-                );
-                instance[pointerLiteralSymbol] = pointer;
-                instance[destructorGuardSymbol] = this.bless(pointer);
-                instance[uniffiTypeNameSymbol] =
-                    "UncheckedOriginalPayloadTransition";
-                return instance;
-            },
-
-            bless(p: UniffiHandle): UniffiGcObject {
-                const ptr = {
-                    p, // make sure this object doesn't get optimized away.
-                    markDestroyed: () => undefined,
-                };
-                if (registry) {
-                    registry.register(ptr, p, ptr);
-                }
-                return ptr;
-            },
-
-            unbless(ptr_: UniffiGcObject) {
-                if (registry) {
-                    registry.unregister(ptr_);
-                }
-            },
-
-            pointer(
-                obj_: UncheckedOriginalPayloadTransitionLike,
-            ): UniffiHandle {
-                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
-                    throw new UniffiInternalError.UnexpectedNullPointer();
-                }
-                return (obj_ as any)[pointerLiteralSymbol];
-            },
-
-            clonePointer(
-                obj_: UncheckedOriginalPayloadTransitionLike,
-            ): UniffiHandle {
-                const pointer = this.pointer(obj_);
-                return uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_uncheckedoriginalpayloadtransition(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            freePointer(pointer: UniffiHandle): void {
-                uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_uncheckedoriginalpayloadtransition(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            isConcreteType(
-                obj_: any,
-            ): obj_ is UncheckedOriginalPayloadTransitionLike {
-                return (
-                    obj_[destructorGuardSymbol] &&
-                    obj_[uniffiTypeNameSymbol] ===
-                        "UncheckedOriginalPayloadTransition"
-                );
-            },
-        };
-    })();
-const FfiConverterTypeUncheckedOriginalPayloadTransition =
-    new FfiConverterObject(
-        uniffiTypeUncheckedOriginalPayloadTransitionObjectFactory,
-    );
-
 export interface UncheckedOriginalPayloadLike {
+    /**
+     * Apply the result of an external broadcast suitability check, ensuring
+     * the Original PSBT can be used as a fallback if the payjoin does
+     * not complete.
+     *
+     * Use [`UncheckedOriginalPayload::extract_tx_to_check_broadcast_suitability`] to obtain
+     * the transaction that needs to be checked.
+     *
+     * Returns an [`UncheckedOriginalPayloadTransition`] that, once persisted,
+     * yields a [`MaybeInputsOwned`] to continue validation.
+     */
+    applyBroadcastSuitability(
+        minFeeRateSatPerKwu: bigint | undefined,
+        isBroadcastSuitable: boolean,
+    ) /*throws*/ : UncheckedOriginalPayloadTransitionLike;
     /**
      * Call this method if the only way to initiate a Payjoin with this receiver
      * requires manual intervention, as in most consumer wallets.
@@ -11871,6 +13484,14 @@ export interface UncheckedOriginalPayloadLike {
         minFeeRateSatPerKwu: bigint | undefined,
         canBroadcast: CanBroadcast,
     ) /*throws*/ : UncheckedOriginalPayloadTransitionLike;
+    /**
+     * Extract the transaction from the Original PSBT for external broadcast suitability checks.
+     *
+     * Submit the result of the check to [`UncheckedOriginalPayload::apply_broadcast_suitability`].
+     *
+     * Returns the consensus-encoded raw transaction bytes.
+     */
+    extractTxToCheckBroadcastSuitability(): ArrayBuffer;
 }
 /**
  * @deprecated Use `UncheckedOriginalPayloadLike` instead.
@@ -11890,6 +13511,49 @@ export class UncheckedOriginalPayload
         this[pointerLiteralSymbol] = pointer;
         this[destructorGuardSymbol] =
             uniffiTypeUncheckedOriginalPayloadObjectFactory.bless(pointer);
+    }
+
+    /**
+     * Apply the result of an external broadcast suitability check, ensuring
+     * the Original PSBT can be used as a fallback if the payjoin does
+     * not complete.
+     *
+     * Use [`UncheckedOriginalPayload::extract_tx_to_check_broadcast_suitability`] to obtain
+     * the transaction that needs to be checked.
+     *
+     * Returns an [`UncheckedOriginalPayloadTransition`] that, once persisted,
+     * yields a [`MaybeInputsOwned`] to continue validation.
+     */
+    applyBroadcastSuitability(
+        minFeeRateSatPerKwu: bigint | undefined,
+        isBroadcastSuitable: boolean,
+    ): UncheckedOriginalPayloadTransitionLike /*throws*/ {
+        return FfiConverterTypeUncheckedOriginalPayloadTransition.lift(
+            uniffiCaller.rustCallWithError(
+                /*liftError:*/ FfiConverterTypeFfiValidationError.lift.bind(
+                    FfiConverterTypeFfiValidationError,
+                ),
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_apply_broadcast_suitability(
+                        uniffiTypeUncheckedOriginalPayloadObjectFactory.clonePointer(
+                            this,
+                        ),
+                        FfiConverterOptionalUInt64.lower(
+                            minFeeRateSatPerKwu,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        FfiConverterBool.lower(
+                            isBroadcastSuitable,
+                            nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
     }
 
     /**
@@ -11969,6 +13633,37 @@ export class UncheckedOriginalPayload
                         FfiConverterTypeCanBroadcast.lower(
                             canBroadcast,
                             nativeModule().rustbuffer_alloc,
+                        ),
+                        callStatus,
+                    );
+                },
+                /*liftString:*/ FfiConverterString.lift.bind(
+                    FfiConverterString,
+                ),
+            ),
+        );
+    }
+
+    /**
+     * Extract the transaction from the Original PSBT for external broadcast suitability checks.
+     *
+     * Submit the result of the check to [`UncheckedOriginalPayload::apply_broadcast_suitability`].
+     *
+     * Returns the consensus-encoded raw transaction bytes.
+     */
+    extractTxToCheckBroadcastSuitability(): ArrayBuffer {
+        return ((__rb: Uint8Array) => {
+            try {
+                return FfiConverterArrayBuffer.lift(__rb);
+            } finally {
+                nativeModule().rustbuffer_free(__rb);
+            }
+        })(
+            uniffiCaller.rustCall(
+                /*caller:*/ (callStatus) => {
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability(
+                        uniffiTypeUncheckedOriginalPayloadObjectFactory.clonePointer(
+                            this,
                         ),
                         callStatus,
                     );
@@ -13838,22 +15533,22 @@ const FfiConverterTypeDecapsulationError = new FfiConverterObject(
  *
  * This error is unrecoverable.
  */
-export interface SenderBuilderErrorLike {}
+export interface BuildSenderErrorLike {}
 /**
- * @deprecated Use `SenderBuilderErrorLike` instead.
+ * @deprecated Use `BuildSenderErrorLike` instead.
  */
-export type SenderBuilderErrorInterface = SenderBuilderErrorLike;
+export type BuildSenderErrorInterface = BuildSenderErrorLike;
 
 /**
  * Error building a Sender from a SenderBuilder.
  *
  * This error is unrecoverable.
  */
-export class SenderBuilderError
+export class BuildSenderError
     extends UniffiAbstractObject
-    implements SenderBuilderErrorLike
+    implements BuildSenderErrorLike
 {
-    readonly [uniffiTypeNameSymbol] = "SenderBuilderError";
+    readonly [uniffiTypeNameSymbol] = "BuildSenderError";
     readonly [destructorGuardSymbol]: UniffiGcObject;
     readonly [pointerLiteralSymbol]: UniffiHandle;
     // No primary constructor declared for this class.
@@ -13861,7 +15556,7 @@ export class SenderBuilderError
         super();
         this[pointerLiteralSymbol] = pointer;
         this[destructorGuardSymbol] =
-            uniffiTypeSenderBuilderErrorObjectFactory.bless(pointer);
+            uniffiTypeBuildSenderErrorObjectFactory.bless(pointer);
     }
 
     toString(): string {
@@ -13874,8 +15569,8 @@ export class SenderBuilderError
         })(
             uniffiCaller.rustCall(
                 /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_display(
-                        uniffiTypeSenderBuilderErrorObjectFactory.clonePointer(
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_display(
+                        uniffiTypeBuildSenderErrorObjectFactory.clonePointer(
                             this,
                         ),
                         callStatus,
@@ -13898,8 +15593,8 @@ export class SenderBuilderError
         })(
             uniffiCaller.rustCall(
                 /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_debug(
-                        uniffiTypeSenderBuilderErrorObjectFactory.clonePointer(
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_debug(
+                        uniffiTypeBuildSenderErrorObjectFactory.clonePointer(
                             this,
                         ),
                         callStatus,
@@ -13912,15 +15607,15 @@ export class SenderBuilderError
         );
     }
 
-    equals(other: SenderBuilderError): boolean {
+    equals(other: BuildSenderError): boolean {
         return FfiConverterBool.lift(
             uniffiCaller.rustCall(
                 /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_eq(
-                        uniffiTypeSenderBuilderErrorObjectFactory.clonePointer(
+                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_eq(
+                        uniffiTypeBuildSenderErrorObjectFactory.clonePointer(
                             this,
                         ),
-                        FfiConverterTypeSenderBuilderError.lower(
+                        FfiConverterTypeBuildSenderError.lower(
                             other,
                             nativeModule().rustbuffer_alloc,
                         ),
@@ -13938,26 +15633,26 @@ export class SenderBuilderError
         const ptr = (this as any)[destructorGuardSymbol];
         if (ptr !== undefined) {
             const pointer =
-                uniffiTypeSenderBuilderErrorObjectFactory.pointer(this);
-            uniffiTypeSenderBuilderErrorObjectFactory.freePointer(pointer);
-            uniffiTypeSenderBuilderErrorObjectFactory.unbless(ptr);
+                uniffiTypeBuildSenderErrorObjectFactory.pointer(this);
+            uniffiTypeBuildSenderErrorObjectFactory.freePointer(pointer);
+            uniffiTypeBuildSenderErrorObjectFactory.unbless(ptr);
             delete (this as any)[destructorGuardSymbol];
         }
     }
 
-    static instanceOf(obj_: any): obj_ is SenderBuilderError {
-        return uniffiTypeSenderBuilderErrorObjectFactory.isConcreteType(obj_);
+    static instanceOf(obj_: any): obj_ is BuildSenderError {
+        return uniffiTypeBuildSenderErrorObjectFactory.isConcreteType(obj_);
     }
 }
 
-const uniffiTypeSenderBuilderErrorObjectFactory: UniffiObjectFactory<SenderBuilderErrorLike> =
+const uniffiTypeBuildSenderErrorObjectFactory: UniffiObjectFactory<BuildSenderErrorLike> =
     (() => {
         /// <reference lib="es2021" />
         const registry =
             typeof FinalizationRegistry !== "undefined"
                 ? new FinalizationRegistry<UniffiHandle>(
                       (heldValue: UniffiHandle) => {
-                          uniffiTypeSenderBuilderErrorObjectFactory.freePointer(
+                          uniffiTypeBuildSenderErrorObjectFactory.freePointer(
                               heldValue,
                           );
                       },
@@ -13965,11 +15660,11 @@ const uniffiTypeSenderBuilderErrorObjectFactory: UniffiObjectFactory<SenderBuild
                 : null;
 
         return {
-            create(pointer: UniffiHandle): SenderBuilderErrorLike {
-                const instance = Object.create(SenderBuilderError.prototype);
+            create(pointer: UniffiHandle): BuildSenderErrorLike {
+                const instance = Object.create(BuildSenderError.prototype);
                 instance[pointerLiteralSymbol] = pointer;
                 instance[destructorGuardSymbol] = this.bless(pointer);
-                instance[uniffiTypeNameSymbol] = "SenderBuilderError";
+                instance[uniffiTypeNameSymbol] = "BuildSenderError";
                 return instance;
             },
 
@@ -13990,18 +15685,18 @@ const uniffiTypeSenderBuilderErrorObjectFactory: UniffiObjectFactory<SenderBuild
                 }
             },
 
-            pointer(obj_: SenderBuilderErrorLike): UniffiHandle {
+            pointer(obj_: BuildSenderErrorLike): UniffiHandle {
                 if ((obj_ as any)[destructorGuardSymbol] === undefined) {
                     throw new UniffiInternalError.UnexpectedNullPointer();
                 }
                 return (obj_ as any)[pointerLiteralSymbol];
             },
 
-            clonePointer(obj_: SenderBuilderErrorLike): UniffiHandle {
+            clonePointer(obj_: BuildSenderErrorLike): UniffiHandle {
                 const pointer = this.pointer(obj_);
                 return uniffiCaller.rustCall(
                     /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_senderbuildererror(
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_buildsendererror(
                             pointer,
                             callStatus,
                         ),
@@ -14012,7 +15707,7 @@ const uniffiTypeSenderBuilderErrorObjectFactory: UniffiObjectFactory<SenderBuild
             freePointer(pointer: UniffiHandle): void {
                 uniffiCaller.rustCall(
                     /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_senderbuildererror(
+                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_buildsendererror(
                             pointer,
                             callStatus,
                         ),
@@ -14020,23 +15715,23 @@ const uniffiTypeSenderBuilderErrorObjectFactory: UniffiObjectFactory<SenderBuild
                 );
             },
 
-            isConcreteType(obj_: any): obj_ is SenderBuilderErrorLike {
+            isConcreteType(obj_: any): obj_ is BuildSenderErrorLike {
                 return (
                     obj_[destructorGuardSymbol] &&
-                    obj_[uniffiTypeNameSymbol] === "SenderBuilderError"
+                    obj_[uniffiTypeNameSymbol] === "BuildSenderError"
                 );
             },
         };
     })();
-const FfiConverterTypeSenderBuilderError = new FfiConverterObject(
-    uniffiTypeSenderBuilderErrorObjectFactory,
+const FfiConverterTypeBuildSenderError = new FfiConverterObject(
+    uniffiTypeBuildSenderErrorObjectFactory,
 );
 
 // Error type: SenderError
 export enum SenderError_Tags {
     Decapsulation = "Decapsulation",
     Response = "Response",
-    Build = "Build",
+    BuildSender = "BuildSender",
     Unexpected = "Unexpected",
 }
 /**
@@ -14120,38 +15815,38 @@ export const SenderError = (() => {
         }
     }
 
-    type Build__interface = {
-        tag: SenderError_Tags.Build;
-        inner: Readonly<[SenderBuilderErrorLike]>;
+    type BuildSender__interface = {
+        tag: SenderError_Tags.BuildSender;
+        inner: Readonly<[BuildSenderErrorLike]>;
     };
     /**
      * Sender Build error
      */
-    class Build_ extends UniffiError implements Build__interface {
+    class BuildSender_ extends UniffiError implements BuildSender__interface {
         /**
          * @private
          * This field is private and should not be used, use `tag` instead.
          */
         readonly [uniffiTypeNameSymbol] = "SenderError";
-        readonly tag = SenderError_Tags.Build;
-        readonly inner: Readonly<[SenderBuilderErrorLike]>;
-        constructor(v0: SenderBuilderErrorLike) {
-            super("SenderError", "Build");
+        readonly tag = SenderError_Tags.BuildSender;
+        readonly inner: Readonly<[BuildSenderErrorLike]>;
+        constructor(v0: BuildSenderErrorLike) {
+            super("SenderError", "BuildSender");
 
             this.inner = Object.freeze([v0]);
         }
-        static new(v0: SenderBuilderErrorLike): Build_ {
-            return new Build_(v0);
+        static new(v0: BuildSenderErrorLike): BuildSender_ {
+            return new BuildSender_(v0);
         }
 
-        static instanceOf(obj: any): obj is Build_ {
-            return obj.tag === SenderError_Tags.Build;
+        static instanceOf(obj: any): obj is BuildSender_ {
+            return obj.tag === SenderError_Tags.BuildSender;
         }
-        static hasInner(obj: any): obj is Build_ {
-            return Build_.instanceOf(obj);
+        static hasInner(obj: any): obj is BuildSender_ {
+            return BuildSender_.instanceOf(obj);
         }
 
-        static getInner(obj: Build_): Readonly<[SenderBuilderErrorLike]> {
+        static getInner(obj: BuildSender_): Readonly<[BuildSenderErrorLike]> {
             return obj.inner;
         }
     }
@@ -14193,7 +15888,7 @@ export const SenderError = (() => {
         instanceOf,
         Decapsulation: Decapsulation_,
         Response: Response_,
-        Build: Build_,
+        BuildSender: BuildSender_,
         Unexpected: Unexpected_,
     });
 })();
@@ -14201,7 +15896,11 @@ export const SenderError = (() => {
  * Error raised by a sender state machine transition
  */
 export type SenderError = InstanceType<
-    (typeof SenderError)["Decapsulation" | "Response" | "Build" | "Unexpected"]
+    (typeof SenderError)[
+        | "Decapsulation"
+        | "Response"
+        | "BuildSender"
+        | "Unexpected"]
 >;
 
 // FfiConverter for enum SenderError
@@ -14220,8 +15919,8 @@ const FfiConverterTypeSenderError = (() => {
                         FfiConverterTypeResponseError.read(from),
                     );
                 case 3:
-                    return new SenderError.Build(
-                        FfiConverterTypeSenderBuilderError.read(from),
+                    return new SenderError.BuildSender(
+                        FfiConverterTypeBuildSenderError.read(from),
                     );
                 case 4:
                     return new SenderError.Unexpected();
@@ -14243,10 +15942,10 @@ const FfiConverterTypeSenderError = (() => {
                     FfiConverterTypeResponseError.write(inner[0], into);
                     return;
                 }
-                case SenderError_Tags.Build: {
+                case SenderError_Tags.BuildSender: {
                     ordinalConverter.write(3, into);
                     const inner = value.inner;
-                    FfiConverterTypeSenderBuilderError.write(inner[0], into);
+                    FfiConverterTypeBuildSenderError.write(inner[0], into);
                     return;
                 }
                 case SenderError_Tags.Unexpected: {
@@ -14276,10 +15975,10 @@ const FfiConverterTypeSenderError = (() => {
                     );
                     return size;
                 }
-                case SenderError_Tags.Build: {
+                case SenderError_Tags.BuildSender: {
                     const inner = value.inner;
                     let size = ordinalConverter.allocationSize(3);
-                    size += FfiConverterTypeSenderBuilderError.allocationSize(
+                    size += FfiConverterTypeBuildSenderError.allocationSize(
                         inner[0],
                     );
                     return size;
@@ -17777,346 +19476,6 @@ const FfiConverterTypeReceiveSession = (() => {
     return new FFIConverter();
 })();
 
-/**
- * Error parsing a Bitcoin address.
- */
-export interface AddressParseErrorLike {}
-/**
- * @deprecated Use `AddressParseErrorLike` instead.
- */
-export type AddressParseErrorInterface = AddressParseErrorLike;
-
-/**
- * Error parsing a Bitcoin address.
- */
-export class AddressParseError
-    extends UniffiAbstractObject
-    implements AddressParseErrorLike
-{
-    readonly [uniffiTypeNameSymbol] = "AddressParseError";
-    readonly [destructorGuardSymbol]: UniffiGcObject;
-    readonly [pointerLiteralSymbol]: UniffiHandle;
-    // No primary constructor declared for this class.
-    private constructor(pointer: UniffiHandle) {
-        super();
-        this[pointerLiteralSymbol] = pointer;
-        this[destructorGuardSymbol] =
-            uniffiTypeAddressParseErrorObjectFactory.bless(pointer);
-    }
-
-    toString(): string {
-        return ((__rb: Uint8Array) => {
-            try {
-                return FfiConverterString.lift(__rb);
-            } finally {
-                nativeModule().rustbuffer_free(__rb);
-            }
-        })(
-            uniffiCaller.rustCall(
-                /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_addressparseerror_uniffi_trait_display(
-                        uniffiTypeAddressParseErrorObjectFactory.clonePointer(
-                            this,
-                        ),
-                        callStatus,
-                    );
-                },
-                /*liftString:*/ FfiConverterString.lift.bind(
-                    FfiConverterString,
-                ),
-            ),
-        );
-    }
-
-    toDebugString(): string {
-        return ((__rb: Uint8Array) => {
-            try {
-                return FfiConverterString.lift(__rb);
-            } finally {
-                nativeModule().rustbuffer_free(__rb);
-            }
-        })(
-            uniffiCaller.rustCall(
-                /*caller:*/ (callStatus) => {
-                    return nativeModule().ubrn_uniffi_payjoin_ffi_fn_method_addressparseerror_uniffi_trait_debug(
-                        uniffiTypeAddressParseErrorObjectFactory.clonePointer(
-                            this,
-                        ),
-                        callStatus,
-                    );
-                },
-                /*liftString:*/ FfiConverterString.lift.bind(
-                    FfiConverterString,
-                ),
-            ),
-        );
-    }
-
-    uniffiDestroy(): void {
-        const ptr = (this as any)[destructorGuardSymbol];
-        if (ptr !== undefined) {
-            const pointer =
-                uniffiTypeAddressParseErrorObjectFactory.pointer(this);
-            uniffiTypeAddressParseErrorObjectFactory.freePointer(pointer);
-            uniffiTypeAddressParseErrorObjectFactory.unbless(ptr);
-            delete (this as any)[destructorGuardSymbol];
-        }
-    }
-
-    static instanceOf(obj_: any): obj_ is AddressParseError {
-        return uniffiTypeAddressParseErrorObjectFactory.isConcreteType(obj_);
-    }
-}
-
-const uniffiTypeAddressParseErrorObjectFactory: UniffiObjectFactory<AddressParseErrorLike> =
-    (() => {
-        /// <reference lib="es2021" />
-        const registry =
-            typeof FinalizationRegistry !== "undefined"
-                ? new FinalizationRegistry<UniffiHandle>(
-                      (heldValue: UniffiHandle) => {
-                          uniffiTypeAddressParseErrorObjectFactory.freePointer(
-                              heldValue,
-                          );
-                      },
-                  )
-                : null;
-
-        return {
-            create(pointer: UniffiHandle): AddressParseErrorLike {
-                const instance = Object.create(AddressParseError.prototype);
-                instance[pointerLiteralSymbol] = pointer;
-                instance[destructorGuardSymbol] = this.bless(pointer);
-                instance[uniffiTypeNameSymbol] = "AddressParseError";
-                return instance;
-            },
-
-            bless(p: UniffiHandle): UniffiGcObject {
-                const ptr = {
-                    p, // make sure this object doesn't get optimized away.
-                    markDestroyed: () => undefined,
-                };
-                if (registry) {
-                    registry.register(ptr, p, ptr);
-                }
-                return ptr;
-            },
-
-            unbless(ptr_: UniffiGcObject) {
-                if (registry) {
-                    registry.unregister(ptr_);
-                }
-            },
-
-            pointer(obj_: AddressParseErrorLike): UniffiHandle {
-                if ((obj_ as any)[destructorGuardSymbol] === undefined) {
-                    throw new UniffiInternalError.UnexpectedNullPointer();
-                }
-                return (obj_ as any)[pointerLiteralSymbol];
-            },
-
-            clonePointer(obj_: AddressParseErrorLike): UniffiHandle {
-                const pointer = this.pointer(obj_);
-                return uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_clone_addressparseerror(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            freePointer(pointer: UniffiHandle): void {
-                uniffiCaller.rustCall(
-                    /*caller:*/ (callStatus) =>
-                        nativeModule().ubrn_uniffi_payjoin_ffi_fn_free_addressparseerror(
-                            pointer,
-                            callStatus,
-                        ),
-                    /*liftString:*/ FfiConverterString.lift,
-                );
-            },
-
-            isConcreteType(obj_: any): obj_ is AddressParseErrorLike {
-                return (
-                    obj_[destructorGuardSymbol] &&
-                    obj_[uniffiTypeNameSymbol] === "AddressParseError"
-                );
-            },
-        };
-    })();
-const FfiConverterTypeAddressParseError = new FfiConverterObject(
-    uniffiTypeAddressParseErrorObjectFactory,
-);
-
-// Error type: ReceiverBuilderError
-export enum ReceiverBuilderError_Tags {
-    InvalidAddress = "InvalidAddress",
-    IntoUrl = "IntoUrl",
-}
-/**
- * Error that may occur when building a receiver session.
- */
-export const ReceiverBuilderError = (() => {
-    type InvalidAddress__interface = {
-        tag: ReceiverBuilderError_Tags.InvalidAddress;
-        inner: Readonly<[AddressParseErrorLike]>;
-    };
-    /**
-     * The provided Bitcoin address is invalid.
-     */
-    class InvalidAddress_
-        extends UniffiError
-        implements InvalidAddress__interface
-    {
-        /**
-         * @private
-         * This field is private and should not be used, use `tag` instead.
-         */
-        readonly [uniffiTypeNameSymbol] = "ReceiverBuilderError";
-        readonly tag = ReceiverBuilderError_Tags.InvalidAddress;
-        readonly inner: Readonly<[AddressParseErrorLike]>;
-        constructor(v0: AddressParseErrorLike) {
-            super("ReceiverBuilderError", "InvalidAddress");
-
-            this.inner = Object.freeze([v0]);
-        }
-        static new(v0: AddressParseErrorLike): InvalidAddress_ {
-            return new InvalidAddress_(v0);
-        }
-
-        static instanceOf(obj: any): obj is InvalidAddress_ {
-            return obj.tag === ReceiverBuilderError_Tags.InvalidAddress;
-        }
-        static hasInner(obj: any): obj is InvalidAddress_ {
-            return InvalidAddress_.instanceOf(obj);
-        }
-
-        static getInner(
-            obj: InvalidAddress_,
-        ): Readonly<[AddressParseErrorLike]> {
-            return obj.inner;
-        }
-    }
-
-    type IntoUrl__interface = {
-        tag: ReceiverBuilderError_Tags.IntoUrl;
-        inner: Readonly<[IntoUrlErrorLike]>;
-    };
-    /**
-     * Error that may occur when converting a value into a URL.
-     */
-    class IntoUrl_ extends UniffiError implements IntoUrl__interface {
-        /**
-         * @private
-         * This field is private and should not be used, use `tag` instead.
-         */
-        readonly [uniffiTypeNameSymbol] = "ReceiverBuilderError";
-        readonly tag = ReceiverBuilderError_Tags.IntoUrl;
-        readonly inner: Readonly<[IntoUrlErrorLike]>;
-        constructor(v0: IntoUrlErrorLike) {
-            super("ReceiverBuilderError", "IntoUrl");
-
-            this.inner = Object.freeze([v0]);
-        }
-        static new(v0: IntoUrlErrorLike): IntoUrl_ {
-            return new IntoUrl_(v0);
-        }
-
-        static instanceOf(obj: any): obj is IntoUrl_ {
-            return obj.tag === ReceiverBuilderError_Tags.IntoUrl;
-        }
-        static hasInner(obj: any): obj is IntoUrl_ {
-            return IntoUrl_.instanceOf(obj);
-        }
-
-        static getInner(obj: IntoUrl_): Readonly<[IntoUrlErrorLike]> {
-            return obj.inner;
-        }
-    }
-
-    function instanceOf(obj: any): obj is ReceiverBuilderError {
-        return obj[uniffiTypeNameSymbol] === "ReceiverBuilderError";
-    }
-
-    return Object.freeze({
-        instanceOf,
-        InvalidAddress: InvalidAddress_,
-        IntoUrl: IntoUrl_,
-    });
-})();
-/**
- * Error that may occur when building a receiver session.
- */
-export type ReceiverBuilderError = InstanceType<
-    (typeof ReceiverBuilderError)["InvalidAddress" | "IntoUrl"]
->;
-
-// FfiConverter for enum ReceiverBuilderError
-const FfiConverterTypeReceiverBuilderError = (() => {
-    const ordinalConverter = FfiConverterInt32;
-    type TypeName = ReceiverBuilderError;
-    class FFIConverter extends AbstractFfiConverterByteArray<TypeName> {
-        read(from: RustBuffer): TypeName {
-            switch (ordinalConverter.read(from)) {
-                case 1:
-                    return new ReceiverBuilderError.InvalidAddress(
-                        FfiConverterTypeAddressParseError.read(from),
-                    );
-                case 2:
-                    return new ReceiverBuilderError.IntoUrl(
-                        FfiConverterTypeIntoUrlError.read(from),
-                    );
-                default:
-                    throw new UniffiInternalError.UnexpectedEnumCase();
-            }
-        }
-        write(value: TypeName, into: RustBuffer): void {
-            switch (value.tag) {
-                case ReceiverBuilderError_Tags.InvalidAddress: {
-                    ordinalConverter.write(1, into);
-                    const inner = value.inner;
-                    FfiConverterTypeAddressParseError.write(inner[0], into);
-                    return;
-                }
-                case ReceiverBuilderError_Tags.IntoUrl: {
-                    ordinalConverter.write(2, into);
-                    const inner = value.inner;
-                    FfiConverterTypeIntoUrlError.write(inner[0], into);
-                    return;
-                }
-                default:
-                    // Throwing from here means that ReceiverBuilderError_Tags hasn't matched an ordinal.
-                    throw new UniffiInternalError.UnexpectedEnumCase();
-            }
-        }
-        allocationSize(value: TypeName): number {
-            switch (value.tag) {
-                case ReceiverBuilderError_Tags.InvalidAddress: {
-                    const inner = value.inner;
-                    let size = ordinalConverter.allocationSize(1);
-                    size += FfiConverterTypeAddressParseError.allocationSize(
-                        inner[0],
-                    );
-                    return size;
-                }
-                case ReceiverBuilderError_Tags.IntoUrl: {
-                    const inner = value.inner;
-                    let size = ordinalConverter.allocationSize(2);
-                    size += FfiConverterTypeIntoUrlError.allocationSize(
-                        inner[0],
-                    );
-                    return size;
-                }
-                default:
-                    throw new UniffiInternalError.UnexpectedEnumCase();
-            }
-        }
-    }
-    return new FFIConverter();
-})();
-
 export interface WithReplyKeyTransitionLike {
     save(
         persister: JsonSenderSessionPersister,
@@ -18992,6 +20351,7 @@ export enum SenderInputError_Tags {
     Psbt = "Psbt",
     Build = "Build",
     FfiValidation = "FfiValidation",
+    UnsupportedPjVersion = "UnsupportedPjVersion",
 }
 /**
  * Raised when inputs provided to the sender are malformed or sender build fails.
@@ -19032,7 +20392,7 @@ export const SenderInputError = (() => {
 
     type Build__interface = {
         tag: SenderInputError_Tags.Build;
-        inner: Readonly<[SenderBuilderErrorLike]>;
+        inner: Readonly<[BuildSenderErrorLike]>;
     };
     class Build_ extends UniffiError implements Build__interface {
         /**
@@ -19041,13 +20401,13 @@ export const SenderInputError = (() => {
          */
         readonly [uniffiTypeNameSymbol] = "SenderInputError";
         readonly tag = SenderInputError_Tags.Build;
-        readonly inner: Readonly<[SenderBuilderErrorLike]>;
-        constructor(v0: SenderBuilderErrorLike) {
+        readonly inner: Readonly<[BuildSenderErrorLike]>;
+        constructor(v0: BuildSenderErrorLike) {
             super("SenderInputError", "Build");
 
             this.inner = Object.freeze([v0]);
         }
-        static new(v0: SenderBuilderErrorLike): Build_ {
+        static new(v0: BuildSenderErrorLike): Build_ {
             return new Build_(v0);
         }
 
@@ -19058,7 +20418,7 @@ export const SenderInputError = (() => {
             return Build_.instanceOf(obj);
         }
 
-        static getInner(obj: Build_): Readonly<[SenderBuilderErrorLike]> {
+        static getInner(obj: Build_): Readonly<[BuildSenderErrorLike]> {
             return obj.inner;
         }
     }
@@ -19099,6 +20459,39 @@ export const SenderInputError = (() => {
         }
     }
 
+    type UnsupportedPjVersion__interface = {
+        tag: SenderInputError_Tags.UnsupportedPjVersion;
+    };
+    /**
+     * The URI's `pj` endpoint is BIP 78 (v1) only. This sender speaks BIP 77
+     * (v2) and cannot pay a v1 receiver, so fall back to a plain transaction.
+     */
+    class UnsupportedPjVersion_
+        extends UniffiError
+        implements UnsupportedPjVersion__interface
+    {
+        /**
+         * @private
+         * This field is private and should not be used, use `tag` instead.
+         */
+        readonly [uniffiTypeNameSymbol] = "SenderInputError";
+        readonly tag = SenderInputError_Tags.UnsupportedPjVersion;
+        constructor() {
+            super("SenderInputError", "UnsupportedPjVersion");
+        }
+
+        static new(): UnsupportedPjVersion_ {
+            return new UnsupportedPjVersion_();
+        }
+
+        static instanceOf(obj: any): obj is UnsupportedPjVersion_ {
+            return obj.tag === SenderInputError_Tags.UnsupportedPjVersion;
+        }
+        static hasInner(obj: any): obj is UnsupportedPjVersion_ {
+            return false;
+        }
+    }
+
     function instanceOf(obj: any): obj is SenderInputError {
         return obj[uniffiTypeNameSymbol] === "SenderInputError";
     }
@@ -19108,13 +20501,18 @@ export const SenderInputError = (() => {
         Psbt: Psbt_,
         Build: Build_,
         FfiValidation: FfiValidation_,
+        UnsupportedPjVersion: UnsupportedPjVersion_,
     });
 })();
 /**
  * Raised when inputs provided to the sender are malformed or sender build fails.
  */
 export type SenderInputError = InstanceType<
-    (typeof SenderInputError)["Psbt" | "Build" | "FfiValidation"]
+    (typeof SenderInputError)[
+        | "Psbt"
+        | "Build"
+        | "FfiValidation"
+        | "UnsupportedPjVersion"]
 >;
 
 // FfiConverter for enum SenderInputError
@@ -19130,12 +20528,14 @@ const FfiConverterTypeSenderInputError = (() => {
                     );
                 case 2:
                     return new SenderInputError.Build(
-                        FfiConverterTypeSenderBuilderError.read(from),
+                        FfiConverterTypeBuildSenderError.read(from),
                     );
                 case 3:
                     return new SenderInputError.FfiValidation(
                         FfiConverterTypeFfiValidationError.read(from),
                     );
+                case 4:
+                    return new SenderInputError.UnsupportedPjVersion();
                 default:
                     throw new UniffiInternalError.UnexpectedEnumCase();
             }
@@ -19151,13 +20551,17 @@ const FfiConverterTypeSenderInputError = (() => {
                 case SenderInputError_Tags.Build: {
                     ordinalConverter.write(2, into);
                     const inner = value.inner;
-                    FfiConverterTypeSenderBuilderError.write(inner[0], into);
+                    FfiConverterTypeBuildSenderError.write(inner[0], into);
                     return;
                 }
                 case SenderInputError_Tags.FfiValidation: {
                     ordinalConverter.write(3, into);
                     const inner = value.inner;
                     FfiConverterTypeFfiValidationError.write(inner[0], into);
+                    return;
+                }
+                case SenderInputError_Tags.UnsupportedPjVersion: {
+                    ordinalConverter.write(4, into);
                     return;
                 }
                 default:
@@ -19178,7 +20582,7 @@ const FfiConverterTypeSenderInputError = (() => {
                 case SenderInputError_Tags.Build: {
                     const inner = value.inner;
                     let size = ordinalConverter.allocationSize(2);
-                    size += FfiConverterTypeSenderBuilderError.allocationSize(
+                    size += FfiConverterTypeBuildSenderError.allocationSize(
                         inner[0],
                     );
                     return size;
@@ -19190,6 +20594,9 @@ const FfiConverterTypeSenderInputError = (() => {
                         inner[0],
                     );
                     return size;
+                }
+                case SenderInputError_Tags.UnsupportedPjVersion: {
+                    return ordinalConverter.allocationSize(4);
                 }
                 default:
                     throw new UniffiInternalError.UnexpectedEnumCase();
@@ -20657,8 +22064,8 @@ export class ReceiverBuilder
     ) /*throws*/ {
         super();
         const pointer = uniffiCaller.rustCallWithError(
-            /*liftError:*/ FfiConverterTypeReceiverBuilderError.lift.bind(
-                FfiConverterTypeReceiverBuilderError,
+            /*liftError:*/ FfiConverterTypeBuildReceiverError.lift.bind(
+                FfiConverterTypeBuildReceiverError,
             ),
             /*caller:*/ (callStatus) => {
                 return nativeModule().ubrn_uniffi_payjoin_ffi_fn_constructor_receiverbuilder_new(
@@ -22016,6 +23423,9 @@ export class SenderBuilder
      *
      * Call [`SenderBuilder::build_recommended()`] or other `build` methods
      * to create a [`WithReplyKey`]
+     *
+     * Only BIP 77 (v2) payjoin URIs are supported. A URI whose `pj` endpoint is
+     * BIP 78 (v1) only fails with [`SenderInputError::UnsupportedPjVersion`].
      */
     constructor(psbt: string, uri: PjUriLike) /*throws*/ {
         super();
@@ -24132,15 +25542,27 @@ const FfiConverterSequenceBytes = new FfiConverterArray(
     FfiConverterArrayBuffer,
 );
 
+// FfiConverter for bigint | undefined
+const FfiConverterOptionalUInt64 = new FfiConverterOptional(FfiConverterUInt64);
+
 // FfiConverter for Array<string>
 const FfiConverterSequenceString = new FfiConverterArray(FfiConverterString);
+
+// FfiConverter for Array<MarkedInputOwnedChecklistItemLike>
+const FfiConverterSequenceTypeMarkedInputOwnedChecklistItem =
+    new FfiConverterArray(FfiConverterTypeMarkedInputOwnedChecklistItem);
+
+// FfiConverter for Array<MarkedInputSeenChecklistItemLike>
+const FfiConverterSequenceTypeMarkedInputSeenChecklistItem =
+    new FfiConverterArray(FfiConverterTypeMarkedInputSeenChecklistItem);
+
+// FfiConverter for Array<MarkedOutputOwnedChecklistItemLike>
+const FfiConverterSequenceTypeMarkedOutputOwnedChecklistItem =
+    new FfiConverterArray(FfiConverterTypeMarkedOutputOwnedChecklistItem);
 
 // FfiConverter for ReceiverPendingFallbackLike | undefined
 const FfiConverterOptionalTypeReceiverPendingFallback =
     new FfiConverterOptional(FfiConverterTypeReceiverPendingFallback);
-
-// FfiConverter for bigint | undefined
-const FfiConverterOptionalUInt64 = new FfiConverterOptional(FfiConverterUInt64);
 
 // FfiConverter for Array<InputPairLike>
 const FfiConverterSequenceTypeInputPair = new FfiConverterArray(
@@ -24150,6 +25572,21 @@ const FfiConverterSequenceTypeInputPair = new FfiConverterArray(
 // FfiConverter for Array<TxOut>
 const FfiConverterSequenceTypeTxOut = new FfiConverterArray(
     FfiConverterTypeTxOut,
+);
+
+// FfiConverter for Array<OutputOwnedChecklistItemLike>
+const FfiConverterSequenceTypeOutputOwnedChecklistItem = new FfiConverterArray(
+    FfiConverterTypeOutputOwnedChecklistItem,
+);
+
+// FfiConverter for Array<InputSeenChecklistItemLike>
+const FfiConverterSequenceTypeInputSeenChecklistItem = new FfiConverterArray(
+    FfiConverterTypeInputSeenChecklistItem,
+);
+
+// FfiConverter for Array<InputOwnedChecklistItemLike>
+const FfiConverterSequenceTypeInputOwnedChecklistItem = new FfiConverterArray(
+    FfiConverterTypeInputOwnedChecklistItem,
 );
 
 // FfiConverter for string | undefined
@@ -24402,6 +25839,22 @@ function uniffiEnsureInitialized() {
         );
     }
     if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_mark() !==
+        26449
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_mark",
+        );
+    }
+    if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_value() !==
+        46399
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_value",
+        );
+    }
+    if (
         nativeModule().ubrn_uniffi_payjoin_ffi_checksum_constructor_inputpair_new() !==
         8855
     ) {
@@ -24415,6 +25868,22 @@ function uniffiEnsureInitialized() {
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_ffi_checksum_method_inputpair_outpoint",
+        );
+    }
+    if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_mark() !==
+        28434
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_mark",
+        );
+    }
+    if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_value() !==
+        13994
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_value",
         );
     }
     if (
@@ -24538,6 +26007,14 @@ function uniffiEnsureInitialized() {
         );
     }
     if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_apply_inputs_owned_checklist() !==
+        54795
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_maybeinputsowned_apply_inputs_owned_checklist",
+        );
+    }
+    if (
         nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_cancel() !==
         58055
     ) {
@@ -24559,6 +26036,14 @@ function uniffiEnsureInitialized() {
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_ffi_checksum_method_maybeinputsowned_extract_tx_to_schedule_broadcast",
+        );
+    }
+    if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_inputs_owned_checklist() !==
+        43607
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_maybeinputsowned_inputs_owned_checklist",
         );
     }
     if (
@@ -24586,6 +26071,14 @@ function uniffiEnsureInitialized() {
         );
     }
     if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_apply_inputs_seen_checklist() !==
+        58257
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_maybeinputsseen_apply_inputs_seen_checklist",
+        );
+    }
+    if (
         nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_cancel() !==
         63747
     ) {
@@ -24599,6 +26092,14 @@ function uniffiEnsureInitialized() {
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_ffi_checksum_method_maybeinputsseen_check_no_inputs_seen_before",
+        );
+    }
+    if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_inputs_seen_checklist() !==
+        1492
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_maybeinputsseen_inputs_seen_checklist",
         );
     }
     if (
@@ -24674,6 +26175,30 @@ function uniffiEnsureInitialized() {
         );
     }
     if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_mark() !==
+        50509
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_mark",
+        );
+    }
+    if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_value() !==
+        42954
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_value",
+        );
+    }
+    if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_apply_outputs_owned_checklist() !==
+        262
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_outputsunknown_apply_outputs_owned_checklist",
+        );
+    }
+    if (
         nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_cancel() !==
         23477
     ) {
@@ -24687,6 +26212,14 @@ function uniffiEnsureInitialized() {
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_ffi_checksum_method_outputsunknown_identify_receiver_outputs",
+        );
+    }
+    if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_outputs_owned_checklist() !==
+        52631
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_outputsunknown_outputs_owned_checklist",
         );
     }
     if (
@@ -24898,6 +26431,14 @@ function uniffiEnsureInitialized() {
         );
     }
     if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_signed_proposal() !==
+        29701
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_signed_proposal",
+        );
+    }
+    if (
         nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_proposal_txid_is_stable() !==
         42703
     ) {
@@ -24907,7 +26448,7 @@ function uniffiEnsureInitialized() {
     }
     if (
         nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_psbt_to_sign() !==
-        27438
+        34539
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_ffi_checksum_method_provisionalproposal_psbt_to_sign",
@@ -24931,7 +26472,7 @@ function uniffiEnsureInitialized() {
     }
     if (
         nativeModule().ubrn_uniffi_payjoin_ffi_checksum_constructor_receiverbuilder_new() !==
-        10505
+        63630
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_ffi_checksum_constructor_receiverbuilder_new",
@@ -25059,7 +26600,7 @@ function uniffiEnsureInitialized() {
     }
     if (
         nativeModule().ubrn_uniffi_payjoin_ffi_checksum_constructor_senderbuilder_new() !==
-        52547
+        34780
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_ffi_checksum_constructor_senderbuilder_new",
@@ -25226,6 +26767,14 @@ function uniffiEnsureInitialized() {
         );
     }
     if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_apply_broadcast_suitability() !==
+        19608
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_apply_broadcast_suitability",
+        );
+    }
+    if (
         nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_assume_interactive_receiver() !==
         52130
     ) {
@@ -25247,6 +26796,14 @@ function uniffiEnsureInitialized() {
     ) {
         throw new UniffiInternalError.ApiChecksumMismatch(
             "uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_check_broadcast_suitability",
+        );
+    }
+    if (
+        nativeModule().ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability() !==
+        45688
+    ) {
+        throw new UniffiInternalError.ApiChecksumMismatch(
+            "uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability",
         );
     }
     if (
@@ -25564,11 +27121,11 @@ function uniffiEnsureInitialized() {
 
     uniffiCallbackInterfaceJsonReceiverSessionPersister.register();
     uniffiCallbackInterfaceJsonReceiverSessionPersisterAsync.register();
-    uniffiCallbackInterfaceIsInputOwned.register();
-    uniffiCallbackInterfaceIsOutputKnown.register();
-    uniffiCallbackInterfaceIsScriptOwned.register();
     uniffiCallbackInterfaceProcessPsbt.register();
     uniffiCallbackInterfaceTransactionFinder.register();
+    uniffiCallbackInterfaceIsScriptOwned.register();
+    uniffiCallbackInterfaceIsOutputKnown.register();
+    uniffiCallbackInterfaceIsInputOwned.register();
     uniffiCallbackInterfaceCanBroadcast.register();
     uniffiCallbackInterfaceJsonSenderSessionPersister.register();
     uniffiCallbackInterfaceJsonSenderSessionPersisterAsync.register();
@@ -25580,6 +27137,8 @@ export default Object.freeze({
         FfiConverterTypeAddressParseError,
         FfiConverterTypeAssumeInteractiveTransition,
         FfiConverterTypeBroadcastedTransition,
+        FfiConverterTypeBuildReceiverError,
+        FfiConverterTypeBuildSenderError,
         FfiConverterTypeCanBroadcast,
         FfiConverterTypeCancelTransition,
         FfiConverterTypeClientResponse,
@@ -25596,6 +27155,7 @@ export default Object.freeze({
         FfiConverterTypeHasReplyableError,
         FfiConverterTypeHasReplyableErrorTransition,
         FfiConverterTypeImplementationError,
+        FfiConverterTypeImplementationError__as_error,
         FfiConverterTypeInitialReceiveTransition,
         FfiConverterTypeInitialSendTransition,
         FfiConverterTypeInitialized,
@@ -25603,8 +27163,10 @@ export default Object.freeze({
         FfiConverterTypeInitializedTransitionOutcome,
         FfiConverterTypeInputContributionError,
         FfiConverterTypeInputContributionError__as_error,
+        FfiConverterTypeInputOwnedChecklistItem,
         FfiConverterTypeInputPair,
         FfiConverterTypeInputPairError,
+        FfiConverterTypeInputSeenChecklistItem,
         FfiConverterTypeIntoUrlError,
         FfiConverterTypeIsInputOwned,
         FfiConverterTypeIsOutputKnown,
@@ -25614,6 +27176,9 @@ export default Object.freeze({
         FfiConverterTypeJsonReply,
         FfiConverterTypeJsonSenderSessionPersister,
         FfiConverterTypeJsonSenderSessionPersisterAsync,
+        FfiConverterTypeMarkedInputOwnedChecklistItem,
+        FfiConverterTypeMarkedInputSeenChecklistItem,
+        FfiConverterTypeMarkedOutputOwnedChecklistItem,
         FfiConverterTypeMaybeInputsOwned,
         FfiConverterTypeMaybeInputsOwnedTransition,
         FfiConverterTypeMaybeInputsSeen,
@@ -25624,6 +27189,7 @@ export default Object.freeze({
         FfiConverterTypeOhttpError__as_error,
         FfiConverterTypeOhttpKeys,
         FfiConverterTypeOutPoint,
+        FfiConverterTypeOutputOwnedChecklistItem,
         FfiConverterTypeOutputSubstitution,
         FfiConverterTypeOutputSubstitutionError,
         FfiConverterTypeOutputSubstitutionProtocolError,
@@ -25648,7 +27214,6 @@ export default Object.freeze({
         FfiConverterTypePsbtParseError,
         FfiConverterTypeReceiveSession,
         FfiConverterTypeReceiverBuilder,
-        FfiConverterTypeReceiverBuilderError,
         FfiConverterTypeReceiverCreateRequestError,
         FfiConverterTypeReceiverCreateRequestError__as_error,
         FfiConverterTypeReceiverError,
@@ -25668,7 +27233,6 @@ export default Object.freeze({
         FfiConverterTypeResponseError,
         FfiConverterTypeSendSession,
         FfiConverterTypeSenderBuilder,
-        FfiConverterTypeSenderBuilderError,
         FfiConverterTypeSenderCancelTransition,
         FfiConverterTypeSenderError,
         FfiConverterTypeSenderInputError,

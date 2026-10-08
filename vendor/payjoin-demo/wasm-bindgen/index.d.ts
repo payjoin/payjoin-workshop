@@ -328,7 +328,15 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_initialsendtransition_sa
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_initialsendtransition_save_async(): number;
 
+export function ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_mark(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_value(): number;
+
 export function ubrn_uniffi_payjoin_ffi_checksum_method_inputpair_outpoint(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_mark(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_value(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_isinputowned_callback(): number;
 
@@ -360,11 +368,15 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_jsonsendersessionpersist
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_jsonsendersessionpersisterasync_save(): number;
 
+export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_apply_inputs_owned_checklist(): number;
+
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_cancel(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_check_inputs_not_owned(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_extract_tx_to_schedule_broadcast(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_inputs_owned_checklist(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_proposal_txid_is_stable(): number;
 
@@ -372,9 +384,13 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsownedtransiti
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsownedtransition_save_async(): number;
 
+export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_apply_inputs_seen_checklist(): number;
+
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_cancel(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_check_no_inputs_seen_before(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_inputs_seen_checklist(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_proposal_txid_is_stable(): number;
 
@@ -392,9 +408,17 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_monitortransition_save()
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_monitortransition_save_async(): number;
 
+export function ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_mark(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_value(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_apply_outputs_owned_checklist(): number;
+
 export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_cancel(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_identify_receiver_outputs(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_outputs_owned_checklist(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_proposal_txid_is_stable(): number;
 
@@ -447,6 +471,8 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_processpsbt_callback(): 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_cancel(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_proposal(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_signed_proposal(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_proposal_txid_is_stable(): number;
 
@@ -522,11 +548,15 @@ export function ubrn_uniffi_payjoin_ffi_checksum_method_sendersessionoutcome_suc
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_transactionfinder_callback(): number;
 
+export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_apply_broadcast_suitability(): number;
+
 export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_assume_interactive_receiver(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_cancel(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_check_broadcast_suitability(): number;
+
+export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability(): number;
 
 export function ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayloadtransition_save(): number;
 
@@ -608,6 +638,8 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_assumeinteractivetransition(han
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_broadcastedtransition(handle: bigint, f_status_: RustCallStatus): bigint;
 
+export function ubrn_uniffi_payjoin_ffi_fn_clone_buildsendererror(handle: bigint, f_status_: RustCallStatus): bigint;
+
 export function ubrn_uniffi_payjoin_ffi_fn_clone_canbroadcast(handle: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_canceltransition(handle: bigint, f_status_: RustCallStatus): bigint;
@@ -638,7 +670,11 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_initialsendtransition(handle: b
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_inputcontributionerror(handle: bigint, f_status_: RustCallStatus): bigint;
 
+export function ubrn_uniffi_payjoin_ffi_fn_clone_inputownedchecklistitem(handle: bigint, f_status_: RustCallStatus): bigint;
+
 export function ubrn_uniffi_payjoin_ffi_fn_clone_inputpair(handle: bigint, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_clone_inputseenchecklistitem(handle: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_intourlerror(handle: bigint, f_status_: RustCallStatus): bigint;
 
@@ -658,6 +694,12 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_jsonsendersessionpersister(hand
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_jsonsendersessionpersisterasync(handle: bigint, f_status_: RustCallStatus): bigint;
 
+export function ubrn_uniffi_payjoin_ffi_fn_clone_markedinputownedchecklistitem(handle: bigint, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_clone_markedinputseenchecklistitem(handle: bigint, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_clone_markedoutputownedchecklistitem(handle: bigint, f_status_: RustCallStatus): bigint;
+
 export function ubrn_uniffi_payjoin_ffi_fn_clone_maybeinputsowned(handle: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_maybeinputsownedtransition(handle: bigint, f_status_: RustCallStatus): bigint;
@@ -673,6 +715,8 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_monitortransition(handle: bigin
 export function ubrn_uniffi_payjoin_ffi_fn_clone_ohttperror(handle: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_ohttpkeys(handle: bigint, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_clone_outputownedchecklistitem(handle: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_outputsubstitutionprotocolerror(handle: bigint, f_status_: RustCallStatus): bigint;
 
@@ -725,8 +769,6 @@ export function ubrn_uniffi_payjoin_ffi_fn_clone_receiversessionstatus(handle: b
 export function ubrn_uniffi_payjoin_ffi_fn_clone_replayresult(handle: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_senderbuilder(handle: bigint, f_status_: RustCallStatus): bigint;
-
-export function ubrn_uniffi_payjoin_ffi_fn_clone_senderbuildererror(handle: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_clone_sendercanceltransition(handle: bigint, f_status_: RustCallStatus): bigint;
 
@@ -806,6 +848,8 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_assumeinteractivetransition(hand
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_broadcastedtransition(handle: bigint, f_status_: RustCallStatus): void;
 
+export function ubrn_uniffi_payjoin_ffi_fn_free_buildsendererror(handle: bigint, f_status_: RustCallStatus): void;
+
 export function ubrn_uniffi_payjoin_ffi_fn_free_canbroadcast(handle: bigint, f_status_: RustCallStatus): void;
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_canceltransition(handle: bigint, f_status_: RustCallStatus): void;
@@ -836,7 +880,11 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_initialsendtransition(handle: bi
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_inputcontributionerror(handle: bigint, f_status_: RustCallStatus): void;
 
+export function ubrn_uniffi_payjoin_ffi_fn_free_inputownedchecklistitem(handle: bigint, f_status_: RustCallStatus): void;
+
 export function ubrn_uniffi_payjoin_ffi_fn_free_inputpair(handle: bigint, f_status_: RustCallStatus): void;
+
+export function ubrn_uniffi_payjoin_ffi_fn_free_inputseenchecklistitem(handle: bigint, f_status_: RustCallStatus): void;
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_intourlerror(handle: bigint, f_status_: RustCallStatus): void;
 
@@ -856,6 +904,12 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_jsonsendersessionpersister(handl
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_jsonsendersessionpersisterasync(handle: bigint, f_status_: RustCallStatus): void;
 
+export function ubrn_uniffi_payjoin_ffi_fn_free_markedinputownedchecklistitem(handle: bigint, f_status_: RustCallStatus): void;
+
+export function ubrn_uniffi_payjoin_ffi_fn_free_markedinputseenchecklistitem(handle: bigint, f_status_: RustCallStatus): void;
+
+export function ubrn_uniffi_payjoin_ffi_fn_free_markedoutputownedchecklistitem(handle: bigint, f_status_: RustCallStatus): void;
+
 export function ubrn_uniffi_payjoin_ffi_fn_free_maybeinputsowned(handle: bigint, f_status_: RustCallStatus): void;
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_maybeinputsownedtransition(handle: bigint, f_status_: RustCallStatus): void;
@@ -871,6 +925,8 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_monitortransition(handle: bigint
 export function ubrn_uniffi_payjoin_ffi_fn_free_ohttperror(handle: bigint, f_status_: RustCallStatus): void;
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_ohttpkeys(handle: bigint, f_status_: RustCallStatus): void;
+
+export function ubrn_uniffi_payjoin_ffi_fn_free_outputownedchecklistitem(handle: bigint, f_status_: RustCallStatus): void;
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_outputsubstitutionprotocolerror(handle: bigint, f_status_: RustCallStatus): void;
 
@@ -923,8 +979,6 @@ export function ubrn_uniffi_payjoin_ffi_fn_free_receiversessionstatus(handle: bi
 export function ubrn_uniffi_payjoin_ffi_fn_free_replayresult(handle: bigint, f_status_: RustCallStatus): void;
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_senderbuilder(handle: bigint, f_status_: RustCallStatus): void;
-
-export function ubrn_uniffi_payjoin_ffi_fn_free_senderbuildererror(handle: bigint, f_status_: RustCallStatus): void;
 
 export function ubrn_uniffi_payjoin_ffi_fn_free_sendercanceltransition(handle: bigint, f_status_: RustCallStatus): void;
 
@@ -1022,6 +1076,14 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_broadcastedtransition_save(ptr
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_broadcastedtransition_save_async(ptr: bigint, persister: bigint): bigint;
 
+export function ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_debug(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_display(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_eq(ptr: bigint, other: bigint, f_status_: RustCallStatus): number;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_ne(ptr: bigint, other: bigint, f_status_: RustCallStatus): number;
+
 export function ubrn_uniffi_payjoin_ffi_fn_method_canbroadcast_callback(ptr: bigint, tx: Uint8Array, f_status_: RustCallStatus): number;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_canceltransition_save(ptr: bigint, persister: bigint, f_status_: RustCallStatus): Uint8Array;
@@ -1084,7 +1146,15 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_inputcontributionerror_uniffi_
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_inputcontributionerror_uniffi_trait_display(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
+export function ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_mark(ptr: bigint, result: number, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_value(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
+
 export function ubrn_uniffi_payjoin_ffi_fn_method_inputpair_outpoint(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_mark(ptr: bigint, result: number, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_value(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_intourlerror_uniffi_trait_debug(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
@@ -1126,11 +1196,15 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_jsonsendersessionpersisterasyn
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_jsonsendersessionpersisterasync_save(ptr: bigint, event: Uint8Array): bigint;
 
+export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_apply_inputs_owned_checklist(ptr: bigint, marked_checklist: Uint8Array, f_status_: RustCallStatus): bigint;
+
 export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_cancel(ptr: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_check_inputs_not_owned(ptr: bigint, is_owned: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_extract_tx_to_schedule_broadcast(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_inputs_owned_checklist(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_proposal_txid_is_stable(ptr: bigint, f_status_: RustCallStatus): number;
 
@@ -1138,9 +1212,13 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsownedtransition_sav
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsownedtransition_save_async(ptr: bigint, persister: bigint): bigint;
 
+export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_apply_inputs_seen_checklist(ptr: bigint, marked_checklist: Uint8Array, f_status_: RustCallStatus): bigint;
+
 export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_cancel(ptr: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_check_no_inputs_seen_before(ptr: bigint, is_known: bigint, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_inputs_seen_checklist(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_proposal_txid_is_stable(ptr: bigint, f_status_: RustCallStatus): number;
 
@@ -1162,13 +1240,21 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_ohttperror_uniffi_trait_debug(
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_ohttperror_uniffi_trait_display(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
+export function ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_mark(ptr: bigint, result: number, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_value(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
+
 export function ubrn_uniffi_payjoin_ffi_fn_method_outputsubstitutionprotocolerror_uniffi_trait_debug(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_outputsubstitutionprotocolerror_uniffi_trait_display(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
+export function ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_apply_outputs_owned_checklist(ptr: bigint, marked_checklist: Uint8Array, f_status_: RustCallStatus): bigint;
+
 export function ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_cancel(ptr: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_identify_receiver_outputs(ptr: bigint, is_receiver_output: bigint, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_outputs_owned_checklist(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_proposal_txid_is_stable(ptr: bigint, f_status_: RustCallStatus): number;
 
@@ -1234,6 +1320,8 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_cancel(ptr
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_proposal(ptr: bigint, process_psbt: bigint, f_status_: RustCallStatus): bigint;
 
+export function ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_signed_proposal(ptr: bigint, signed_psbt: Uint8Array, f_status_: RustCallStatus): bigint;
+
 export function ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_proposal_txid_is_stable(ptr: bigint, f_status_: RustCallStatus): number;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_psbt_to_sign(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
@@ -1290,14 +1378,6 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuilder_build_recommende
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuilder_build_with_additional_fee(ptr: bigint, max_fee_contribution_sats: bigint, change_index: Uint8Array, min_fee_rate_sat_per_kwu: bigint, clamp_fee_contribution: number, f_status_: RustCallStatus): bigint;
 
-export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_debug(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
-
-export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_display(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
-
-export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_eq(ptr: bigint, other: bigint, f_status_: RustCallStatus): number;
-
-export function ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_ne(ptr: bigint, other: bigint, f_status_: RustCallStatus): number;
-
 export function ubrn_uniffi_payjoin_ffi_fn_method_sendercanceltransition_save(ptr: bigint, persister: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_sendercanceltransition_save_async(ptr: bigint, persister: bigint): bigint;
@@ -1340,11 +1420,15 @@ export function ubrn_uniffi_payjoin_ffi_fn_method_sessionerror_uniffi_trait_disp
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_transactionfinder_callback(ptr: bigint, txid: Uint8Array, f_status_: RustCallStatus): Uint8Array;
 
+export function ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_apply_broadcast_suitability(ptr: bigint, min_fee_rate_sat_per_kwu: Uint8Array, is_broadcast_suitable: number, f_status_: RustCallStatus): bigint;
+
 export function ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_assume_interactive_receiver(ptr: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_cancel(ptr: bigint, f_status_: RustCallStatus): bigint;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_check_broadcast_suitability(ptr: bigint, min_fee_rate_sat_per_kwu: Uint8Array, can_broadcast: bigint, f_status_: RustCallStatus): bigint;
+
+export function ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 
 export function ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayloadtransition_save(ptr: bigint, persister: bigint, f_status_: RustCallStatus): bigint;
 
@@ -1544,6 +1628,14 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_fn_method_initializedtransition_save: (a: number, b: bigint, c: bigint, d: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_initializedtransition_save_async: (a: bigint, b: bigint) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_initializedtransition_save_async: (a: bigint, b: bigint) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_clone_inputownedchecklistitem: (a: bigint, b: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_clone_inputownedchecklistitem: (a: bigint, b: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_free_inputownedchecklistitem: (a: bigint, b: number) => void;
+    readonly uniffi_payjoin_ffi_fn_free_inputownedchecklistitem: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_mark: (a: bigint, b: number, c: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_mark: (a: bigint, b: number, c: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_value: (a: bigint, b: number) => [number, number];
+    readonly uniffi_payjoin_ffi_fn_method_inputownedchecklistitem_value: (a: number, b: bigint, c: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_inputpair: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_clone_inputpair: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_free_inputpair: (a: bigint, b: number) => void;
@@ -1552,6 +1644,14 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_fn_constructor_inputpair_new: (a: bigint, b: bigint, c: number, d: number, e: bigint, f: bigint, g: number, h: number, i: bigint, j: bigint, k: number, l: number, m: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_inputpair_outpoint: (a: bigint, b: number) => [number, number];
     readonly uniffi_payjoin_ffi_fn_method_inputpair_outpoint: (a: number, b: bigint, c: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_clone_inputseenchecklistitem: (a: bigint, b: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_clone_inputseenchecklistitem: (a: bigint, b: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_free_inputseenchecklistitem: (a: bigint, b: number) => void;
+    readonly uniffi_payjoin_ffi_fn_free_inputseenchecklistitem: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_mark: (a: bigint, b: number, c: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_mark: (a: bigint, b: number, c: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_value: (a: bigint, b: number) => [number, number];
+    readonly uniffi_payjoin_ffi_fn_method_inputseenchecklistitem_value: (a: number, b: bigint, c: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_isinputowned: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_clone_isinputowned: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_free_isinputowned: (a: bigint, b: number) => void;
@@ -1600,16 +1700,32 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_fn_method_jsonreceiversessionpersisterasync_load: (a: bigint) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_jsonreceiversessionpersisterasync_close: (a: bigint) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_jsonreceiversessionpersisterasync_close: (a: bigint) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_clone_markedinputownedchecklistitem: (a: bigint, b: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_clone_markedinputownedchecklistitem: (a: bigint, b: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_free_markedinputownedchecklistitem: (a: bigint, b: number) => void;
+    readonly uniffi_payjoin_ffi_fn_free_markedinputownedchecklistitem: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_clone_markedinputseenchecklistitem: (a: bigint, b: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_clone_markedinputseenchecklistitem: (a: bigint, b: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_free_markedinputseenchecklistitem: (a: bigint, b: number) => void;
+    readonly uniffi_payjoin_ffi_fn_free_markedinputseenchecklistitem: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_clone_markedoutputownedchecklistitem: (a: bigint, b: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_clone_markedoutputownedchecklistitem: (a: bigint, b: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_free_markedoutputownedchecklistitem: (a: bigint, b: number) => void;
+    readonly uniffi_payjoin_ffi_fn_free_markedoutputownedchecklistitem: (a: bigint, b: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_maybeinputsowned: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_clone_maybeinputsowned: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_free_maybeinputsowned: (a: bigint, b: number) => void;
     readonly uniffi_payjoin_ffi_fn_free_maybeinputsowned: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_apply_inputs_owned_checklist: (a: bigint, b: number, c: number, d: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_method_maybeinputsowned_apply_inputs_owned_checklist: (a: bigint, b: bigint, c: bigint, d: number, e: number, f: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_cancel: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_maybeinputsowned_cancel: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_check_inputs_not_owned: (a: bigint, b: bigint, c: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_maybeinputsowned_check_inputs_not_owned: (a: bigint, b: bigint, c: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_extract_tx_to_schedule_broadcast: (a: bigint, b: number) => [number, number];
     readonly uniffi_payjoin_ffi_fn_method_maybeinputsowned_extract_tx_to_schedule_broadcast: (a: number, b: bigint, c: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_inputs_owned_checklist: (a: bigint, b: number) => [number, number];
+    readonly uniffi_payjoin_ffi_fn_method_maybeinputsowned_inputs_owned_checklist: (a: number, b: bigint, c: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsowned_proposal_txid_is_stable: (a: bigint, b: number) => number;
     readonly uniffi_payjoin_ffi_fn_method_maybeinputsowned_proposal_txid_is_stable: (a: bigint, b: number) => number;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_maybeinputsownedtransition: (a: bigint, b: number) => bigint;
@@ -1624,10 +1740,14 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_fn_clone_maybeinputsseen: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_free_maybeinputsseen: (a: bigint, b: number) => void;
     readonly uniffi_payjoin_ffi_fn_free_maybeinputsseen: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_apply_inputs_seen_checklist: (a: bigint, b: number, c: number, d: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_method_maybeinputsseen_apply_inputs_seen_checklist: (a: bigint, b: bigint, c: bigint, d: number, e: number, f: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_cancel: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_maybeinputsseen_cancel: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_check_no_inputs_seen_before: (a: bigint, b: bigint, c: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_maybeinputsseen_check_no_inputs_seen_before: (a: bigint, b: bigint, c: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_inputs_seen_checklist: (a: bigint, b: number) => [number, number];
+    readonly uniffi_payjoin_ffi_fn_method_maybeinputsseen_inputs_seen_checklist: (a: number, b: bigint, c: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_maybeinputsseen_proposal_txid_is_stable: (a: bigint, b: number) => number;
     readonly uniffi_payjoin_ffi_fn_method_maybeinputsseen_proposal_txid_is_stable: (a: bigint, b: number) => number;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_maybeinputsseentransition: (a: bigint, b: number) => bigint;
@@ -1656,14 +1776,26 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_fn_method_monitortransition_save: (a: bigint, b: bigint, c: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_monitortransition_save_async: (a: bigint, b: bigint) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_monitortransition_save_async: (a: bigint, b: bigint) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_clone_outputownedchecklistitem: (a: bigint, b: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_clone_outputownedchecklistitem: (a: bigint, b: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_free_outputownedchecklistitem: (a: bigint, b: number) => void;
+    readonly uniffi_payjoin_ffi_fn_free_outputownedchecklistitem: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_mark: (a: bigint, b: number, c: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_mark: (a: bigint, b: number, c: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_value: (a: bigint, b: number) => [number, number];
+    readonly uniffi_payjoin_ffi_fn_method_outputownedchecklistitem_value: (a: number, b: bigint, c: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_outputsunknown: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_clone_outputsunknown: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_free_outputsunknown: (a: bigint, b: number) => void;
     readonly uniffi_payjoin_ffi_fn_free_outputsunknown: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_apply_outputs_owned_checklist: (a: bigint, b: number, c: number, d: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_method_outputsunknown_apply_outputs_owned_checklist: (a: bigint, b: bigint, c: bigint, d: number, e: number, f: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_cancel: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_outputsunknown_cancel: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_identify_receiver_outputs: (a: bigint, b: bigint, c: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_outputsunknown_identify_receiver_outputs: (a: bigint, b: bigint, c: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_outputs_owned_checklist: (a: bigint, b: number) => [number, number];
+    readonly uniffi_payjoin_ffi_fn_method_outputsunknown_outputs_owned_checklist: (a: number, b: bigint, c: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_outputsunknown_proposal_txid_is_stable: (a: bigint, b: number) => number;
     readonly uniffi_payjoin_ffi_fn_method_outputsunknown_proposal_txid_is_stable: (a: bigint, b: number) => number;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_outputsunknowntransition: (a: bigint, b: number) => bigint;
@@ -1720,6 +1852,8 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_fn_method_provisionalproposal_cancel: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_proposal: (a: bigint, b: bigint, c: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_proposal: (a: bigint, b: bigint, c: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_signed_proposal: (a: bigint, b: number, c: number, d: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_method_provisionalproposal_finalize_signed_proposal: (a: bigint, b: bigint, c: bigint, d: number, e: number, f: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_proposal_txid_is_stable: (a: bigint, b: number) => number;
     readonly uniffi_payjoin_ffi_fn_method_provisionalproposal_proposal_txid_is_stable: (a: bigint, b: number) => number;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_provisionalproposal_psbt_to_sign: (a: bigint, b: number) => [number, number];
@@ -1800,12 +1934,16 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_fn_clone_uncheckedoriginalpayload: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_free_uncheckedoriginalpayload: (a: bigint, b: number) => void;
     readonly uniffi_payjoin_ffi_fn_free_uncheckedoriginalpayload: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_apply_broadcast_suitability: (a: bigint, b: number, c: number, d: number, e: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_apply_broadcast_suitability: (a: bigint, b: bigint, c: bigint, d: number, e: number, f: number, g: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_assume_interactive_receiver: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_assume_interactive_receiver: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_cancel: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_cancel: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_check_broadcast_suitability: (a: bigint, b: number, c: number, d: bigint, e: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_check_broadcast_suitability: (a: bigint, b: bigint, c: bigint, d: number, e: number, f: bigint, g: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability: (a: bigint, b: number) => [number, number];
+    readonly uniffi_payjoin_ffi_fn_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability: (a: number, b: bigint, c: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_uncheckedoriginalpayloadtransition: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_clone_uncheckedoriginalpayloadtransition: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_free_uncheckedoriginalpayloadtransition: (a: bigint, b: number) => void;
@@ -2122,6 +2260,18 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_fn_method_withreplykeytransition_save: (a: bigint, b: bigint, c: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_withreplykeytransition_save_async: (a: bigint, b: bigint) => bigint;
     readonly uniffi_payjoin_ffi_fn_method_withreplykeytransition_save_async: (a: bigint, b: bigint) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_clone_buildsendererror: (a: bigint, b: number) => bigint;
+    readonly uniffi_payjoin_ffi_fn_clone_buildsendererror: (a: bigint, b: number) => bigint;
+    readonly ubrn_uniffi_payjoin_ffi_fn_free_buildsendererror: (a: bigint, b: number) => void;
+    readonly uniffi_payjoin_ffi_fn_free_buildsendererror: (a: bigint, b: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_debug: (a: bigint, b: number) => [number, number];
+    readonly uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_debug: (a: number, b: bigint, c: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_display: (a: bigint, b: number) => [number, number];
+    readonly uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_display: (a: number, b: bigint, c: number) => void;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_eq: (a: bigint, b: bigint, c: number) => number;
+    readonly uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_eq: (a: bigint, b: bigint, c: number) => number;
+    readonly ubrn_uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_ne: (a: bigint, b: bigint, c: number) => number;
+    readonly uniffi_payjoin_ffi_fn_method_buildsendererror_uniffi_trait_eq_ne: (a: bigint, b: bigint, c: number) => number;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_createrequesterror: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_clone_createrequesterror: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_free_createrequesterror: (a: bigint, b: number) => void;
@@ -2140,18 +2290,6 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_fn_method_decapsulationerror_uniffi_trait_debug: (a: number, b: bigint, c: number) => void;
     readonly ubrn_uniffi_payjoin_ffi_fn_method_decapsulationerror_uniffi_trait_display: (a: bigint, b: number) => [number, number];
     readonly uniffi_payjoin_ffi_fn_method_decapsulationerror_uniffi_trait_display: (a: number, b: bigint, c: number) => void;
-    readonly ubrn_uniffi_payjoin_ffi_fn_clone_senderbuildererror: (a: bigint, b: number) => bigint;
-    readonly uniffi_payjoin_ffi_fn_clone_senderbuildererror: (a: bigint, b: number) => bigint;
-    readonly ubrn_uniffi_payjoin_ffi_fn_free_senderbuildererror: (a: bigint, b: number) => void;
-    readonly uniffi_payjoin_ffi_fn_free_senderbuildererror: (a: bigint, b: number) => void;
-    readonly ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_debug: (a: bigint, b: number) => [number, number];
-    readonly uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_debug: (a: number, b: bigint, c: number) => void;
-    readonly ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_display: (a: bigint, b: number) => [number, number];
-    readonly uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_display: (a: number, b: bigint, c: number) => void;
-    readonly ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_eq: (a: bigint, b: bigint, c: number) => number;
-    readonly uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_eq: (a: bigint, b: bigint, c: number) => number;
-    readonly ubrn_uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_ne: (a: bigint, b: bigint, c: number) => number;
-    readonly uniffi_payjoin_ffi_fn_method_senderbuildererror_uniffi_trait_eq_ne: (a: bigint, b: bigint, c: number) => number;
     readonly ubrn_uniffi_payjoin_ffi_fn_clone_senderreplayerror: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_ffi_fn_clone_senderreplayerror: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_ffi_fn_free_senderreplayerror: (a: bigint, b: number) => void;
@@ -2414,8 +2552,16 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_checksum_method_initializedtransition_save: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_initializedtransition_save_async: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_initializedtransition_save_async: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_mark: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_mark: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_value: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_inputownedchecklistitem_value: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_inputpair_outpoint: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_inputpair_outpoint: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_mark: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_mark: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_value: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_inputseenchecklistitem_value: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_isinputowned_callback: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_isinputowned_callback: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_isoutputknown_callback: () => number;
@@ -2434,22 +2580,30 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_checksum_method_jsonreceiversessionpersisterasync_load: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_jsonreceiversessionpersisterasync_close: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_jsonreceiversessionpersisterasync_close: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_apply_inputs_owned_checklist: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_maybeinputsowned_apply_inputs_owned_checklist: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_cancel: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_maybeinputsowned_cancel: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_check_inputs_not_owned: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_maybeinputsowned_check_inputs_not_owned: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_extract_tx_to_schedule_broadcast: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_maybeinputsowned_extract_tx_to_schedule_broadcast: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_inputs_owned_checklist: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_maybeinputsowned_inputs_owned_checklist: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsowned_proposal_txid_is_stable: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_maybeinputsowned_proposal_txid_is_stable: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsownedtransition_save: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_maybeinputsownedtransition_save: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsownedtransition_save_async: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_maybeinputsownedtransition_save_async: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_apply_inputs_seen_checklist: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_maybeinputsseen_apply_inputs_seen_checklist: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_cancel: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_maybeinputsseen_cancel: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_check_no_inputs_seen_before: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_maybeinputsseen_check_no_inputs_seen_before: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_inputs_seen_checklist: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_maybeinputsseen_inputs_seen_checklist: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseen_proposal_txid_is_stable: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_maybeinputsseen_proposal_txid_is_stable: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_maybeinputsseentransition_save: () => number;
@@ -2466,10 +2620,18 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_checksum_method_monitortransition_save: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_monitortransition_save_async: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_monitortransition_save_async: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_mark: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_mark: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_value: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_outputownedchecklistitem_value: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_apply_outputs_owned_checklist: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_outputsunknown_apply_outputs_owned_checklist: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_cancel: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_outputsunknown_cancel: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_identify_receiver_outputs: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_outputsunknown_identify_receiver_outputs: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_outputs_owned_checklist: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_outputsunknown_outputs_owned_checklist: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknown_proposal_txid_is_stable: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_outputsunknown_proposal_txid_is_stable: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_outputsunknowntransition_save: () => number;
@@ -2500,6 +2662,8 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_checksum_method_provisionalproposal_cancel: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_proposal: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_proposal: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_signed_proposal: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_provisionalproposal_finalize_signed_proposal: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_proposal_txid_is_stable: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_provisionalproposal_proposal_txid_is_stable: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_provisionalproposal_psbt_to_sign: () => number;
@@ -2534,12 +2698,16 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_checksum_method_replayresult_state: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_transactionfinder_callback: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_transactionfinder_callback: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_apply_broadcast_suitability: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_apply_broadcast_suitability: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_assume_interactive_receiver: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_assume_interactive_receiver: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_cancel: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_cancel: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_check_broadcast_suitability: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_check_broadcast_suitability: () => number;
+    readonly ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability: () => number;
+    readonly uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayload_extract_tx_to_check_broadcast_suitability: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayloadtransition_save: () => number;
     readonly uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayloadtransition_save: () => number;
     readonly ubrn_uniffi_payjoin_ffi_checksum_method_uncheckedoriginalpayloadtransition_save_async: () => number;
@@ -2716,18 +2884,18 @@ export interface InitOutput {
     readonly uniffi_payjoin_ffi_checksum_constructor_url_parse: () => number;
     readonly ubrn_ffi_payjoin_ffi_uniffi_contract_version: () => number;
     readonly ffi_payjoin_ffi_uniffi_contract_version: () => number;
-    readonly __wbg_foreignfuturecompleteu8_free: (a: number, b: number) => void;
-    readonly foreignfuturecompleteu8_call: (a: number, b: number, c: bigint, d: any) => void;
-    readonly __wbg_foreignfuturecompletei32_free: (a: number, b: number) => void;
-    readonly foreignfuturecompletei32_call: (a: number, b: number, c: bigint, d: any) => void;
-    readonly __wbg_foreignfuturecompleteu16_free: (a: number, b: number) => void;
-    readonly foreignfuturecompleteu16_call: (a: number, b: number, c: bigint, d: any) => void;
-    readonly __wbg_foreignfuturecompletef64_free: (a: number, b: number) => void;
-    readonly foreignfuturecompletef64_call: (a: number, b: number, c: bigint, d: any) => void;
-    readonly __wbg_foreignfuturecompletevoid_free: (a: number, b: number) => void;
-    readonly foreignfuturecompletevoid_call: (a: number, b: number, c: bigint, d: any) => void;
+    readonly __wbg_foreignfuturecompleteu32_free: (a: number, b: number) => void;
+    readonly foreignfuturecompleteu32_call: (a: number, b: number, c: bigint, d: any) => void;
     readonly __wbg_foreignfuturecompletei8_free: (a: number, b: number) => void;
     readonly foreignfuturecompletei8_call: (a: number, b: number, c: bigint, d: any) => void;
+    readonly __wbg_foreignfuturecompletevoid_free: (a: number, b: number) => void;
+    readonly foreignfuturecompletevoid_call: (a: number, b: number, c: bigint, d: any) => void;
+    readonly __wbg_foreignfuturecompletei32_free: (a: number, b: number) => void;
+    readonly foreignfuturecompletei32_call: (a: number, b: number, c: bigint, d: any) => void;
+    readonly __wbg_foreignfuturecompletef32_free: (a: number, b: number) => void;
+    readonly foreignfuturecompletef32_call: (a: number, b: number, c: bigint, d: any) => void;
+    readonly __wbg_foreignfuturecompletef64_free: (a: number, b: number) => void;
+    readonly foreignfuturecompletef64_call: (a: number, b: number, c: bigint, d: any) => void;
     readonly ubrn_uniffi_payjoin_demo_wallet_fn_clone_demowallet: (a: bigint, b: number) => bigint;
     readonly uniffi_payjoin_demo_wallet_fn_clone_demowallet: (a: bigint, b: number) => bigint;
     readonly ubrn_uniffi_payjoin_demo_wallet_fn_free_demowallet: (a: bigint, b: number) => void;
@@ -2794,18 +2962,18 @@ export interface InitOutput {
     readonly uniffi_payjoin_demo_wallet_checksum_constructor_demowallets_from_json: () => number;
     readonly ubrn_ffi_payjoin_demo_wallet_uniffi_contract_version: () => number;
     readonly ffi_payjoin_demo_wallet_uniffi_contract_version: () => number;
-    readonly __wbg_foreignfuturecompletef32_free: (a: number, b: number) => void;
-    readonly foreignfuturecompletef32_call: (a: number, b: number, c: bigint, d: any) => void;
-    readonly __wbg_foreignfuturecompleteu32_free: (a: number, b: number) => void;
-    readonly foreignfuturecompleteu32_call: (a: number, b: number, c: bigint, d: any) => void;
     readonly __wbg_foreignfuturecompletei64_free: (a: number, b: number) => void;
     readonly foreignfuturecompletei64_call: (a: number, b: number, c: bigint, d: any) => void;
+    readonly __wbg_foreignfuturecompleteu8_free: (a: number, b: number) => void;
+    readonly foreignfuturecompleteu8_call: (a: number, b: number, c: bigint, d: any) => void;
+    readonly __wbg_foreignfuturecompleteu16_free: (a: number, b: number) => void;
+    readonly foreignfuturecompleteu16_call: (a: number, b: number, c: bigint, d: any) => void;
     readonly __wbg_foreignfuturecompletei16_free: (a: number, b: number) => void;
     readonly foreignfuturecompletei16_call: (a: number, b: number, c: bigint, d: any) => void;
-    readonly __wbg_foreignfuturecompleterustbuffer_free: (a: number, b: number) => void;
-    readonly foreignfuturecompleterustbuffer_call: (a: number, b: number, c: bigint, d: any) => void;
     readonly __wbg_foreignfuturecompleteu64_free: (a: number, b: number) => void;
     readonly foreignfuturecompleteu64_call: (a: number, b: number, c: bigint, d: any) => void;
+    readonly __wbg_foreignfuturecompleterustbuffer_free: (a: number, b: number) => void;
+    readonly foreignfuturecompleterustbuffer_call: (a: number, b: number, c: bigint, d: any) => void;
     readonly __wbg_rustcallstatus_free: (a: number, b: number) => void;
     readonly __wbg_get_rustcallstatus_code: (a: number) => number;
     readonly __wbg_set_rustcallstatus_code: (a: number, b: number) => void;
