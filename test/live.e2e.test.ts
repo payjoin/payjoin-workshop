@@ -77,6 +77,11 @@ describe.runIf(process.env.PAYJOIN_LIVE_E2E === "1")(
             expect(
                 original.outputs.find((o) => o.party === "receiver")?.valueSat,
             ).toBe(amountSat);
+            expect(
+                original.outputs.some(
+                    (o) => o.isChange && o.party === "sender",
+                ),
+            ).toBe(true);
 
             // The signed proposal: inputs from both sides. The whole point.
             expect(payjoin.inputs.some((i) => i.party === "receiver")).toBe(
@@ -86,6 +91,7 @@ describe.runIf(process.env.PAYJOIN_LIVE_E2E === "1")(
             expect(payjoin.inputs.length).toBeGreaterThan(
                 original.inputs.length,
             );
+            expect(payjoin.outputs).toHaveLength(2);
             expect(payjoin.txid).not.toBe(original.txid);
 
             // The receive rule: the contributed coin is the receiver's smallest.
@@ -99,6 +105,8 @@ describe.runIf(process.env.PAYJOIN_LIVE_E2E === "1")(
             expect(payjoin.hex).toMatch(/^[0-9a-f]+$/);
             expect(payjoin.feeSat).toBeGreaterThanOrEqual(original.feeSat);
             expect(payjoin.feeRateSatPerVb).toBeGreaterThanOrEqual(1);
+            expect(payjoin.vsize).toBeGreaterThan(0);
+            expect(payjoin.weight).toBeGreaterThan(0);
 
             // The trace the page renders, in order, on both roles.
             expect(steps.map((e) => e.id)).toEqual(STEP_ORDER);
@@ -119,7 +127,17 @@ describe("live driver, without touching the network", () => {
         expect(sender.party).toBe("sender");
         expect(receiver.utxos).toHaveLength(2);
         expect(sender.utxos).toHaveLength(4);
+        expect(receiver.address).toMatch(/^bcrt1q/);
+        expect(sender.address).toMatch(/^bcrt1q/);
         expect(receiver.address).not.toBe(sender.address);
+        expect(sender.balanceSat).toBe(
+            sender.utxos.reduce((sum, utxo) => sum + utxo.valueSat, 0),
+        );
+
+        // The highest amount the page offers still leaves room for fee and
+        // change.
+        const bounds = driver.amountBounds();
+        expect(bounds.maxSat).toBeLessThan(sender.balanceSat);
     });
 
     it("settles a cancelled session as cancelled rather than throwing", async () => {
