@@ -158,7 +158,7 @@ class LiveSession implements DemoSession {
         try {
             return await this.run(uri);
         } catch (error) {
-            return this.toFailure(error);
+            return toFailure(error);
         }
     }
 
@@ -189,23 +189,29 @@ class LiveSession implements DemoSession {
     private throwIfCancelled(): void {
         if (this.flag.cancelled) throw new Cancelled();
     }
+}
 
-    private toFailure(error: unknown): DemoResult {
-        const message = error instanceof Error ? error.message : String(error);
-        if (error instanceof Cancelled) {
-            return { ok: false, kind: "cancelled", message };
-        }
-        if (error instanceof NoRelaysLeft) {
-            return { ok: false, kind: "network", message };
-        }
-        if (
-            error instanceof ProtocolError ||
-            error instanceof steps.NotImplemented
-        ) {
-            return { ok: false, kind: "protocol", message };
-        }
-        // Anything PDK threw. The page shows it verbatim; the driver does not
-        // classify errors it did not raise.
+/** Turns anything a step threw into the failure shape the page renders. */
+export function toFailure(error: unknown): DemoResult {
+    const message = error instanceof Error ? error.message : String(error);
+    if (error instanceof Cancelled) {
+        return { ok: false, kind: "cancelled", message };
+    }
+    if (error instanceof NoRelaysLeft) {
+        return {
+            ok: false,
+            kind: "network",
+            message,
+            relay: error.failed.join(", "),
+        };
+    }
+    if (
+        error instanceof ProtocolError ||
+        error instanceof steps.NotImplemented
+    ) {
         return { ok: false, kind: "protocol", message };
     }
+    // Anything PDK threw. The page shows it verbatim; the driver does not
+    // classify errors it did not raise.
+    return { ok: false, kind: "protocol", message };
 }
