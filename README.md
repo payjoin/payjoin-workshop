@@ -205,7 +205,7 @@ payjoin-cli receive --help
 `payjoin-cli` is a working reference wallet for BIP 77 against a bitcoind
 node. Reading its `receive` and `send` implementations after this workshop is
 the fastest route to a production integration. Bindings exist for TypeScript
-(what you used today), C#, Python, Dart and Kotlin from the same
+(what you used today), C#, Python and Dart from the same
 [rust-payjoin](https://github.com/payjoin/rust-payjoin) repository, and a
 typical wallet integration lands in about a thousand lines.
 
