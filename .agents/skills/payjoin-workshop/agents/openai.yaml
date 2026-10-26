@@ -1,0 +1,4 @@
+interface:
+  display_name: "Payjoin Workshop"
+  short_description: "Teach and guide the Payjoin workshop"
+  default_prompt: "Use $payjoin-workshop to answer Payjoin and PDK questions or fill the correct workshop code when I ask, using mock or regtest-safe verification."
